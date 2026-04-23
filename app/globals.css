@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f9f6f1;
+  --surface: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --accent: #c8472b;
+  --accent-light: #f5e6e3;
+  --border: #e5e0d8;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+[data-theme="dark"] {
+  --bg: #141414;
+  --surface: #1e1e1e;
+  --text-primary: #f0ece4;
+  --text-secondary: #b0a99e;
+  --text-muted: #6e6860;
+  --accent: #e05a3a;
+  --accent-light: #2a1a16;
+  --border: #2e2a26;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.25;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; height: auto; display: block; }
