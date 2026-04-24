@@ -1,0 +1,22 @@
+---
+title: "Using a Local LLM as a Zero-Shot Classifier"
+date: "2026-04-24"
+category: "data_engineering"
+source: "https://towardsdatascience.com/using-a-local-llm-as-a-zero-shot-classifier/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/04/zero-shot-free-text-classification-scaled-1.jpg"
+disclaimer: "None"
+---
+
+## What Happened
+
+that “groups are remarkably intelligent, and are often smarter than the smartest people in them.” He was writing about decision-making, but the same principle applies to classification: get enough people to describe the same phenomenon and a taxonomy starts to emerge, even if no two people phrase it the same way. The challenge is extracting that signal from the noise.
+
+I had several thousand rows of free-text data and needed to do exactly that. Each row was a short natural-language annotation explaining why an automated security finding was irrelevant, which functions to use for a fix, or what coding practices to follow. One person wrote “this is test code, not deployed anywhere.” Another wrote “non-production environment, safe to ignore.” A third wrote “only runs in CI/CD pipeline during integration tests.” All three meant the same thing, but no two shared more than a word or two.
+
+The taxonomy was in there. I just needed the right tool to extract it. Traditional clustering and keyword matching couldn’t handle the paraphrase variation, so I tried something I hadn’t seen discussed much: using a locally hosted LLM as a zero-shot classifier. This blog post explores how it performed, how it works, and some tips for using and deploying these systems yourself.
+
+Standard unsupervised clustering works by finding mathematical proximity in some feature space. For long documents, this is usually fine. Enough signal exists in word frequencies or embedding vectors to form coherent groups. But short, semantically dense text breaks these assumptions in a few specific ways.
+
+## Why This Matters
+
+This development in data engineering is worth following closely. Read the full story at the original source for complete details.
