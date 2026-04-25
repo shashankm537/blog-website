@@ -5,6 +5,9 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "The Daily Read | Tech, Finance & More",
   description: "Auto-published daily blog covering tech, finance, data engineering and cybersecurity.",
+  verification: {
+    google: "VHthEITrQ8BcyH6pIj2LEEJpwBDDRrE4y39AfJiRKoM",
+  },
 };
 
 export default function RootLayout({
