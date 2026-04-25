@@ -1,0 +1,22 @@
+---
+title: "Introduction to Approximate Solution Methods for Reinforcement Learning"
+date: "2026-04-25"
+category: "data_engineering"
+source: "https://towardsdatascience.com/introduction-to-approximate-solution-methods-for-reinforcement-learning-2/"
+image: "https://towardsdatascience.com/wp-content/uploads/2025/08/image-225.jpg"
+disclaimer: "None"
+---
+
+## What Happened
+
+series about Reinforcement Learning (RL), following Sutton and Barto’s famous book “Reinforcement Learning” [1].
+
+In the previous posts we finished dissecting Part I of said book, which introduces fundamental solution techniques which form the basis for many RL methods. These are: Dynamic Programming (DP), Monte Carlo methods (MC) and Temporal Difference Learning (TD). What separates Part I from Part II of Sutton’s book, and justifies the distinction, is a constraint on the problem size: while in Part I tabular solution methods were covered, we now dare to dive deeper into this fascinating topics and include function approximation.
+
+To make it specific, in Part I we assumed the state space of the problems under investigation to be small enough s.t. we could represent it and also the found solutions via a simple table (imagine a table denoting a certain “goodness” – a value – for each state). Now, in Part II, we drop this assumption, and are thus able to tackle arbitrary problems.
+
+And this modified setup is dearly needed, as we could observe first-hand: in a previous post we managed to learn to play Tic Tac Toe, but already failed for Connect Four – since the number of states here is in the order of 10²⁰. Or, consider an RL problem which learns a task based on camera images: the number of possible camera images is greater than the number of atoms in the known universe [1].
+
+## Why This Matters
+
+This development in data engineering is worth following closely. Read the full story at the original source for complete details.
