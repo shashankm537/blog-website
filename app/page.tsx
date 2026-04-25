@@ -75,6 +75,172 @@ export default function Home() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
 
+      {/* Responsive CSS */}
+      <style>{`
+        .header-inner {
+          width: 100%;
+          padding: 0 16px;
+          height: 64px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          box-sizing: border-box;
+        }
+        .theme-btn {
+          position: absolute;
+          right: 16px;
+          background: var(--accent-light);
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          padding: 6px 12px;
+          cursor: pointer;
+          color: var(--text-primary);
+          font-size: 13px;
+          font-family: inherit;
+          white-space: nowrap;
+        }
+        .hero {
+          background: var(--accent);
+          color: #fff;
+          text-align: center;
+          padding: 40px 16px;
+        }
+        .hero h2 {
+          font-size: clamp(22px, 5vw, 48px);
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+        .hero p {
+          font-size: clamp(13px, 2vw, 18px);
+          opacity: 0.85;
+          max-width: 560px;
+          margin: 0 auto;
+        }
+        .filters {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 24px 16px 0;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
+        .filter-btn {
+          padding: 7px 16px;
+          border-radius: 20px;
+          border: 1px solid var(--border);
+          cursor: pointer;
+          font-size: 13px;
+          font-family: inherit;
+          text-transform: capitalize;
+          transition: all 0.2s;
+          white-space: nowrap;
+        }
+        .filter-select {
+          padding: 7px 16px;
+          border-radius: 20px;
+          border: 1px solid var(--border);
+          cursor: pointer;
+          font-size: 13px;
+          font-family: inherit;
+          outline: none;
+          appearance: none;
+        }
+        .blog-grid {
+          display: grid;
+          gap: 16px;
+          grid-template-columns: 1fr;
+        }
+        @media (min-width: 480px) {
+          .blog-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (min-width: 768px) {
+          .blog-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        @media (min-width: 1024px) {
+          .blog-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+        .blog-card {
+          background: var(--surface);
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid var(--border);
+          box-shadow: var(--card-shadow);
+          transition: transform 0.2s, box-shadow 0.2s;
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        .blog-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .card-image {
+          height: 180px;
+          background: var(--accent-light);
+          overflow: hidden;
+          flex-shrink: 0;
+        }
+        @media (max-width: 479px) {
+          .card-image {
+            height: 200px;
+          }
+        }
+        .card-content {
+          padding: 14px 16px 18px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+        .card-title {
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 1.35;
+          margin-bottom: 8px;
+          color: var(--text-primary);
+        }
+        @media (max-width: 479px) {
+          .card-title {
+            font-size: 17px;
+          }
+        }
+        .card-excerpt {
+          font-size: 13px;
+          color: var(--text-secondary);
+          line-height: 1.6;
+          flex: 1;
+        }
+        .pagination {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin-top: 40px;
+          flex-wrap: wrap;
+        }
+        .page-btn {
+          padding: 8px 14px;
+          border-radius: 8px;
+          border: 1px solid var(--border);
+          cursor: pointer;
+          font-size: 14px;
+          font-family: inherit;
+        }
+        .main-content {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 24px 16px 64px;
+        }
+      `}</style>
+
       {/* Header */}
       <header style={{
         borderBottom: '1px solid var(--border)',
@@ -84,133 +250,71 @@ export default function Home() {
         zIndex: 100,
         boxShadow: '0 1px 8px rgba(0,0,0,0.06)'
       }}>
-        <div style={{
-          width: '100%',
-          padding: '0 24px',
-          height: 64,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-          boxSizing: 'border-box'
-        }}>
+        <div className="header-inner">
           <div style={{ textAlign: 'center' }}>
-            <h1 style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.5px' }}>
+            <h1 style={{ fontSize: 'clamp(16px, 4vw, 22px)', fontWeight: 700, letterSpacing: '-0.5px' }}>
               The Daily Read
             </h1>
-            <p style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 1 }}>
+            <p style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 1 }}>
               Tech · Finance · Data · Security
             </p>
           </div>
-          <button
-            onClick={toggleTheme}
-            style={{
-              position: 'absolute',
-              right: 24,
-              background: 'var(--accent-light)',
-              border: '1px solid var(--border)',
-              borderRadius: 8,
-              padding: '8px 16px',
-              cursor: 'pointer',
-              color: 'var(--text-primary)',
-              fontSize: 14,
-              fontFamily: 'inherit'
-            }}
-          >
-            {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+          <button className="theme-btn" onClick={toggleTheme}>
+            {theme === 'light' ? '🌙' : '☀️'}
           </button>
         </div>
       </header>
 
       {/* Hero */}
-      <div style={{
-        background: 'var(--accent)',
-        color: '#fff',
-        textAlign: 'center',
-        padding: '56px 24px'
-      }}>
-        <h2 style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 700, marginBottom: 12 }}>
-          Your Daily Dose of What Matters
-        </h2>
-        <p style={{ fontSize: 'clamp(14px, 2vw, 18px)', opacity: 0.85, maxWidth: 560, margin: '0 auto' }}>
-          Curated and rewritten daily from the best sources across tech, finance, data engineering and cybersecurity.
-        </p>
+      <div className="hero">
+        <h2>Your Daily Dose of What Matters</h2>
+        <p>Curated and rewritten daily from the best sources across tech, finance, data engineering and cybersecurity.</p>
       </div>
 
       {/* Filters */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 24px 0' }}>
-        {/* Category + Date row - center aligned */}
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              style={{
-                padding: '8px 18px',
-                borderRadius: 20,
-                border: '1px solid var(--border)',
-                background: activeCategory === cat ? 'var(--accent)' : 'var(--surface)',
-                color: activeCategory === cat ? '#fff' : 'var(--text-secondary)',
-                cursor: 'pointer',
-                fontSize: 14,
-                fontFamily: 'inherit',
-                textTransform: 'capitalize',
-                transition: 'all 0.2s'
-              }}
-            >
-              {cat.replace('_', ' ')}
-            </button>
-          ))}
-
-          {/* Date dropdown */}
-          <select
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
+      <div className="filters">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className="filter-btn"
             style={{
-              padding: '8px 18px',
-              borderRadius: 20,
-              border: '1px solid var(--border)',
-              background: selectedDate ? 'var(--accent)' : 'var(--surface)',
-              color: selectedDate ? '#fff' : 'var(--text-secondary)',
-              cursor: 'pointer',
-              fontSize: 14,
-              fontFamily: 'inherit',
-              outline: 'none',
-              appearance: 'none',
-              paddingRight: 32
+              background: activeCategory === cat ? 'var(--accent)' : 'var(--surface)',
+              color: activeCategory === cat ? '#fff' : 'var(--text-secondary)',
             }}
           >
-            <option value="">📅 Date</option>
-            {availableDates.map((date) => (
-              <option key={date} value={date}>
-                {formatDate(date)}
-              </option>
-            ))}
-          </select>
+            {cat.replace('_', ' ')}
+          </button>
+        ))}
 
-          {/* Clear filters */}
-          {(selectedDate || activeCategory !== 'all') && (
-            <button
-              onClick={() => { setSelectedDate(''); setActiveCategory('all'); }}
-              style={{
-                padding: '8px 18px',
-                borderRadius: 20,
-                border: '1px solid var(--border)',
-                background: 'var(--surface)',
-                color: 'var(--accent)',
-                cursor: 'pointer',
-                fontSize: 14,
-                fontFamily: 'inherit',
-              }}
-            >
-              ✕ Clear
-            </button>
-          )}
-        </div>
+        <select
+          value={selectedDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
+          className="filter-select"
+          style={{
+            background: selectedDate ? 'var(--accent)' : 'var(--surface)',
+            color: selectedDate ? '#fff' : 'var(--text-secondary)',
+          }}
+        >
+          <option value="">📅 Date</option>
+          {availableDates.map((date) => (
+            <option key={date} value={date}>{formatDate(date)}</option>
+          ))}
+        </select>
+
+        {(selectedDate || activeCategory !== 'all') && (
+          <button
+            className="filter-btn"
+            onClick={() => { setSelectedDate(''); setActiveCategory('all'); }}
+            style={{ background: 'var(--surface)', color: 'var(--accent)' }}
+          >
+            ✕ Clear
+          </button>
+        )}
       </div>
 
       {/* Blog Grid */}
-      <main style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 24px 64px' }}>
+      <main className="main-content">
         {loading ? (
           <div style={{ textAlign: 'center', padding: '80px 0', color: 'var(--text-muted)' }}>
             Loading articles...
@@ -221,51 +325,23 @@ export default function Home() {
           </div>
         ) : (
           <>
-            {/* 4 columns grid */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: 20
-            }}>
+            <div className="blog-grid">
               {paginated.map((blog) => (
-                <Link key={blog.slug} href={`/blog/${blog.slug}`}>
-                  <article style={{
-                    background: 'var(--surface)',
-                    borderRadius: 12,
-                    overflow: 'hidden',
-                    border: '1px solid var(--border)',
-                    boxShadow: 'var(--card-shadow)',
-                    transition: 'transform 0.2s, box-shadow 0.2s',
-                    cursor: 'pointer',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column'
-                  }}
-                    onMouseEnter={e => {
-                      (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
-                      (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
-                    }}
-                    onMouseLeave={e => {
-                      (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                      (e.currentTarget as HTMLElement).style.boxShadow = 'var(--card-shadow)';
-                    }}
-                  >
-                    {/* Image */}
-                    <div style={{ height: 180, background: 'var(--accent-light)', overflow: 'hidden' }}>
+                <Link key={blog.slug} href={`/blog/${blog.slug}`} style={{ display: 'flex' }}>
+                  <article className="blog-card">
+                    <div className="card-image">
                       {blog.image ? (
                         <img
                           src={blog.image}
                           alt={blog.title}
                           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
-                          }}
+                          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                         />
                       ) : (
                         <div style={{
                           width: '100%', height: '100%',
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          fontSize: 36
+                          display: 'flex', alignItems: 'center',
+                          justifyContent: 'center', fontSize: 36
                         }}>
                           {blog.category === 'tech' ? '💻' :
                             blog.category === 'finance' ? '📈' :
@@ -274,18 +350,14 @@ export default function Home() {
                       )}
                     </div>
 
-                    {/* Content */}
-                    <div style={{ padding: '16px 18px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <div className="card-content">
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10, flexWrap: 'wrap' }}>
                         <span style={{
-                          fontSize: 10,
-                          fontWeight: 600,
-                          textTransform: 'uppercase',
-                          letterSpacing: 1,
+                          fontSize: 10, fontWeight: 600,
+                          textTransform: 'uppercase', letterSpacing: 1,
                           color: '#fff',
                           background: categoryColor[blog.category] || '#c8472b',
-                          padding: '3px 8px',
-                          borderRadius: 4
+                          padding: '3px 8px', borderRadius: 4
                         }}>
                           {blog.category.replace('_', ' ')}
                         </span>
@@ -294,31 +366,10 @@ export default function Home() {
                         </span>
                       </div>
 
-                      <h2 style={{
-                        fontSize: 16,
-                        fontWeight: 700,
-                        lineHeight: 1.3,
-                        marginBottom: 8,
-                        color: 'var(--text-primary)'
-                      }}>
-                        {blog.title}
-                      </h2>
+                      <h2 className="card-title">{blog.title}</h2>
+                      <p className="card-excerpt">{blog.excerpt}</p>
 
-                      <p style={{
-                        fontSize: 13,
-                        color: 'var(--text-secondary)',
-                        lineHeight: 1.6,
-                        flex: 1
-                      }}>
-                        {blog.excerpt}
-                      </p>
-
-                      <div style={{
-                        marginTop: 14,
-                        fontSize: 13,
-                        color: 'var(--accent)',
-                        fontWeight: 600
-                      }}>
+                      <div style={{ marginTop: 14, fontSize: 13, color: 'var(--accent)', fontWeight: 600 }}>
                         Read more →
                       </div>
                     </div>
@@ -327,66 +378,36 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Pagination */}
             {totalPages > 1 && (
-              <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: 8,
-                marginTop: 48,
-                flexWrap: 'wrap'
-              }}>
+              <div className="pagination">
                 {currentPage > 1 && (
                   <button
+                    className="page-btn"
                     onClick={() => setCurrentPage(currentPage - 1)}
-                    style={{
-                      padding: '8px 16px',
-                      borderRadius: 8,
-                      border: '1px solid var(--border)',
-                      background: 'var(--surface)',
-                      color: 'var(--text-primary)',
-                      cursor: 'pointer',
-                      fontSize: 14,
-                      fontFamily: 'inherit'
-                    }}
+                    style={{ background: 'var(--surface)', color: 'var(--text-primary)' }}
                   >
                     ← Prev
                   </button>
                 )}
-
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                   <button
                     key={page}
+                    className="page-btn"
                     onClick={() => setCurrentPage(page)}
                     style={{
-                      padding: '8px 14px',
-                      borderRadius: 8,
-                      border: '1px solid var(--border)',
                       background: currentPage === page ? 'var(--accent)' : 'var(--surface)',
                       color: currentPage === page ? '#fff' : 'var(--text-primary)',
-                      cursor: 'pointer',
-                      fontSize: 14,
-                      fontFamily: 'inherit',
                       fontWeight: currentPage === page ? 700 : 400
                     }}
                   >
                     {page}
                   </button>
                 ))}
-
                 {currentPage < totalPages && (
                   <button
+                    className="page-btn"
                     onClick={() => setCurrentPage(currentPage + 1)}
-                    style={{
-                      padding: '8px 16px',
-                      borderRadius: 8,
-                      border: '1px solid var(--border)',
-                      background: 'var(--surface)',
-                      color: 'var(--text-primary)',
-                      cursor: 'pointer',
-                      fontSize: 14,
-                      fontFamily: 'inherit'
-                    }}
+                    style={{ background: 'var(--surface)', color: 'var(--text-primary)' }}
                   >
                     Next →
                   </button>
@@ -397,7 +418,6 @@ export default function Home() {
         )}
       </main>
 
-      {/* Footer */}
       <footer style={{
         borderTop: '1px solid var(--border)',
         textAlign: 'center',
