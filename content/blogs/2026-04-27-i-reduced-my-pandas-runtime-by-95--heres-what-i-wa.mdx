@@ -1,0 +1,22 @@
+---
+title: "I Reduced My Pandas Runtime by 95% — Here’s What I Was Doing Wrong"
+date: "2026-04-27"
+category: "data_engineering"
+source: "https://towardsdatascience.com/i-reduced-my-pandas-runtime-by-95-heres-what-i-was-doing-wrong/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/04/fast-pandas.jpg"
+disclaimer: "None"
+---
+
+## The Story
+
+for some time now. Nothing too crazy though. Just basic data cleaning, exploratory data analysis, and some essential functions. I’ve also explored things like method chaining for cleaner, more organized code, and operations that silently break your Pandas workflow, both of which I’ve written about before.
+
+I never really thought about runtime. Honestly, if my code ran without errors and gave me the output I needed, I was happy. Even if it took a few minutes for all my notebook cells to finish, I didn’t care. No errors meant no problems, right?
+
+Then I came across the concept of vectorization. And something clicked.
+
+I went down the rabbit hole, as I usually do. The more I read, the more I realized that “no errors” and “efficient code” are two very different things. Your Pandas code can be completely correct and still be quietly terrible at scale.
+
+## What This Means
+
+This is a significant development in data engineering. Read the full details at the original source linked below.
