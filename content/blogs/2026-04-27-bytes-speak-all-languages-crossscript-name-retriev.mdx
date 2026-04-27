@@ -1,0 +1,22 @@
+---
+title: "Bytes Speak All Languages: Cross-Script Name Retrieval via Contrastive Learning"
+date: "2026-04-27"
+category: "data_engineering"
+source: "https://towardsdatascience.com/bytes-speak-all-languages-cross-script-name-retrieval-via-contrastive-learning/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/04/Gemini_Generated_Image_i9mhwti9mhwti9mh-scaled-1.jpg"
+disclaimer: "None"
+---
+
+## What Happened
+
+screening system checks a name against a watchlist, it faces a silent failure mode that nobody talks about. Type “Владимир Путин” into a system indexed on “Vladimir Putin” and most name-matching approaches return nothing. The two strings share zero characters, so edit distance is meaningless, phonetic codes fail (they assume Latin), and BM25 gives up entirely.
+
+This is not an obscure edge case. Immigration databases, hospital record systems, and financial compliance pipelines deal with this daily. And yet, the dominant approaches to this problem are either classical (edit distance, Soundex variants) or heavyweight (fine-tune a multilingual LLM on a few hundred manually labeled pairs). In this post, I’ll walk you through how we trained a compact transformer encoder from scratch on raw UTF-8 bytes, with no tokenizer, no pretrained backbone, and no script detection, to solve cross-script phonetic name retrieval. We achieved 0.775 MRR and 0.897 R@10 across 8 non-Latin scripts, reducing the performance gap between Latin and non-Latin queries by 10x over the best classical baseline.
+
+The full code is on GitHub. This post covers the ideas and the engineering.
+
+The problem sits at the intersection of three things that don’t cooperate:
+
+## Why This Matters
+
+This development in data engineering is worth following closely. Read the full story at the original source for complete details.
