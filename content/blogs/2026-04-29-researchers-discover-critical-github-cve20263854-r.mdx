@@ -1,0 +1,24 @@
+---
+title: "Researchers Discover Critical GitHub CVE-2026-3854 RCE Flaw Exploitable via Single Git Push"
+date: "2026-04-29"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/04/researchers-discover-critical-github.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgztlzahKA2HwUQiNDerhbX2l415JinNIW5jaU5tgskPVHqpMhba_NorYL9SSWRzLdSPjSnsxZKQic97f8H2Bx2G0Dsjb58dcdFuZoL0c5Gno3BVvYa4vi62_PNr1Qh-kBYED7YbTPw3fqQklMmnoPV0b1KYaienKHzIAtBuktMqyVCxGU0u8Hkd-zzYeNU/s1600/github.jpg"
+disclaimer: "None"
+---
+
+## Critical GitHub Flaw Could Let Attackers Execute Code With a Single Command
+
+A significant security loophole has been uncovered in GitHub, potentially allowing malicious actors to execute arbitrary code on affected servers with a simple "git push" operation. This discovery highlights the ongoing challenges in securing complex code hosting platforms.
+
+### The Nature of the Vulnerability
+
+The flaw, officially designated CVE-2026-3854, is a critical command injection vulnerability with a CVSS score of 8.7. It stems from how GitHub handled user-provided "push options" during a git push. Researchers found that these options weren't properly vetted, allowing attackers with push access to a repository to slip in malicious commands disguised as metadata. These commands could then be executed on the server hosting the repository, granting the attacker remote control.
+
+### How the Exploit Works and Its Scope
+
+The vulnerability arises from a lack of sanitization on user-supplied push option values. When these values were incorporated into internal service headers, a delimiter character used by GitHub's internal system also existed in the potential user input. This overlap allowed an attacker to inject additional metadata fields, effectively hijacking the command execution process. Google-owned cloud security firm Wiz is credited with discovering and reporting this issue. While the vulnerability was patched on GitHub.com within two hours of its discovery, it also impacts various versions of GitHub Enterprise Server, requiring administrators to update their systems.
+
+### What To Watch
+
+While there's no indication that this vulnerability was ever exploited maliciously, the swift patching on GitHub.com and the subsequent release of updates for GitHub Enterprise Server are crucial. Security professionals will be closely monitoring for any signs of exploitation attempts and ensuring all affected instances are updated to the patched versions. The focus now shifts to proactive security audits and further hardening of code hosting platforms against such sophisticated command injection attacks.
