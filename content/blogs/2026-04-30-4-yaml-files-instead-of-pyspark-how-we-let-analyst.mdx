@@ -1,0 +1,24 @@
+---
+title: "4 YAML Files Instead of PySpark: How We Let Analysts Build Data Pipelines Without Engineers"
+date: "2026-04-30"
+category: "data_engineering"
+source: "https://towardsdatascience.com/4-yaml-files-instead-of-pyspark-how-we-let-analysts-build-data-pipelines-without-engineers/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/04/Group-1-3-scaled-1.jpg"
+disclaimer: "None"
+---
+
+## Analysts Now Build Data Pipelines in a Day, Not Weeks: The YAML Revolution at Mindbox
+
+Imagine waiting weeks for a critical business metric to be calculated, only to discover it's still not ready. At Mindbox, this was the frustrating reality until a clever shift away from complex coding empowered analysts to build their own data pipelines in a single day, using just simple configuration files.
+
+### The PySpark Bottleneck: When Complexity Hinders Progress
+
+For data engineers like Kiril Kazlou at Mindbox, the constant need to build data marts for client billing and analytics meant wrestling with PySpark. While powerful, PySpark demands Python expertise, effectively locking out the very people who best understood the business logic: analysts and product managers. This reliance on developers created a significant bottleneck, with even a seemingly straightforward metric like Monthly Active Users (MAU) taking a full week to implement due to the extensive infrastructure setup and coding involved. Each new metric followed the same lengthy process, from analyst requirement definition to developer coding, review, and deployment, often stretching into weeks.
+
+### Empowering Analysts: The Rise of YAML and SQL
+
+Mindbox's solution was to move towards a declarative approach, simplifying the pipeline creation process. They broke down their data layer into three key components, each with a user-friendly tool. Instead of writing Python code, analysts now define their data needs using simple YAML files. These files, combined with familiar SQL for data transformations, allow analysts to ingest, transform, and load data without needing any programming background. This fundamental shift in approach has dramatically accelerated the delivery of vital business insights, putting the power directly into the hands of those who understand the data's purpose the most.
+
+### What To Watch
+
+The success of this YAML-driven approach at Mindbox suggests a broader trend in data engineering towards democratizing data pipeline creation. Expect to see more organizations exploring similar declarative frameworks that prioritize ease of use and reduce reliance on specialized coding skills for common data tasks. This could lead to faster innovation and more agile data strategies across industries.
