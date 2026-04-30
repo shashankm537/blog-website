@@ -383,7 +383,7 @@ export default function Home() {
                 {currentPage > 1 && (
                   <button
                     className="page-btn"
-                    onClick={() => setCurrentPage(currentPage - 1)}
+                    onClick={() => { setCurrentPage(currentPage - 1); window.scrollTo(0, 0); }}
                     style={{ background: 'var(--surface)', color: 'var(--text-primary)' }}
                   >
                     ← Prev
@@ -393,7 +393,7 @@ export default function Home() {
                   <button
                     key={page}
                     className="page-btn"
-                    onClick={() => setCurrentPage(page)}
+                    onClick={() => { setCurrentPage(page); window.scrollTo(0, 0); }}
                     style={{
                       background: currentPage === page ? 'var(--accent)' : 'var(--surface)',
                       color: currentPage === page ? '#fff' : 'var(--text-primary)',
@@ -406,7 +406,7 @@ export default function Home() {
                 {currentPage < totalPages && (
                   <button
                     className="page-btn"
-                    onClick={() => setCurrentPage(currentPage + 1)}
+                    onClick={() => { setCurrentPage(currentPage + 1); window.scrollTo(0, 0); }}
                     style={{ background: 'var(--surface)', color: 'var(--text-primary)' }}
                   >
                     Next →

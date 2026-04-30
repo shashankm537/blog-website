@@ -73,6 +73,11 @@ export default function BlogPost() {
     </div>
   );
 
+  // Check if disclaimer is valid (not empty, not "None", not "none")
+  const hasDisclaimer = blog.disclaimer &&
+    blog.disclaimer.trim() !== '' &&
+    blog.disclaimer.trim().toLowerCase() !== 'none';
+
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
 
@@ -105,13 +110,29 @@ export default function BlogPost() {
         </div>
       </header>
 
-      {/* Hero Image */}
+      {/* Hero Image - fixed to not crop */}
       {blog.image && (
-        <div style={{ width: '100%', height: 'clamp(200px, 40vw, 420px)', overflow: 'hidden' }}>
+        <div style={{
+          width: '100%',
+          maxHeight: 480,
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'var(--accent-light)'
+        }}>
           <img
             src={blog.image}
             alt={blog.title}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: 480,
+              objectFit: 'contain'
+            }}
+            onError={(e) => {
+              (e.target as HTMLImageElement).parentElement!.style.display = 'none';
+            }}
           />
         </div>
       )}
@@ -149,8 +170,8 @@ export default function BlogPost() {
           {blog.title}
         </h1>
 
-        {/* Disclaimer */}
-        {blog.disclaimer && (
+        {/* Disclaimer - only show if valid */}
+        {hasDisclaimer && (
           <div style={{
             background: 'var(--accent-light)',
             border: '1px solid var(--border)',
@@ -184,7 +205,7 @@ export default function BlogPost() {
           }}>
             Original source:{' '}
             
-             <a href={blog.source}
+            <a  href={blog.source}
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'var(--accent)', textDecoration: 'underline' }}
