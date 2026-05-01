@@ -1,0 +1,26 @@
+---
+title: "PyTorch Lightning and Intercom-client Hit in Supply Chain Attacks to Steal Credentials"
+date: "2026-05-01"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/04/pytorch-lightning-compromised-in-pypi.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7hiQfVCFzoPBzfr5xqJ06qMjzv-zw_qiUcDTgyEM8RbEVk3PDztg9U5Vlkgvz6j7nX8ODtXwnTCC2wB78lupEmRjcxJTz74GJGSslsMQM-e5b8vG0W2gLFnbEzYAPKw05ZelkaNfy50VyLJeb-3EhwiGKfIP9qHNRpNG4MnFUnTBBOJ95vRJb-RbcFVxX/s1600/python.png"
+disclaimer: "None"
+---
+
+## Popular Python Package "Lightning" Compromised in Supply Chain Attack
+
+Developers relying on the widely-used Python framework PyTorch Lightning have been targeted in a sophisticated supply chain attack. Threat actors successfully injected malicious code into two versions of the popular package, aiming to steal sensitive credentials and propagate malware. This incident highlights the ongoing vulnerabilities within software development ecosystems.
+
+### Malicious Versions Unveiled
+
+Two compromised versions of PyTorch Lightning, specifically versions 2.6.2 and 2.6.3, were pushed to the Python Package Index (PyPI) on April 30, 2026. These tainted releases contained hidden malicious payloads designed to execute automatically upon installation and import of the Lightning module, requiring no further user interaction. Researchers from Aikido Security, OX Security, Socket, and StepSecurity have been instrumental in uncovering the details of this attack.
+
+The malicious code operates through a downloader that leverages the Bun JavaScript runtime. This runtime then executes an obfuscated JavaScript file, its primary objective being the comprehensive theft of user credentials. A particularly concerning aspect of the attack is its interaction with GitHub tokens. These tokens are validated against GitHub's API, and if successful, are used to inject a worm-like payload into up to 50 branches within any repository the token has write access to.
+
+### Stealthy Infection and Propagation
+
+The injected code is designed to be stealthy, both creating new files and silently overwriting existing ones without prior checks. This "upsert" operation ensures the malicious payload is embedded without immediate detection. Intriguingly, the compromised commits are authored using a hardcoded identity that impersonates "Anthropic's Claude Code," adding another layer of deception. Furthermore, the malware includes an npm-based propagation method, modifying local npm packages with a postinstall hook to spread its reach. In response to the discovered threat, PyPI administrators have quarantined the affected Lightning package, preventing further downloads of the compromised versions.
+
+### What To Watch
+
+The ongoing investigation into the full scope of this attack and the potential impact on compromised systems is critical. Developers are strongly advised to review their installed packages and ensure they are running the latest, untainted versions of PyTorch Lightning. The industry will likely see increased scrutiny on the security practices of open-source package repositories and enhanced tools for detecting supply chain threats.
