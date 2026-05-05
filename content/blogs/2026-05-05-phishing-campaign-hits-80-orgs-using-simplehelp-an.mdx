@@ -1,0 +1,26 @@
+---
+title: "Phishing Campaign Hits 80+ Orgs Using SimpleHelp and ScreenConnect RMM Tools"
+date: "2026-05-05"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/05/phishing-campaign-hits-80-orgs-using.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqa_ifaDYXI_GirxdHpZgSiE6fjnNdCmviv3QO9JsRvy1ddAWCRfoNd032ANB7pNfFMS4hLEwkfNHPHC5MNwkhK6XRjbe_y8qzWGpXRsdqhMnnUMGguScuIYtcUNQqQlmZkY4BUXy-ue6fAlor8LOfvEZNZrOq0JrIbOc2jXXAUBarqlodfdsIshRq7dXi/s1600/phishing-org.jpg"
+disclaimer: "None"
+---
+
+## Cybercriminals Exploit Legitimate Software in Widespread Phishing Scheme
+
+A sophisticated phishing campaign, operating for months, is successfully breaching over 80 organizations by cleverly weaponizing common remote access tools. This widespread attack leverages seemingly legitimate software to gain a persistent foothold within victim networks, posing a significant threat to businesses, particularly in the United States.
+
+### The Venomous Helper: A Dual-Threat Approach
+
+Dubbed "VENOMOUS#HELPER," this ongoing operation is distinguished by its use of both SimpleHelp and ScreenConnect, popular Remote Monitoring and Management (RMM) tools. By employing software that is often legitimately installed by IT departments, attackers effectively bypass many standard security defenses, making detection significantly more challenging. The decision to deploy both RMM solutions suggests a deliberate strategy to establish a redundant access system, ensuring they can maintain control even if one tool is discovered and disabled.
+
+### A Carefully Crafted Entry Point
+
+The initial phase of the attack begins with deceptively crafted phishing emails. These messages impersonate the U.S. Social Security Administration (SSA), instructing recipients to verify their email addresses and download an alleged SSA statement. The link within the email, however, doesn't lead directly to malicious infrastructure. Instead, it directs users to a compromised Mexican business website, a tactic designed to slip past email spam filters and appear more trustworthy.
+
+Once the victim clicks, they are prompted to download what seems to be an official document. In reality, this "statement" is an executable file hosted on a separate attacker-controlled domain. This executable then silently installs the SimpleHelp RMM tool onto the compromised system, opening the door for attackers to establish persistent remote access and potentially pursue further malicious activities, such as ransomware deployment.
+
+### What To Watch
+
+The continued operation of VENOMOUS#HELPER suggests attackers are actively refining their methods. Organizations should be particularly vigilant about emails that request verification or document downloads, even if they appear to come from trusted sources. Furthermore, a thorough review of RMM tool usage and any unauthorized installations or activity on networks is strongly recommended. Monitoring for unusual network traffic and endpoint behavior associated with these RMM tools will be crucial in identifying and mitigating future intrusions.
