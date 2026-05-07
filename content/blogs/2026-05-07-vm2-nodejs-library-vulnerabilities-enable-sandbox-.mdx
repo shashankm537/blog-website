@@ -1,0 +1,26 @@
+---
+title: "vm2 Node.js Library Vulnerabilities Enable Sandbox Escape and Arbitrary Code Execution"
+date: "2026-05-07"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/05/vm2-nodejs-library-vulnerabilities.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGJE3Tcr425AIfztOUrdhPUiEkVY8bMrHMmO-5FZ2N3cLaW9ErdLJJS3KwjzYNvLAIcVT7xpSw8wswiDIPenyZa_ki3ZrOHJFY-cXKHPu0EGnfCGXxkEAlvE6tLogT8T_lRolQ-qI-GFqlgwqpbLD1HfmDo4HkJbV9XNDh9rcGbM3Nc8ruu5I_47DBmzsy/s1600/vm2.jpg"
+disclaimer: "None"
+---
+
+## Serious Security Holes Found in vm2 Node.js Library Threaten System Security
+
+A dozen critical vulnerabilities have been uncovered in the vm2 Node.js library, a tool designed to run untrusted code safely. These flaws could allow attackers to bypass security measures, break out of the intended sandbox environment, and execute malicious code on vulnerable systems.
+
+### The Sandbox Under Siege
+
+The vm2 library plays a crucial role in many applications by creating a secure isolated space for running potentially risky JavaScript code. It acts like a digital bodyguard, preventing outside code from accessing or tampering with the main system. However, researchers have discovered multiple ways attackers can outsmart this bodyguard, gaining unauthorized access and control.
+
+These newly revealed security weaknesses, some with a severe CVSS score of 9.8, indicate a significant risk. They exploit specific functions and properties within the library, like "__lookupGetter__", the "species" property of promises, and the "inspect" function. By leveraging these vulnerabilities, malicious actors can achieve "sandbox escape," effectively breaking free from the digital cage meant to contain them and execute arbitrary commands on the host system.
+
+### A Cascade of Exploits and Patches
+
+The discovered vulnerabilities aren't a single, isolated incident. Some of these new flaws are actually bypasses of previously identified security issues, demonstrating a persistent effort by attackers to find new ways into systems. For example, CVE-2026-24120 is a patch bypass for CVE-2023-37466, highlighting how quickly attackers adapt to security updates. The affected versions of vm2 vary, but many critical issues impact versions up to 3.10.4 and 3.10.3, with patches now available in versions 3.11.0 and 3.10.5 respectively. The sheer number of critical flaws underscores the urgency for developers to update their dependencies.
+
+### What To Watch
+
+Developers relying on vm2 should immediately assess their usage and apply the latest security patches. Monitoring security advisories from the vm2 project and the Node.js ecosystem will be crucial. Expect further analysis of these vulnerabilities and potentially new exploit techniques to emerge as the cybersecurity community scrutinizes these findings.
