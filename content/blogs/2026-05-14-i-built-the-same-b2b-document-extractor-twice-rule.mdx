@@ -1,0 +1,28 @@
+---
+title: "I Built the Same B2B Document Extractor Twice: Rules vs. LLM"
+date: "2026-05-14"
+category: "data_engineering"
+source: "https://towardsdatascience.com/i-built-the-same-b2b-document-extractor-twice-rules-vs-llm/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/05/I-built-the-same-B2B-Document-Extractor-Twice-Regex-Rules-vs.-LLM.jpg"
+disclaimer: "None"
+---
+
+## Decoding B2B Orders: Rules vs. AI - A Head-to-Head Showdown
+
+Processing B2B order forms, a daily grind for many operations teams, presents a unique challenge: while the information should be consistent, the presentation is anything but. This article dives into a fascinating experiment, pitting traditional, rule-based data extraction methods against the power of Large Language Models (LLMs) to see which reigns supreme when faced with diverse document layouts.
+
+### The Case of the Elusive Purchase Order
+
+Imagine your team, buried under a mountain of PDF order forms, each ostensibly containing critical data like customer IDs, purchase order numbers, and delivery dates. The snag? Each customer's document dances to its own design tune. One might put the crucial "PO Number" in the top left, another buries it in the bottom right. Worse still, synonyms abound – "Order ID," "Order Reference," "PO Number" – all meaning the same thing to a human but a cryptic puzzle to rigid automation. This is precisely the real-world problem recreated here, serving as the battleground for our two competing extraction techniques.
+
+### Building Two Paths to Data Extraction
+
+The experiment meticulously reconstructs two distinct pipelines to tackle this very problem. The first adheres to a classic methodology, leveraging optical character recognition (OCR) with tools like pytesseract and painstakingly crafted regular expression (regex) rules to pinpoint and extract data. The second approach embraces the burgeoning capabilities of LLMs, also utilizing OCR but then employing Ollama and LLaMA 3 to intelligently decipher the document's content and context. The aim isn't to declare LLMs as a universal victor, but rather to understand when the complexity and variety of document layouts begin to strain traditional systems, and crucially, when an LLM can actually alleviate the ongoing maintenance burden.
+
+### When Simplicity Trumps Sophistication
+
+While LLMs offer remarkable flexibility, it's essential to recognize their limitations. For straightforward, highly standardized documents where data fields consistently appear in predictable locations and with uniform labels, a well-defined rule-based system can be exceptionally efficient and cost-effective. Introducing an LLM in such scenarios might add unnecessary complexity and computational overhead without a tangible benefit, potentially even introducing new sources of error if not fine-tuned correctly. The key lies in identifying the tipping point where the inherent variability of the data necessitates a more adaptable and context-aware solution.
+
+### What To Watch
+
+The outcome of this comparison will likely shed light on the practical trade-offs between upfront development effort and long-term maintainability. Expect to see a clear illustration of how rule-based systems falter with increasing document variation, and where LLMs begin to demonstrate their value in handling ambiguity and diverse layouts, potentially paving the way for more robust and less labor-intensive data processing solutions.
