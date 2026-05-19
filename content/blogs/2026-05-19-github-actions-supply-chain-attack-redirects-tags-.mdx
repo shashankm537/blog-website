@@ -1,0 +1,26 @@
+---
+title: "GitHub Actions Supply Chain Attack Redirects Tags to Steal CI/CD Credentials"
+date: "2026-05-19"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/05/github-actions-supply-chain-attack.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgc7jpVO6HhBuEBTjkwmNjYhKlFmhhmytOqNZHYuGP-dNWrf3AoyE68yoKj77elddOX4Ps2x9jSuwhi5sE-QjK_oEjLXgQW9e6EHx6W0G7qTqYTM3fZh1AQTyrgm2o-PFBeD9ryHnC6fDmK5MYKUzBjU_pJibTilnm1d99WSQkJux6PXXRydkYW5d15Ada-/s1600/step.jpg"
+disclaimer: "None"
+---
+
+## GitHub Actions Hit by New Supply Chain Attack, Stealing CI/CD Secrets
+
+A sophisticated supply chain attack has targeted a popular GitHub Actions workflow, silently redirecting code commits to siphon off sensitive credentials from continuous integration and continuous deployment (CI/CD) pipelines. The compromise of the `actions-cool/issues-helper` workflow allowed attackers to inject malicious code, posing a significant threat to organizations relying on automated development processes.
+
+### The Deceptive Art of Imposter Commits
+
+At the heart of this attack lies a clever technique known as an "imposter commit." Threat actors manipulated the `issues-helper` repository by moving all existing tags to point to a specially crafted, malicious commit. This commit, hidden from the project's normal development history, contained code designed to steal valuable CI/CD secrets. By leveraging imposter commits, attackers can bypass typical security reviews like pull requests, leading to the undetected execution of arbitrary code within a user's environment.
+
+The malicious code within this imposter commit is designed to be highly stealthy and effective. Upon execution within a GitHub Actions runner, it first downloads the Bun JavaScript runtime. It then proceeds to access the memory of the `Runner.Worker` process to extract sensitive credentials. Finally, this stolen data is sent to an attacker-controlled server located at `t.m-kosche[.]com` via an HTTPS connection. Similar tactics were also observed in the `actions-cool/maintain-one-comment` action, indicating a broader campaign.
+
+### A Wider Network and GitHub's Response
+
+The exfiltration domain, `t.m-kosche[.]com`, has previously been linked to the Mini Shai-Hulud campaign targeting npm packages within the `@antv` ecosystem. This connection suggests a potential overlap between different threat actor groups or a coordinated effort across multiple supply chain attack vectors. Any workflow referencing the compromised actions by version would have inadvertently pulled this malicious code, potentially exposing their CI/CD secrets. In response to the violation of its terms of service, GitHub has disabled access to the affected repositories. The exact timeline and the specific triggers for this decision remain unclear.
+
+### What To Watch
+
+Developers and security teams should be on high alert for any unusual activity within their CI/CD pipelines, particularly those utilizing GitHub Actions. It is crucial to audit dependencies and review any recent changes to workflows that might have incorporated the compromised actions. Organizations may want to consider implementing stricter checks on third-party code and explore using signed commits or secure artifact registries to mitigate future supply chain risks.

@@ -1,0 +1,28 @@
+---
+title: "Six Choices Every AI Engineer Has to Make (and Nobody Teaches)"
+date: "2026-05-19"
+category: "data_engineering"
+source: "https://towardsdatascience.com/six-choices-every-ai-engineer-has-to-make-and-nobody-teaches/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/05/Captura-de-ecra-2026-05-11-152824.jpg"
+disclaimer: "None"
+---
+
+## Beyond the Code: The Unwritten Rules of AI Engineering
+
+Becoming an AI engineer often focuses on mastering algorithms and building accurate models. But what happens after the model is built? Production AI work is less about perfect code and more about navigating complex trade-offs that are rarely covered in textbooks. These are the crucial decisions that separate a functional AI system from a truly effective one, impacting cost, performance, and long-term viability.
+
+### The Build vs. Buy Dilemma in the Age of Large Language Models
+
+The question of whether to train a model from scratch is largely a relic of the past; few organizations undertake such monumental tasks today. The contemporary challenge revolves around a more nuanced spectrum of choices: leveraging existing API services, fine-tuning pre-trained open-source models, or developing and managing an entire proprietary stack. Each path presents distinct financial implications and unique risk profiles. While a recent survey indicated that a vast majority of stakeholders believe building offers greater customization and control, an equally high percentage acknowledged that pre-built platforms enable faster deployment. This simultaneous truth highlights the core tension in this decision-making process.
+
+### Data Quality Trumps Quantity: A Smarter Approach to AI Training
+
+It’s a common misconception that more data always leads to better AI performance. In reality, the quality of the data often plays a far more significant role than sheer volume. Poorly labeled, noisy, or biased data can actively degrade a model's effectiveness, leading to inaccurate predictions and flawed outputs. Therefore, AI engineers must prioritize meticulous data curation and cleaning processes, ensuring that the information fed into the models is reliable and representative of the real-world scenarios they are intended to address. Investing in high-quality data can often yield superior results compared to simply amassing vast quantities of substandard information.
+
+### Balancing Speed and Reliability: Throughput vs. Latency
+
+Deciding between real-time inference and batch processing presents a critical balancing act for AI engineers. Real-time inference, while offering immediate results crucial for applications like fraud detection or interactive chatbots, can incur higher operational costs and may struggle with processing massive datasets. Conversely, batch processing is more economical and efficient for handling large volumes of data offline, such as in daily reporting or analytics tasks, but lacks the immediacy required for time-sensitive operations. The optimal choice hinges on the specific demands of the application, the acceptable cost, and the business's tolerance for response times.
+
+### What To Watch
+
+As AI systems become more integrated into our daily lives, the emphasis will likely shift from purely technical model building to the strategic decision-making surrounding their deployment and maintenance. Expect to see more research and industry discussions focusing on these real-world trade-offs, offering practical frameworks and data-driven insights to guide engineers through these complex choices. The development of standardized metrics for evaluating these production-level considerations will also be a key area to monitor.
