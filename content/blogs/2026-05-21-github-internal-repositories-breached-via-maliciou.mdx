@@ -1,0 +1,28 @@
+---
+title: "GitHub Internal Repositories Breached via Malicious Nx Console VS Code Extension"
+date: "2026-05-21"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/05/github-internal-repositories-breached.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJ64wgVqZTQx208NgY0sBvUUQcR5mb-G4ENkfw4PEX9KlJJxEI_uUKQvPG0rReXB4chZ3wXrvNSR1QsrK525DDHkzY9X3nQYduh36qKTyC-k4EfixFeOU7YR1mRIw8ZJL-oYN8k_wwBid2GU8NYJtCqEFLOSzomuu-Xx7yA3Djim0nq79RyoZJs6HGga_H/s1600/github-hacked.jpg"
+disclaimer: "None"
+---
+
+# Developers Beware: Malicious VS Code Extension Leads to GitHub Internal Repo Breach
+
+A sophisticated cyberattack has infiltrated GitHub's internal systems, compromising a significant number of private repositories. The breach, confirmed by GitHub, originated from a compromised developer device that was running a tampered version of a popular Visual Studio Code extension, Nx Console. This incident underscores the growing threat of supply chain attacks targeting the very tools developers rely on daily.
+
+## The Nx Console Compromise: A Trojan Horse in the Code Editor
+
+The vulnerability was traced back to the Nx Console extension, specifically the `nrwl.angular-console` package. Developers at Narwhal Technologies, the company behind Nx, reported that one of their developer's systems was compromised. This hack occurred in the aftermath of a broader supply chain attack that affected major tech players like OpenAI, Mistral AI, and Grafana Labs, indicating a wider campaign targeting the software development ecosystem. The compromised extension then served as an entry point for the threat actor to access GitHub's internal environment.
+
+## Impact and Response: What Was Taken and What's Being Done
+
+According to GitHub, the attackers managed to exfiltrate approximately 3,800 internal repositories. While GitHub's Chief Information Security Officer, Alexis Wales, has stated there's no evidence of customer information stored outside of these internal repositories being affected, the company acknowledges that some internal repos may contain excerpts of customer support interactions. GitHub has initiated incident response protocols and will notify affected customers if any such impact is discovered. The company has taken immediate steps to contain the breach, including rotating critical security credentials and is actively monitoring for any further malicious activity.
+
+## A Wake-Up Call for Software Supply Chain Security
+
+This incident highlights a critical vulnerability in the modern software development landscape. Jeff Cross, co-founder of Narwhal Technologies, has emphasized the need for fundamental changes in how developer tools and open-source software are secured and distributed. The compromises experienced by GitHub and other leading tech firms in recent times suggest that long-held assumptions about the security of the software supply chain are no longer valid. Conversations are already underway with other open-source maintainers to explore collaborative solutions to address these deep-seated structural issues. The rise of sophisticated groups like TeamPCP, now infamous for large-scale software supply chain attacks, demands a more robust and proactive approach to cybersecurity across the entire development lifecycle.
+
+### What To Watch
+
+Expect a heightened focus on security audits for popular developer tools and extensions in the coming months. Additionally, we may see the emergence of new industry-wide initiatives aimed at strengthening the security of the open-source software supply chain and better protecting against sophisticated supply chain attacks.
