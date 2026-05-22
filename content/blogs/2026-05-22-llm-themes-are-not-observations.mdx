@@ -1,0 +1,28 @@
+---
+title: "LLM Themes Are Not Observations"
+date: "2026-05-22"
+category: "data_engineering"
+source: "https://towardsdatascience.com/llm-themes-are-not-observations/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/05/hero_notitle.jpg"
+disclaimer: "None"
+---
+
+## Beyond the Buzzwords: Why Your Data Tells a Story, Not the Whole Truth
+
+When we analyze customer interactions, it’s easy to think we’re getting a direct line into their thoughts and feelings. However, a closer look reveals that the neat columns in our datasets often mask complex processes. Recent insights highlight how readily available data, especially from text analysis, can be deceptively simplified, leading to potentially flawed conclusions about our customers.
+
+### The Illusion of "Observation"
+
+Imagine you're looking at customer support call data. If a customer doesn't have a transcript, their "theme" might be represented as a "NULL." This NULL value can then be automatically filled with zeros, a generic "no issue mentioned," or simply ignored. This might seem like a minor technicality, but it can drastically alter the data. For instance, a "did not call support" might be transformed into a “did not experience billing frustration,” a leap that assumes a great deal and can skew subsequent analysis. The crucial point is that these generated themes are not direct observations of customer attributes; they are the result of a sophisticated process applied to a self-selected group of customer behaviors.
+
+### Hidden Assumptions in Text Analysis
+
+The issue extends beyond simple missing data imputation. Modern data pipelines, whether using advanced LLMs or simpler classification models, turn raw text into structured data. However, the process of turning a chat log, a product review, or survey response into a tidy column involves numerous assumptions that are rarely articulated. Each step, from the initial text extraction to the final variable’s representation, influences its meaning in any downstream analysis. When these generated variables are treated as direct readings of customer sentiment or behavior, we risk building strategies on a foundation of invisible biases.
+
+### The Four Pitfalls of Generated Variables
+
+The seemingly innocuous "NULL" filling practice actually exposes four critical pitfalls that plague text-based data analysis. Firstly, **Selection Bias** is rampant. A theme only appears if a customer actively engaged in a way that generated text – they called, complained, or posted. Whatever drove that initial action is likely correlated with the very things we're trying to understand, like customer satisfaction or product issues. These pre-existing correlations can warp the results of our analyses in ways that are difficult to detect once the data is tidied and joined.
+
+### What To Watch
+
+Moving forward, the focus needs to shift from simply collecting data to understanding the generative processes that create it. Be critical of variables derived from text, questioning their origin and the assumptions embedded within their creation. Prioritize transparency in data pipelines and actively seek to identify and mitigate selection biases.
