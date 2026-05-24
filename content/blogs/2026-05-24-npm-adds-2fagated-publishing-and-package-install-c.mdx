@@ -1,0 +1,28 @@
+---
+title: "npm Adds 2FA-Gated Publishing and Package Install Controls Against Supply Chain Attacks"
+date: "2026-05-24"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/05/npm-adds-2fa-gated-publishing-and.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4rnMZgOYbsYr65UN9AZ3oFzcAwqXSYqgRfjUGpeaQeyP-0OAaqJ9aceXPAiujRKwyGQMa_4ShcSvtOWPb9T3qpqF2LATAw2U4iA7IkU9ok0alDbzN_WYJeaZ1SrF0-vyRrEHGedMEcCeP2otYYqplHmqEBda1R_MePbWgEpt-b-GB_RhxJLDC1pJFV0S0/s1600/npm-security.png"
+disclaimer: "None"
+---
+
+## Fortifying the Digital Foundation: npm Steps Up Security with Staged Publishing and Granular Install Controls
+
+In a significant move to bolster the security of the software development ecosystem, npm, the world's largest package registry, is rolling out new features designed to combat the ever-growing threat of supply chain attacks. Developers can now leverage "staged publishing" and refined install controls, offering a robust defense against malicious code being injected into the open-source software they rely on.
+
+### Introducing Staged Publishing: An Extra Layer of Human Oversight
+
+The most impactful of these changes is the introduction of staged publishing. This new feature acts as a crucial gatekeeper, requiring a human maintainer to explicitly approve a package version before it becomes available to the public. Instead of a direct publish, the package's prebuilt code will be uploaded to a staging area, where a maintainer must pass a two-factor authentication (2FA) challenge to greenlight its release. This "proof of presence" ensures that every update, even those originating from automated CI/CD pipelines, has been scrutinized by a trusted individual, significantly reducing the risk of compromised code slipping through the cracks.
+
+To utilize staged publishing, package maintainers must have existing publish access to a package, have 2FA enabled on their account, and the package must already exist on the npm registry; new packages cannot be staged. Developers can initiate this process using the `npm stage publish` command from their package's root directory, ensuring they have updated to npm CLI version 11.15.0 or later. GitHub strongly recommends pairing staged publishing with trusted publishing via OpenID Connect (OIDC) for the highest level of security.
+
+### Tighter Control Over Package Installations: Beyond the Registry
+
+Complementing the staged publishing improvements, npm is also enhancing control over how packages are installed. Alongside the existing `--allow-git` flag, three new install source flags have been introduced: `--allow-file`, `--allow-remote`, and `--allow-directory`. These flags empower developers to precisely define from where their projects can pull dependencies.
+
+The `--allow-file` flag controls installations from local file paths and tarballs, while `--allow-remote` governs installations from remote URLs, including HTTPS tarballs. Lastly, `--allow-directory` provides explicit control over installations from local directories. By implementing these granular controls, developers can adopt an explicit allowlist approach for every non-registry installation source, mirroring the security benefits of staged publishing and further safeguarding against unexpected or malicious code sources.
+
+### What to Watch
+
+The rollout of these enhanced security measures signifies a proactive stance from npm and GitHub against the increasing sophistication of software supply chain attacks. Expect to see broader adoption of staged publishing as developers become more familiar with its benefits. Furthermore, the introduction of these new install source flags will likely lead to more robust and secure dependency management practices across the open-source community. The focus is clearly on building trust and resilience into the very fabric of software development.
