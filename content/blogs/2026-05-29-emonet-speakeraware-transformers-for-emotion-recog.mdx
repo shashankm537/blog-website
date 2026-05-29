@@ -1,0 +1,30 @@
+---
+title: "EmoNet: Speaker-Aware Transformers for Emotion Recognition — and What I’d Build Differently in 2026"
+date: "2026-05-29"
+category: "data_engineering"
+source: "https://towardsdatascience.com/emonet-speaker-aware-transformers-for-emotion-recognition-and-what-id-build-differently-in-2026/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/05/image-370.jpg"
+disclaimer: "None"
+---
+
+## EmoNet Revisited: Lessons Learned from Two Years in the Emotion Recognition Trenches
+
+Two years ago, a master's thesis project, EmoNet, made waves in the challenging field of emotion recognition within conversations. While the technology landscape has drastically shifted, the core insights of EmoNet are surprisingly still relevant, offering a valuable perspective on the evolution of this complex AI task.
+
+### The Challenge of Understanding Conversational Emotions
+
+Emotion Recognition in Conversation (ERC) is more than just deciphering the sentiment of individual sentences. It’s about understanding how each utterance contributes to the emotional arc of a dialogue, a task made significantly harder by the lack of crucial non-textual cues. In real-life interactions, tone of voice, facial expressions, and body language convey a vast amount of emotional information, all of which is absent when working with text alone. This means ERC models must rely solely on the linguistic context and the evolving dynamics between speakers to infer emotions.
+
+### EmoNet's Contribution and the Evolving Landscape
+
+My initial work with EmoNet focused on capturing these conversational nuances by developing a speaker-aware Transformer model. It achieved a competitive Weighted F1 score of 39.18 on the EmoryNLP dataset, positioning it favorably against other leading approaches at the time. This model aimed to recognize how preceding dialogue and speaker identity influenced the emotional tone of subsequent statements.
+
+However, the field has advanced at an astonishing pace. Today's top-performing ERC systems are built on much larger language models like LLaMA-2, leveraging techniques such as LoRA fine-tuning and retrieval-augmented prompting. These newer methods represent a significant leap in computational power and architectural complexity, transforming the state-of-the-art in ways that were unimaginable just two years ago.
+
+### Reframing the Future: What I'd Build Now
+
+Despite the dramatic changes, the fundamental principles behind EmoNet—understanding contextual dependencies and speaker specificities—are still being applied, albeit at a different level within these advanced models. If I were to embark on an ERC project today, I would focus on integrating even richer contextual embeddings and perhaps exploring novel ways to represent speaker identity that go beyond simple identifiers. The goal would be to build upon the foundational ideas of EmoNet while embracing the capabilities of cutting-edge large language models.
+
+### What To Watch
+
+The continued integration of larger, more powerful language models will likely lead to further improvements in nuanced emotion recognition. Expect to see more research exploring how to effectively combine these models with external knowledge sources and multimodal data to create a more holistic understanding of human emotion in conversation.
