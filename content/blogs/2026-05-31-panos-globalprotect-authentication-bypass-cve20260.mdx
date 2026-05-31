@@ -1,0 +1,24 @@
+---
+title: "PAN-OS GlobalProtect Authentication Bypass (CVE-2026-0257) Under Active Exploitation"
+date: "2026-05-31"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/05/pan-os-globalprotect-authentication.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkaW0i4ALAlpWQ_cOjfhoqUlNgMlZysJA6ay0qPViGI_KxEEG-Hh0KdtWLqBXDH42ZBGSONs0ZJuzOqdRF7vbx6Xa9J8HlP60lY45JHy0ivdRQs0exe4wZT2lI3TW4oDO-XXPVz2pek2M3izLqT3ONwq2iuHPN31ZZvK3jl0zIDq_h5XF1CTRk7fUPzjEQ/s1600/panos.jpg"
+disclaimer: "None"
+---
+
+### Exploits Target Palo Alto Networks VPNs: Authentication Bypass Flaw Under Fire
+
+Cybersecurity giant Palo Alto Networks is sounding the alarm as a recently identified vulnerability in its PAN-OS and Prisma Access products is actively being exploited by malicious actors. This authentication bypass flaw, identified as CVE-2026-0257, could allow unauthorized users to establish VPN connections, potentially granting them access to sensitive internal networks.
+
+### The Vulnerability: A Digital Backdoor
+
+The vulnerability specifically affects Palo Alto Networks firewalls equipped with the GlobalProtect portal or gateway functionality. For this exploit to be successful, two conditions must be met: authentication override cookies must be enabled, and a particular certificate configuration needs to be in place. When these elements align, attackers can bypass standard security checks, essentially opening a digital backdoor into an organization's network by establishing an unauthorized VPN connection. Palo Alto Networks has categorized this as a medium-severity issue, but the implications for compromised organizations are anything but minor.
+
+### Active Exploitation: A Race Against Time
+
+Palo Alto Networks first issued a warning about this issue on May 13, 2026. However, by May 29, the company updated its advisory, confirming it had observed "limited exploit attempts on unpatched PAN-OS devices without mitigations applied." The situation escalated as security firm Rapid7 reported identifying successful exploitation instances across several of its clients, with initial attacks dating back to May 17. A second wave of activity was noted on May 21, both attributed to the same threat actor. In these observed attacks, threat actors were able to establish VPN connections and gain access to internal networks. While no further malicious activity was immediately detected after the initial VPN session establishment, the ability to bypass security controls and enter a network remains a significant concern.
+
+### What To Watch
+
+The immediate priority for organizations utilizing Palo Alto Networks' GlobalProtect VPN is to apply the vendor-supplied patches as soon as possible. As temporary measures, disabling the authentication override feature or regenerating the relevant certificate are also recommended until a permanent fix can be implemented. Security teams should remain vigilant for any unusual network activity and be prepared to respond to potential intrusions.
