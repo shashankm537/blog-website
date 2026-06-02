@@ -1,0 +1,28 @@
+---
+title: "RAG Is Not Machine Learning, and the ML Toolkit Solves the Wrong Problem"
+date: "2026-06-02"
+category: "data_engineering"
+source: "https://towardsdatascience.com/rag-is-not-machine-learning-and-the-ml-toolkit-solves-the-wrong-problem/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/06/loupe_O7LDeH0Qo_v3_card.jpg"
+disclaimer: "None"
+---
+
+## Beyond the Hype: Why Your RAG System Isn't Learning (And What to Do About It)
+
+Many organizations are pouring months of engineering time into optimizing their Retrieval Augmented Generation (RAG) systems, only to find their accuracy stubbornly refusing to budge. The culprit? A fundamental misunderstanding: RAG isn't truly machine learning, and applying ML tools to it often leads down an expensive, unproductive rabbit hole.
+
+### The Siren Song of Machine Learning for RAG
+
+It's easy to see why the machine learning toolkit feels like the obvious next step for RAG. Concepts like hyperparameter tuning, evaluation datasets, and explainability frameworks are deeply ingrained in ML practices. When your RAG system isn't performing as expected, the instinct is to treat it like a model that needs more training or tweaking. This can lead to teams spending significant effort on activities like running multiple optimization sweeps, developing custom rerankers, or fine-tuning embedding models, all while the core issue remains unaddressed.
+
+### RAG: An Assembly Problem, Not a Learning Problem
+
+The critical distinction lies in what RAG and machine learning are fundamentally trying to achieve. Machine learning excels at predicting unknown outcomes – forecasting customer churn, identifying fraudulent transactions, or classifying images. These problems require models to learn from vast datasets to generalize and make predictions. RAG, on the other hand, is primarily an engineering challenge focused on assembling existing components. While it leverages ML models (like embedding models), the system itself isn't learning in the traditional sense; it's retrieving and presenting information. Treating RAG as a learning problem can lead to misdiagnoses, focusing on the wrong metrics, and employing the wrong skillsets, ultimately masking critical failures in areas like data parsing or question interpretation.
+
+### The Four Pillars of Effective RAG
+
+Instead of getting lost in ML optimization, focus on the fundamental building blocks of a robust RAG system. These are the four core areas that truly drive performance: effective parsing of your source documents, precise understanding of user queries, efficient retrieval of relevant information, and coherent generation of answers. Addressing challenges within these "engineering bricks" is far more likely to yield tangible improvements than chasing elusive ML solutions for a system that doesn't require them.
+
+### What To Watch
+
+Expect to see a growing awareness around the distinct nature of RAG systems, leading to a shift in tooling and best practices. Organizations that reorient their efforts towards robust engineering fundamentals in parsing, query understanding, and retrieval will likely see faster, more sustainable gains in their RAG implementations.
