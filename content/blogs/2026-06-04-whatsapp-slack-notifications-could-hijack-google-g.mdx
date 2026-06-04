@@ -1,0 +1,28 @@
+---
+title: "WhatsApp, Slack Notifications Could Hijack Google Gemini on Android"
+date: "2026-06-04"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/06/whatsapp-slack-notifications-could.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCJpW9I-QTgQOkP7AV3rwUtEOEs96ek2ySR06Go-xq5AThZV84qY3mDN1Dkh0oQ-94jZHc7zB21ax9ljU0dW2LtsSW5p7xuuX9ARsvoIZQTGaMSkESGxTjl-PgTy8hrnsI8ucVZpENLEuMa9QzoUYVmfp4aug4OnEZq3XeL3ZELNZVELSegpS398l8vKg/s1600/gemini-prompt.jpg"
+disclaimer: "None"
+---
+
+## A Text Message Could Have Unleashed Chaos: Your Android Assistant Under Threat
+
+Imagine a single notification, seemingly harmless, secretly giving attackers the keys to your digital life. Researchers have unveiled a concerning vulnerability in Google Gemini on Android, demonstrating how a crafted alert from popular apps could have been used to manipulate the AI assistant into taking unauthorized actions, from sending fake messages to initiating video calls. This discovery highlights a sophisticated new attack vector that bypasses previous security enhancements.
+
+### The Notification's Hidden Power
+
+The vulnerability stemmed from a feature within Gemini for Android that allows it to read and respond to notifications from various applications, including WhatsApp, Slack, and others. Security researcher Or Yair discovered that the assistant treated the text within these notifications not just as information, but as potential instructions. This meant that any app capable of sending a notification could potentially deliver a malicious payload, effectively turning a user's own device against them.
+
+This ingenious exploit, detailed by Yair following his team's previous research involving malicious calendar invites, bypassed Google's updated defenses. While the specific vulnerability has since been patched by Google and no malicious activity in the wild has been reported, the demonstration serves as a stark reminder of the evolving tactics used by cyber adversaries. The "attack surface," as Yair termed it, was virtually limitless, given the widespread use of notification-generating apps.
+
+### Beyond Fake Messages: Real-World Consequences
+
+The implications of this attack went far beyond simply having Gemini display false information. Attackers could have leveraged this vulnerability to manipulate Gemini into performing sensitive actions. For instance, an attacker could craft a notification that, when interpreted by Gemini, would cause it to open a video conferencing app, potentially forcing a user into an unwanted Zoom call. More subtly, a notification could have been designed to make Gemini send a fake message, impersonating a trusted contact like a boss, potentially leading to serious repercussions for the victim.
+
+The research highlighted a particularly concerning scenario: the ability for Gemini to silently mimic a sender from a user's genuine notification queue. This would mean a fabricated message could be attributed to a real person, making it incredibly difficult to discern the truth, especially if the user wasn't actively observing their screen. The bypass of Google's prior mitigations, which were designed to prevent such direct manipulation of sensitive actions, underscores the persistent cat-and-mouse game between security researchers and those seeking to exploit digital systems.
+
+### What To Watch
+
+With the vulnerability now patched, the immediate threat has been neutralized. However, this incident underscores the ongoing need for vigilance in the cybersecurity landscape. Users should remain aware of app permissions, particularly those granting access to notifications. Developers, on the other hand, will likely continue to refine how AI assistants process external data, seeking to differentiate between user intent and malicious instructions. The industry will be watching to see how future AI assistants are designed to handle the constant influx of notifications from our connected devices.
