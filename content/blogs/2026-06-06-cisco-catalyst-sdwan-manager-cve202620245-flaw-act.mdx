@@ -1,0 +1,24 @@
+---
+title: "Cisco Catalyst SD-WAN Manager CVE-2026-20245 Flaw Actively Exploited – No Patch Available"
+date: "2026-06-06"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-manager-cve-2026.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYckKvOFV_Xz1o-nUKCcjlMQmOxdFC6FMzIjMnE4GSPPJ9kQxDLqOmK9WhofViemB5grKkMJDV_KPnQAuLci5RtV3sCOei2Fzk31qOdIk3Jeroj_6NVxoa0VX0Bw5nwwzffBp4o3hoDysRntjOxTR7akhfDV_1ZIpmcQKFMsxdvb00KYypSv7daJTqYHXb/s1600/cisco-exploit.jpg"
+disclaimer: "None"
+---
+
+## Critical Security Flaw in Cisco SD-WAN Manager Under Active Attack, No Fix Yet
+
+Security teams are on high alert as a serious vulnerability in Cisco's Catalyst SD-WAN Manager is currently being exploited by attackers. This flaw, identified as CVE-2026-20245, allows unauthorized individuals to gain deep control over network devices, and critically, there's no immediate patch available to fix it.
+
+### What's the Vulnerability?
+
+The issue lies within the command-line interface (CLI) of Cisco Catalyst SD-WAN Manager, a tool used to manage complex software-defined networks. An attacker who already has local administrative access to the system can trick it into executing malicious commands by uploading a specially crafted file. This could allow them to essentially take over the system and elevate their privileges to the highest level, known as "root." This type of attack is particularly concerning as it bypasses normal security protocols and grants an intruder complete control.
+
+### How is it Being Exploited?
+
+To exploit this specific vulnerability, an attacker first needs "netadmin" privileges. This means they must already have valid login credentials for the system, or they've successfully exploited other related security weaknesses. Cisco has pointed to two prior vulnerabilities, CVE-2026-20182 and CVE-2026-20127, which also allowed for authentication bypass and could pave the way for exploiting CVE-2026-20245. These earlier flaws have been seen in the wild as "zero-day" exploits, meaning they were used by attackers before a fix was available, with one group even linked to abusing them since last year. Cisco has seen instances where this flaw has been used to push unwanted configuration changes to network edge devices.
+
+### What to Watch
+
+With no patch available, organizations using Cisco Catalyst SD-WAN Manager are advised to review their security configurations and access controls closely. Monitoring network traffic for any unusual activity or unauthorized changes is crucial. Cisco is actively working on a fix, and security professionals will be watching for an official advisory when a patch is released. In the meantime, vigilance and strict access management are the best defenses.

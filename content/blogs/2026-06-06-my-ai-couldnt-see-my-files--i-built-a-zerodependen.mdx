@@ -1,0 +1,26 @@
+---
+title: "My AI Couldn’t See My Files — I Built a Zero-Dependency MCP Server"
+date: "2026-06-06"
+category: "data_engineering"
+source: "https://towardsdatascience.com/my-ai-couldnt-see-my-files-i-built-a-zero-dependency-mcp-server/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/06/Zero-Dependency-MCP-Server.jpg"
+disclaimer: "None"
+---
+
+## Ditching the Copy-Paste Cycle: Building a Lightweight AI File Access Server
+
+Tired of the frustrating loop of copying and pasting entire code files into AI chat windows for feedback? One developer faced exactly this, spending valuable time on repetitive manual transfers that stifled productivity. This led to a quest for a more seamless integration, ultimately resulting in the creation of a custom, dependency-free solution for direct AI access to project files.
+
+### The Pain of Manual AI Integration
+
+The daily grind of using AI for code assistance often involves tedious manual effort. Imagine meticulously opening a file, selecting all its content, pasting it into a chat interface, waiting for the AI's response, then navigating back to your editor to apply the changes. This process, especially when dealing with multiple files, can consume significant time – one developer calculated spending twenty minutes switching between applications before writing a single new line of code. This inefficient workflow highlighted the urgent need for a more direct and integrated approach.
+
+### A "Bare Metal" Approach to Model Context Protocol
+
+The ideal solution seemed to be granting the AI direct access to the project folder. This is precisely what the Model Context Protocol (MCP) is designed for, allowing an AI client to call tools exposed by a locally running server. However, readily available implementations often brought a heavy burden of dependencies like FastAPI, uvicorn, and LangChain. Undeterred, the developer delved into the MCP specification, discovering its core simplicity: it relies on JSON-RPC 2.0 over basic transport layers.
+
+This realization sparked a crucial question: what if the entire protocol could be implemented using only Python's built-in capabilities? By focusing on standard library modules like `sys`, `http.server`, `threading`, `queue`, `pathlib`, and `json`, the developer bypassed the need for any external package installations. The result is a remarkably lean server that handles both the `stdio` and `HTTP/Server-Sent Events` transports, complete with a robust security model and comprehensive testing, all contained within a single, easily executable file.
+
+### What To Watch
+
+This development offers a compelling alternative for developers seeking streamlined AI integration without the overhead of complex frameworks. The focus on standard library components suggests a future where lightweight, custom AI tooling can become more accessible. The success of this zero-dependency approach may inspire further innovations in how AI interacts with local development environments.
