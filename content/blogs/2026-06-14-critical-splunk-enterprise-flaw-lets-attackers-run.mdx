@@ -1,0 +1,26 @@
+---
+title: "Critical Splunk Enterprise Flaw Lets Attackers Run Code Without Authentication"
+date: "2026-06-14"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/06/critical-splunk-enterprise-flaw-lets.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7NRzSRKbGdsTj1TIWcks4nX5u6n1U2vl5hxJ8KKFZ-JCAKlMQPXQNHA1i0otd63wcKJoZbeEc3oVa9o4uYNTRkRyZaJsJVGV7JUmlqjY5mQkrOXFQJXmUT1kOIZPU6CRdlwx6X7lyi7Iffz7gUIC-nYc2N1dzmiuo2hyphenhyphenPURZ3nKdQcsbLACKidjOeTbRh/s1600/splunk.jpg"
+disclaimer: "None"
+---
+
+## Critical Splunk Flaw Opens Door to Unauthenticated System Takeover
+
+Security professionals are on high alert following the discovery of a severe vulnerability in Splunk Enterprise. This flaw, rated a near-perfect 9.8 out of 10 on the CVSS scoring system, allows attackers to manipulate files and even execute malicious code on affected systems without needing any credentials. Splunk, now part of Cisco, has released urgent patches to address this critical gap in their popular data analytics platform.
+
+### A Dangerous Gateway: Unauthenticated File Operations
+
+The vulnerability, designated CVE-2026-20253, stems from a lack of authentication controls within a PostgreSQL sidecar service. This means that any user with network access to an unpatched Splunk Enterprise instance can create or delete files without providing any login details. This capability alone can be disruptive, but it's the potential for further exploitation that truly elevates the risk.
+
+### The Path to Remote Code Execution
+
+Security researchers at watchTowr Labs have detailed how attackers can leverage this file manipulation to achieve pre-authenticated remote code execution. By chaining together two specific API endpoints, an attacker can essentially trick Splunk into running arbitrary commands. This involves first dumping the contents of an attacker-controlled database into a file on the Splunk server, and then using another endpoint to "restore" this data. During the restore process, they can inject a specially crafted file containing database credentials, allowing them to execute SQL queries that can lead to full system compromise.
+
+The affected versions of Splunk Enterprise include those from 10.0.0 to 10.0.6 and 10.2.0 to 10.2.3. Splunk has released updates 10.0.7 and 10.2.4 respectively to patch these issues. Notably, Splunk Cloud is not impacted as it does not utilize the vulnerable PostgreSQL sidecar service.
+
+### What To Watch
+
+Organizations running vulnerable versions of Splunk Enterprise must prioritize applying the latest security updates immediately. It's also crucial to monitor network traffic for any unusual activity related to the affected PostgreSQL endpoints. Security teams should be prepared for potential reconnaissance attempts targeting these systems.
