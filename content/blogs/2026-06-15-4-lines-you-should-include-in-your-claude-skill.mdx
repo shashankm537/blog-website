@@ -1,0 +1,28 @@
+---
+title: "4 Lines You Should Include in Your Claude Skill"
+date: "2026-06-15"
+category: "data_engineering"
+source: "https://towardsdatascience.com/4-lines-you-must-include-in-your-claude-skill/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/06/Screenshot-2026-06-10-at-12.39.34-PM.jpg"
+disclaimer: "None"
+---
+
+## AI Missteps: When Confidence Outweighs Accuracy in Customer Insights
+
+A recent project aimed at extracting valuable customer feedback from a mountain of unstructured text data took an unexpected turn, revealing a critical flaw in AI-driven analysis. While the initial output seemed impressive, a deeper dive unearthed significant inaccuracies, demonstrating that even sophisticated AI can sometimes be confidently incorrect.
+
+### The Quest for Actionable Customer Feedback
+
+The objective was clear: transform a raw collection of customer comments into a comprehensive PDF report detailing product sentiment for the quarter. The process involved crafting a precise prompt for Claude, feeding it the extensive dataset, and awaiting the generated insights. The initial delivery appeared to meet expectations, presenting what seemed like a thorough analysis of customer opinions across various product lines.
+
+However, upon closer examination by stakeholders, a pattern of overconfidence emerged. The AI would confidently declare trends, such as a significant rise in negative sentiment within a specific department. While this sounded alarming and actionable, the reality was far more nuanced. The "spike" in negativity, for instance, was often attributable to a single product launch with a known issue, rather than a systemic problem affecting an entire department. The AI, lacking specific instructions to investigate such granular details, missed these crucial distinctions.
+
+### Building a More Nuanced AI Reporter
+
+To address these shortcomings, a new "Claude skill" was developed specifically to generate a more reliable quarterly customer sentiment report. This enhanced system is designed to process a filtered segment of customer reviews for the current quarter, meticulously grouping feedback by product department. It then aims to identify both overarching trends and specific areas of concern, culminating in a professional PDF summary for product leadership.
+
+For illustrative purposes, the project utilized the Women's E-Commerce Clothing Reviews dataset from Kaggle. This dataset, comprising over 23,000 anonymized reviews across various clothing categories, provided a realistic, albeit generalized, test case. The goal was to ensure the AI could effectively read, categorize, and analyze this type of data, providing a more accurate and trustworthy output for business decision-making.
+
+### What To Watch
+
+Moving forward, the focus will be on refining the prompts and the AI's architecture to encourage deeper investigation and contextual understanding. Expect to see further developments in how AI systems are instructed to handle outlier data and identify root causes behind observed trends, moving beyond superficial correlation to true insight generation. The aim is to build AI tools that are not only capable of processing vast amounts of information but also possess the critical thinking skills to deliver genuinely accurate and actionable intelligence.
