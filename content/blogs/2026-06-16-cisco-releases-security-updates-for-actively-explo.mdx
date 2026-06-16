@@ -1,0 +1,24 @@
+---
+title: "Cisco Releases Security Updates for Actively Exploited SD-WAN Manager Flaw"
+date: "2026-06-16"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/06/cisco-releases-security-updates-for.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-vJIadGle0Cre1cNAxZIcD9ktkl1mPnUwtEtF1xuMbeH75BnvGq3twL0W2OowYW7ZZMxvzMjdbU-VMEZfEvV1q2pTIoG8VU_D0d_rpRqwlViZqUyb1WKcL6pM9Nklx_mISZR2BttoBxMq8w6Z87rf3Stm37ZbcRbAYM0SQeEJqg0T8dc2KsrX1a9l95B7/s1600/cisco-flaw.jpg"
+disclaimer: "None"
+---
+
+## Critical SD-WAN Flaw Under Active Attack: Cisco Urges Immediate Patching
+
+Network administrators are on high alert as Cisco has released urgent security updates for a critical vulnerability in its Catalyst SD-WAN Manager software, which is already being actively exploited by malicious actors. This flaw, designated CVE-2026-20262, could grant unauthorized access and allow for significant system compromise.
+
+### How the Flaw Works and Who is at Risk
+
+The vulnerability resides within the web user interface of Cisco Catalyst SD-WAN Manager, a crucial component for managing software-defined wide-area networks. Researchers discovered that the system fails to properly validate user-submitted data during file uploads. This oversight allows an attacker, who already possesses valid credentials with write access, to craft malicious HTTP requests. By exploiting this, they can either create new files or overwrite existing ones on the system's filesystem, potentially leading to a complete takeover of the underlying operating system. This impacts a wide range of Cisco Catalyst SD-WAN Manager deployments, including on-premises installations, cloud-based solutions, and government-specific versions.
+
+### Cisco's Response and Mitigation Steps
+
+Cisco confirmed they became aware of limited exploitation of this vulnerability in June 2026, a discovery made during their internal security testing. The company has acted swiftly to provide patches for various versions of the affected software. Customers are strongly advised to consult Cisco's security advisory for specific patch versions applicable to their existing installations. In addition to patching, Cisco has released indicators of compromise, guiding users to scrutinize their system logs, specifically `/var/log/nms/vmanage-log`, for any signs of suspicious file uploads.
+
+### What to Watch
+
+The primary focus for organizations utilizing Cisco Catalyst SD-WAN Manager will be the swift and comprehensive application of the released security patches. Network security teams will also be closely monitoring for any further exploitation attempts or the emergence of new attack vectors exploiting this or related vulnerabilities. Staying updated on Cisco's security advisories and maintaining robust logging and auditing practices are paramount in the ongoing effort to safeguard these critical network management systems.
