@@ -1,0 +1,28 @@
+---
+title: "Structured Outputs with LLMs: JSON Mode, Function Calling, and When to Use Each"
+date: "2026-06-19"
+category: "data_engineering"
+source: "https://towardsdatascience.com/structured-outputs-with-llms-json-mode-function-calling-and-when-to-use-each/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/06/BBD94E2D-CF75-487F-96CB-6BD5682C7CAC.jpg"
+disclaimer: "None"
+---
+
+## Beyond Chatbots: Getting AI to Play by the Rules
+
+Ever feel like your AI conversations are just one big text dump? While Large Language Models (LLMs) excel at natural language, getting them to spit out data in a format your other applications can use can be a challenge. Fortunately, there are increasingly sophisticated ways to make LLMs deliver structured, machine-readable outputs, moving beyond simple text responses.
+
+### JSON Mode: The Straightforward Route to Structured Data
+
+When you need an LLM to reliably provide data in a specific, consistent format, JSON Mode is your go-to. Think of it as a strict instruction: "Give me a valid JSON object, no exceptions." This is incredibly useful for tasks where you're expecting specific pieces of information, like extracting customer details or product specifications from unstructured text. By enforcing a JSON output, you bypass the need for complex parsing of free-form text, making your application logic much cleaner and more robust.
+
+### Function Calling: Empowering AI with Actions
+
+Function Calling, often referred to as tool use, takes structured outputs a step further by enabling the LLM to not just generate data, but also to decide when and how to "call" specific functions within your application. Imagine asking an AI to book a flight; instead of just giving you the flight details, it can trigger your booking system directly. This allows for dynamic interaction, where the AI acts as an intelligent agent capable of performing actions based on user requests and its understanding of available tools. It's the difference between getting a recipe and the AI actually adding the ingredients to your online grocery cart.
+
+### Structured Outputs: Supercharged Schema Enforcement
+
+Building on the foundation of Function Calling, OpenAI's Structured Outputs feature offers an even more rigorous approach to schema enforcement. This means that not only does the LLM need to adhere to a specified format, but it must also ensure the data conforms to predefined rules and types. This is crucial for applications where data integrity is paramount, such as financial transactions or critical system updates. It provides an extra layer of confidence that the AI's output is not just formatted correctly, but also valid and safe to use in sensitive operations.
+
+### What To Watch
+
+The evolution of structured outputs from LLMs is rapidly expanding the possibilities for AI-powered applications. Expect to see even more seamless integration between AI models and external systems, enabling more complex automation and intelligent decision-making. As these tools mature, the line between conversational AI and functional AI will continue to blur, leading to more powerful and versatile applications.
