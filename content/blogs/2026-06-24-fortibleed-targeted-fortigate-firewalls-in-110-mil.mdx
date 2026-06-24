@@ -1,0 +1,28 @@
+---
+title: "FortiBleed Targeted FortiGate Firewalls in 110 Million-Credential Harvesting Operation"
+date: "2026-06-24"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/06/fortibleed-targeted-fortigate-firewalls.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJkhDD5qINhfAhBFXG2C13raQF6T6zAOmnHlArhnLUP5z0ifBzpyq6M_4n11cgynQfZW0mxJWnYU-TDYSpKQHYFHvXsZHCB7uoMFg0w02yZILY-JLMm2-uqm-CA_wIqZHhzl25FfO_lMd7dYm6VfprDP83bz_SoB3MWLEc059E4YCa554bba-qWHW5udHv/s1600/fortigate.jpg"
+disclaimer: "None"
+---
+
+# FortiBleed Exposes Millions of Credentials: FortiGate Firewalls Under Global Assault
+
+A sophisticated credential-harvesting operation, dubbed "FortiBleed," has reportedly compromised over 430,000 FortiGate firewalls worldwide, leading to the potential exposure of 110 million user credentials. This large-scale campaign, believed to be orchestrated by a financially motivated, Russian-speaking initial access broker, poses a significant threat to organizations relying on these widely used network security devices.
+
+### The Inner Workings of FortiBleed
+
+The FortiBleed campaign operates through a methodical approach to infiltrate and extract sensitive data. Attackers begin by gathering credential lists and scanning for exposed services before launching brute-force attacks against accessible systems. Their key tactic involves deploying custom-built "sniffers" directly onto compromised FortiGate firewalls. According to a report by SOCRadar, these sniffers are designed to capture both cleartext and hashed credentials from the network traffic flowing through the infected devices.
+
+Central to this operation is a Golang-based tool named FortigateSniffer. This sophisticated utility cleverly exploits the FortiOS built-in diagnostic command, `diagnose sniffer packet`, to passively monitor authentication traffic. The tool is capable of parsing data across 24 different protocols, efficiently extracting valuable credentials that are then cracked, validated, and reused by the threat actors to gain further access into Active Directory domains and other critical services.
+
+### Who's Being Targeted and Why?
+
+The FortiBleed campaign exhibits a strategic focus, predominantly targeting Small and Medium Businesses (SMBs) with fewer than 200 employees. This choice suggests a calculated effort by the attackers to maximize their "downstream access," as compromising IT service providers can open pathways into numerous client environments. Geographically, the United States and India have been hit particularly hard, with the IT services sector identified as a primary target.
+
+Adding another layer of sophistication, researchers suspect the threat actors might be leveraging advanced tools, including an open-source, AI-native offensive security platform called CyberStrike, to streamline various stages of their malicious workflow. This potential integration of AI underscores a growing trend of adversaries adopting cutting-edge technologies to enhance the scale and efficiency of their cyberattacks.
+
+### What To Watch
+
+The FortiBleed operation highlights the persistent threat posed by financially motivated initial access brokers and the evolving tactics they employ. Organizations, especially SMBs and those in the IT services sector, must remain vigilant. It is crucial to implement strong, unique passwords, enable multi-factor authentication (MFA) across all services, and ensure that all FortiGate firewalls and other network devices are running the latest firmware with all security patches applied. Regular security audits and proactive monitoring for unusual network activity are essential steps to detect and mitigate potential compromises before they escalate into larger breaches.
