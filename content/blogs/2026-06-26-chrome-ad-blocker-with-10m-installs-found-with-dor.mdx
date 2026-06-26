@@ -1,0 +1,26 @@
+---
+title: "Chrome Ad Blocker with 10M+ Installs Found with Dormant Script Injection Capability"
+date: "2026-06-26"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/06/chrome-ad-blocker-with-10m-installs.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqtdBDQ0Y38i0JZmDwU6XKiZ1R6HJ0KHe59012E0krnPubG5pJgiTg6IUg4fHEzoW5jm7QyEk8fXOL9swj7FlpXdMcjyn0ltziMhQJD2pYPtzjXimsntV8DFg-c1erOgWkLl8du8eBvJYlukTCDDycp5jSmWNfwmv5WwGKlJRJvZt1GvUZZl24dP2HVDkn/s1600/adblocker.jpg"
+disclaimer: "None"
+---
+
+A popular Google Chrome ad-blocking extension, trusted by over 10 million users, has been found to contain a hidden capability allowing for the remote execution of arbitrary JavaScript code. This discovery by security researchers unearths a significant dormant threat, raising serious privacy and security questions for a vast user base, even though there's no current evidence of it being actively exploited for harm.
+
+### Under the Hood: A Dormant Script Injection Threat
+
+The extension in question, "Adblock for YouTube" (ID: cmedhionkhpnakcndndgjdbohmhepckk), boasts a "Featured" badge on the Chrome Web Store and is designed to block various advertisements, including those preroll ads on YouTube. While it delivers on its promise of an ad-free experience, a recent analysis by security firm Island revealed a concerning underlying architecture. Researchers Oleg Zaytsev and Shachar Gritzman highlighted that the extension contains "architectural ingredients" for arbitrary JavaScript execution on *any* website.
+
+Crucially, this capability could be activated by a simple server-side configuration change, requiring no extension update, no Chrome Web Store review, and offering no visible sign to the user that anything has changed. In practical terms, this means a malicious actor gaining control could potentially read web pages, steal sensitive data, or even act as the user within personal accounts, work applications, and other critical browser sessions without permission.
+
+### Red Flags and Shifting Ownership
+
+While it's important to emphasize that no evidence has surfaced of a malicious payload being distributed to users via this particular extension, the mere presence of such a powerful and easily activated capability is a major cause for concern. Adding to these worries are the historical connections to other ad-blocking extensions that have already been removed from the Chrome Web Store due to malware activity. These related extensions, such as "Adblock for Chrome" and "Adblock for You," point to a troubling pattern within certain corners of the extension ecosystem.
+
+Furthermore, "Adblock for YouTube" itself has a history that adds to the skepticism. Launched in 2014, the extension changed ownership in 2018. Earlier iterations of the add-on were reportedly found to ship with ad-injection software, a practice considered highly intrusive and often malicious. This track record, combined with the current discovery, paints a picture of heightened risk for its millions of unsuspecting users.
+
+### What To Watch
+
+The immediate future will likely focus on Google's response to these findings, particularly given the extension's "Featured" status and massive user base. Users of "Adblock for YouTube" should consider reviewing their installed extensions and remaining vigilant about the permissions they grant. Security researchers will continue to monitor the extension for any signs of activation, and the broader cybersecurity community will undoubtedly scrutinize the potential implications for other popular extensions with similar architectures.
