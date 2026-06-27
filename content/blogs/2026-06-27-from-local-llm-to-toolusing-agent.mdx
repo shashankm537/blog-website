@@ -1,0 +1,24 @@
+---
+title: "From Local LLM to Tool-Using Agent"
+date: "2026-06-27"
+category: "data_engineering"
+source: "https://towardsdatascience.com/from-local-llm-to-tool-using-agent/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/06/local_deep_research_agent.jpg"
+disclaimer: "None"
+---
+
+## Unleashing Local AI: Transform Your LLM into a Smart, Tool-Savvy Agent
+
+Ever found yourself wishing your local AI could do more than just chat? Imagine a powerful assistant living right on your computer, capable of not only understanding your questions but also actively seeking out information and synthesizing answers. This post explores exactly that, demonstrating how to transform a readily available local Large Language Model (LLM) into an intelligent, tool-using agent.
+
+### Building Your Local Research Assistant
+
+The core of this project lies in giving our local LLM the ability to interact with the outside world. We'll achieve this by equipping it with tools for web searching and information gathering. Specifically, we'll be leveraging the Gemma 4 model, a set of edge-friendly variants perfect for local deployment. To manage this model, we'll use Ollama, a convenient platform for running LLMs locally. The magic truly happens with the OpenAI Agents SDK, which provides the framework for our LLM to become an agent, and Tavily's web search capabilities, serving as our first external tool. The end result will be a functional deep research agent that can tackle complex queries.
+
+### The Technical Toolkit: What You'll Need
+
+To bring this local AI agent to life, a few key components are essential. First, we need Ollama installed on your system; it's a straightforward process whether you're on Windows or Linux. Once Ollama is up and running, you’ll download the specific Gemma 4 E4B model variant. This particular model is optimized for local, agentic tasks, making it an ideal choice. Finally, integrating the OpenAI Agents SDK will enable the agentic behavior, allowing the LLM to plan and execute tasks. With these pieces in place, your local LLM is ready to step into its new role as an active problem-solver.
+
+### What To Watch For
+
+The creation of this local deep research agent opens up exciting possibilities for more sophisticated AI applications running entirely on your hardware. Expect to see how this agent can be prompted to conduct multi-step searches, gather diverse information, and present a synthesized, well-cited answer. This reusable pattern of connecting local models to agent runtimes and external tools signifies a significant step towards democratizing powerful AI capabilities beyond the cloud.
