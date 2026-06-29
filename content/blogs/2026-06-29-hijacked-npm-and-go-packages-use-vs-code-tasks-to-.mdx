@@ -1,0 +1,24 @@
+---
+title: "Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer"
+date: "2026-06-29"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/06/hijacked-npm-and-go-packages-use-vs.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBjmO4haWCgXfALMAtSHKJXRWIlLfYqulkKflfK-3BSYON-8A4MjUNoZRxOyaLGc-4Bsj1eIfGDhdpJuKZrJORz4HZHx5iM7lj0-VlehqqZ6kaq5_ZWP08MviAchtNF1XORD_Fps-IWderGKNM18TT-Jgh_0LRFULqdMeOfv_FKDd8oWmHmv-iR1-_7XZP/s1600/gogo.jpg"
+disclaimer: "None"
+---
+
+## Hidden Threat Lurking in Code: Developers Beware of New Supply Chain Attacks
+
+Developers working with popular open-source tools are facing a sophisticated new threat, as malicious actors have managed to inject malware into widely used software packages. These compromised libraries, disguised as legitimate code, are designed to steal sensitive information across Windows, Linux, and macOS systems, raising serious concerns for the security of the software development ecosystem.
+
+### A Deeper Dive into the Malicious Code
+
+Researchers have uncovered a cunning attack vector that bypasses standard security checks within the npm package manager. Instead of exploiting common vulnerabilities, the malware lies dormant within a Visual Studio Code task, specifically designed to execute when a project folder is opened. This stealthy approach aims to circumvent recent security enhancements in npm, making it harder for automated systems to detect. Once triggered, the malicious code fetches encrypted JavaScript from blockchain data, establishes a connection to attacker-controlled servers, and ultimately deploys a potent Python-based information stealer.
+
+### Deception and Disguise: The "Fake Font" Tactic
+
+The attackers have employed a notable tactic of disguising their malicious JavaScript payload as a font file, specifically named `fa-solid-400.woff2`. This deceptive naming convention, coupled with its placement within a project, aims to mislead developers into believing it's an innocuous asset. Furthermore, the method of using a VS Code task to automatically execute code upon folder opening, along with this "fake font" disguise, has been previously linked to North Korean state-sponsored cyber activity. Security researchers are tracking this particular campaign under the name "Fake Font," recognizing it as a variant of the "Cont" malware family.
+
+### What To Watch
+
+The removal of the identified npm packages, `html-to-gutenberg` and `fetch-page-assets`, from the registry is a positive step, but the ingenuity of these attackers suggests that similar threats may emerge. Developers should remain vigilant about the packages they integrate into their projects, practicing strict dependency management and code review. The reliance on VS Code's task execution feature highlights the need for security-conscious configurations within development environments, and for users to only mark projects as "trusted" when fully verified.
