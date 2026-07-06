@@ -1,0 +1,28 @@
+---
+title: "Assemble Each RAG Generation Prompt from a Base Prompt Plus the Rules Each Question Needs"
+date: "2026-07-06"
+category: "data_engineering"
+source: "https://towardsdatascience.com/assemble-each-rag-generation-prompt-from-a-base-prompt-plus-the-rules-each-question-needs/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/07/compare_letterpress_drawer_4140925_v3_card.jpg"
+disclaimer: "None"
+---
+
+## Taming the AI Beast: How to Craft Smarter Prompts for Enterprise Document Intelligence
+
+Building effective AI systems for understanding enterprise documents is a complex puzzle. A recent deep-dive into Enterprise Document Intelligence focuses on the crucial "generation" phase, revealing a smarter approach to crafting prompts that guide AI responses. This innovation promises to move away from unwieldy, all-encompassing prompts towards a more organized and adaptable system.
+
+### The Perils of the "Mega-Prompt"
+
+Many AI projects fall into the trap of creating a single, massive system prompt that tries to handle every possible scenario – dates, amounts, tables, and free-form text. This "mega-prompt" quickly becomes a tangled mess of conditional clauses, making it difficult to maintain and understand over time. Each new requirement adds another layer of complexity, leading to confusion and potential errors as developers struggle to remember which clause was designed for which specific output format. This approach ultimately hinders the AI's ability to deliver precise and reliable answers.
+
+### Introducing the "Dispatcher": A Smarter Prompt Assembly Line
+
+The solution lies in a new approach called the "dispatcher." Instead of a single, monolithic prompt, this system dynamically assembles prompts for each individual question. When a "ParsedQuestion" arrives, the dispatcher intelligently selects the correct data schema from a registry based on the expected answer format. It then constructs a system prompt by combining a fixed base with specific fragments tailored to the user's request. This targeted approach ensures the AI receives precisely the guidance it needs for each query, leading to more accurate and predictable results.
+
+### Building the Generation Brick
+
+This advancement is part of a larger series building an enterprise RAG (Retrieval Augmented Generation) system, comprising document parsing, question parsing, retrieval, and finally, generation. Previous articles have laid the groundwork by detailing the answer contract and the registry that maps answer types to their schemas. This current piece focuses on the mechanism that fills that contract: receiving a parsed question, dispatching it to the appropriate schema, composing a precise system and user prompt, calling the AI model, and meticulously logging the entire process for transparency and debugging.
+
+### What To Watch
+
+The evolution of this generation process is key to unlocking more sophisticated document intelligence. Expect to see further refinements in how these prompts are assembled, potentially leading to even greater accuracy and flexibility in AI-powered document analysis. The success of this dispatcher model will likely influence future RAG system designs, emphasizing modularity and dynamic prompt construction.
