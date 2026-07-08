@@ -1,0 +1,28 @@
+---
+title: "RedWing MaaS Packages Android Bank Fraud as a Telegram Rental Service"
+date: "2026-07-08"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/07/redwing-maas-packages-android-bank.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdqPEGRKkKA7pjGNpR8hijHzJLPvyPD1g1C8bTt91eLUOFdu6Jw99i8LFybvHG9SP3syQ8shdXpC6EhinlQoB9aTgBMtejiCWAzVhhTi0o3nCTKZeKNnwDY0J_Lbf9LGN-KIQIoJ7-GW2op-JUcBg64uz5Actwh7TsFEstwNx9fXnLj4SODskUpnX9TPE/s1600/android-trojan-telegram.jpg"
+disclaimer: "None"
+---
+
+## Telegram Becomes the Launchpad for a New Android Banking Trojan: Introducing RedWing
+
+A sophisticated new Android malware, dubbed RedWing, has surfaced, operating not from the dark web, but surprisingly, as a rental service on the popular messaging app Telegram. This alarming development allows even novice cybercriminals to launch targeted banking fraud attacks, stealing sensitive financial information and account credentials from unsuspecting users.
+
+### The "Malware-as-a-Service" Revolution
+
+RedWing isn't just a piece of malware; it's a fully packaged, user-friendly operation designed for ease of use. Researchers have noted that it appears to be a successor to Oblivion, another "rent-a-malware" tool previously identified. The RedWing service offers subscription tiers, complete with training materials like guides and video tutorials, effectively lowering the barrier to entry for those looking to engage in criminal activities. A dedicated Telegram bot even custom-builds a malicious application for each buyer, ensuring a ready-to-deploy solution.
+
+### A Deceptive Infection Pathway
+
+The initial infection vector for RedWing is a carefully crafted phishing link that directs users to a fake app store. These imposter stores can convincingly mimic legitimate platforms like Google Play, Samsung's Galaxy Store, or Huawei's AppGallery, complete with fabricated ratings and download numbers. The goal is to trick users into downloading and installing an app from an unverified source, bypassing official app stores' security measures. Once installed, the app systematically requests permissions, often masking its malicious intent by framing requests as necessary for basic functionality, such as disabling battery optimization or becoming the default SMS handler.
+
+### Granting the Keys to the Kingdom
+
+The true danger lies in the permissions RedWing seeks, particularly access to Android's Accessibility service. This powerful feature, intended to aid users with disabilities, grants the malware extensive control over a device. With these permissions, RedWing can deploy convincing fake login screens that appear over legitimate banking and cryptocurrency applications, capturing user credentials. Furthermore, it can silently intercept one-time passcodes sent via SMS and even extract sensitive data like card numbers and PINs directly from the screen as they appear, rendering two-factor authentication nearly useless.
+
+### What To Watch
+
+Security researchers will be closely monitoring the distribution channels and evolution of RedWing, particularly its ability to evade current security solutions. Users should remain vigilant against unsolicited links and prioritize downloading apps only from official app stores, scrutinizing all requested permissions before granting them.
