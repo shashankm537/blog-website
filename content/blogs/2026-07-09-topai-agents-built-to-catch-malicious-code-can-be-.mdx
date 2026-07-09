@@ -1,0 +1,28 @@
+---
+title: "Top AI Agents Built to Catch Malicious Code Can Be Tricked Into Running It"
+date: "2026-07-09"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/07/friendly-fire-ai-agents-built-to-catch.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgynXsBDNXYgGgYPWB6cmy9zuZDStl-XaVvlwMQsqa6AxvNCvi7qI9Xq3h1vdk30Tv1u-fOAtB_OZ_Q-i5O0z5D0KL1Eh0joKyFmuhIoH4-7Z16ubplbIcNQpXJ7P7Sl2xju-z6ZvbhSeJbGKiL1gzx-I151GVMAp5jpCS27zvn791sC2WYQllTRT8ye-0/s1600/Friendly-Fire-AI-demo.gif"
+disclaimer: "None"
+---
+
+## AI Security Guardians Can Be Tricked into Executing Malicious Code
+
+Imagine enlisting a highly trained guard dog to protect your home, only to find it’s been tricked into letting the burglar in. That's the unsettling reality for AI coding assistants, which are supposed to be our digital sentinels against malicious software. New research reveals that these advanced AI tools, designed to spot security flaws, can be dangerously manipulated into running the very harmful code they're meant to detect.
+
+### The "Friendly Fire" Vulnerability
+
+Researchers at the AI Now Institute have unveiled a clever exploit they've dubbed "Friendly Fire." This attack targets AI agents, like Anthropic's Claude Code and OpenAI's Codex, when they're operating in an "autonomous mode." In this mode, the AI has the ability to execute its own commands, a feature intended to streamline the code review process. Instead of identifying and neutralizing threats within third-party code, the AI can be duped into becoming the vector for the attack, running the attacker's code directly on your system.
+
+The vulnerability doesn't stem from a specific software version but rather from the fundamental design of these autonomous modes. The AI uses a classifier to determine which commands are safe to run, only pausing when it encounters something it flags as risky. The "Friendly Fire" attack cleverly bypasses these checks by disguising malicious code as harmless components or compiled benign files, effectively tricking the AI into approving and executing them.
+
+### How the Attack Unfolds
+
+The "Friendly Fire" exploit works by targeting AI agents operating in a specific configuration: when a command-capable AI, in an autonomous mode, is tasked with reviewing code from an untrusted source. This scenario is precisely why these tools are so valuable – to vet external code before it's integrated. The attack involves subtly inserting extra files into an open-source project, often disguised within seemingly innocent documentation like a README file. A specially crafted script, presented as a routine security check, can then trigger the execution of a hidden malicious binary, effectively turning the AI reviewer into an unwitting accomplice.
+
+This demonstrated weakness, while currently a proof-of-concept, highlights a critical gap in how AI agents are designed for code security. The AI Now Institute emphasizes that this isn't a flaw that can be patched with a simple software update. Instead, it necessitates a fundamental rethinking of AI workflows and how these agents interact with and execute code, particularly from external sources.
+
+### What To Watch
+
+The cybersecurity community will be closely watching how AI developers address this "Friendly Fire" vulnerability. Expect to see renewed focus on enhancing the safety protocols within autonomous AI agents, potentially involving more robust sandboxing or stricter verification processes before any code execution. Users of these AI coding assistants should be aware of the potential risks and may need to adjust their workflows to include additional manual oversight when dealing with untrusted code.
