@@ -1,0 +1,24 @@
+---
+title: "Dormant GitHub Accounts Help Attackers Blend In While Mapping Corporate Orgs"
+date: "2026-07-10"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/07/dormant-github-accounts-help-attackers.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDslymdYqhkFwIm3ZeaXVZweYVT_R1d6LCQhIm799y9-5hQ3C45cumIStxGYheFbwosbd_JtrB6FgOthR2KJgfe8PYs0k47eGV7263ATac5UR0t7OOaqOUGOf5DHAR4b0IaKTozk0UEiHJz5-nze3b1ureycPGqdPVlqrImWreOWwMpGxC8kgBvONCLGbH/s1600/github-ghost.jpg"
+disclaimer: "None"
+---
+
+## Silent Scrapers: Dormant GitHub Accounts Used to Map Corporate Defenses
+
+Cybercriminals are employing a stealthy new tactic on GitHub, using long-forgotten accounts to meticulously map out corporate organizations. This sophisticated reconnaissance operation, uncovered by Datadog Security Labs, allows attackers to gather crucial intelligence on company structures and codebases without immediately raising alarms.
+
+### The Art of the Ghost Account
+
+Attackers are breathing new life into old, dormant GitHub accounts – some inactive for up to five years. These "ghost" accounts, alongside compromised personal access tokens (PATs) from legitimate users, are the backbone of these campaigns. By utilizing these seemingly inactive or authorized credentials, threat actors can operate under the radar, mimicking normal user activity rather than flagging suspicious new accounts. This allows them to systematically query the GitHub API, gathering detailed information about organizations, their public repositories, and even their employees' connections.
+
+### Unveiling Corporate Architectures
+
+The primary goal of this campaign is reconnaissance, allowing attackers to build a comprehensive picture of a target organization's presence on GitHub. They can identify public repositories, understand user relationships by examining follower and following lists, and even enumerate gists and starred projects. While much of this data is publicly accessible through the GitHub API, the sheer volume and systematic collection by these coordinated campaigns provide invaluable intel for future, more targeted attacks. In a concerning development, some campaigns have moved beyond public data, successfully cloning private repositories, indicating a significant escalation in their capabilities.
+
+### What To Watch
+
+Expect to see continued efforts by attackers to refine these stealthy reconnaissance techniques. Organizations should proactively review their security postures, particularly their use of PATs and the activity associated with older, less-monitored accounts. Implementing stricter access controls and more robust monitoring for API usage patterns will be critical in detecting and mitigating these evolving threats.
