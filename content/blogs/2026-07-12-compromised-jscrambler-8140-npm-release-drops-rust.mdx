@@ -1,0 +1,24 @@
+---
+title: "Compromised jscrambler 8.14.0 npm Release Drops Rust Infostealer During Install"
+date: "2026-07-12"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/07/compromised-jscrambler-8140-npm-release.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhodiWPXDsex6YL7v4e2n_D5MJFMht76GRRmHTdiG61tfEmsoZyow4tkiS3ORACILDl2fNP27YQkw1XLSBKGcom-DhCVzzPDdkdSgeMGdxcVL_rgO70x5LqZcjxKAPTtFOquB8LwSBPWrSpflqCzns-cFZ_EVm0WZfV7wSoPM3S-7_IGtCT3AjxY0rfITU/s1600/npm-js.jpg"
+disclaimer: "None"
+---
+
+# Malicious Code Sneaks onto Developer Machines via Compromised npm Package
+
+A recent security incident has sent shockwaves through the developer community, as a popular npm package, jscrambler, was found to be distributing malicious software. Version 8.14.0 of the jscrambler package, released on July 11th, 2026, secretly installs a data-stealing program, an infostealer, onto any machine that pulls it during its installation process. This discovery highlights a critical vulnerability in the software supply chain, where even trusted packages can harbor hidden threats.
+
+## The Stealthy Infostealer's Entry
+
+The compromised jscrambler release operated with a sophisticated stealth. Upon installation, a hidden script named `setup.js` activates a preinstall hook. This hook then extracts and executes a native binary, tailored to run on Windows, macOS, and Linux systems. The entire operation is designed to be undetectable, with the binary written to the temporary directory under an unassuming name and its execution running without visible output. This means that developers who installed this version may have unwittingly granted access to sensitive information on their systems.
+
+## A Supply Chain Attack Uncovered
+
+Security researchers at Socket were quick to detect the malicious activity, flagging the release within minutes of its publication. Further investigation by other security firms, StepSecurity and SafeDep, revealed that the malicious code present in version 8.14.0 had no corresponding entry in the jscrambler project's public GitHub repository. This suggests a significant breach, likely involving either a compromised npm account or a compromised build pipeline, which allowed the malicious version to bypass the project's standard release procedures and be pushed directly to the npm registry. The targeted data includes credentials for major cloud providers like AWS, Azure, and Google Cloud, as well as sensitive information from cryptocurrency wallets and password managers.
+
+## What To Watch
+
+The primary concern now is the extent of the compromise and how many developers may have been affected before the malicious package was identified. Developers are strongly advised to immediately check their systems for any signs of compromise and to revert to a known clean version of the jscrambler package. The investigation into how the jscrambler account or build system was compromised is ongoing, and it will be crucial to understand the full scope of the attack to prevent future incidents of this nature.
