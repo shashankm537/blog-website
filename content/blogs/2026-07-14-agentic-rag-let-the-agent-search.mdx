@@ -1,0 +1,28 @@
+---
+title: "Agentic RAG: Let the Agent Search"
+date: "2026-07-14"
+category: "data_engineering"
+source: "https://towardsdatascience.com/agentic-rag-let-the-agent-search/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/07/agenti_RAG.jpg"
+disclaimer: "None"
+---
+
+### Beyond the Simple Search: Introducing Agentic RAG for Smarter Answers
+
+Traditional question-answering systems, often built with a straightforward "chunk, embed, retrieve, answer" approach, frequently fall short when faced with real-world complexity. Information retrieval can be a hit-or-miss affair, leading to irrelevant results or crucial context being overlooked. Now, a new paradigm, known as **agentic Retrieval Augmented Generation (RAG)**, promises to bring a more dynamic and intelligent approach to finding answers.
+
+### When Basic Retrieval Isn't Enough
+
+The familiar RAG process, while effective in theory, often struggles with the nuances of how information is actually used. Similarity searches might latch onto keywords without grasping the underlying meaning, leading to the retrieval of superficially related but ultimately unhelpful text segments. Worse still, vital pieces of information might be ranked too low to be considered, or essential context could be fragmented across multiple document chunks, leaving the language model with insufficient grounding for an accurate response. When the retrieved context is lacking, the power of even the most advanced language models is severely limited.
+
+### The Rise of the Intelligent Agent: Iterative Search and Decision-Making
+
+Agentic RAG introduces a game-changing concept: the retrieval process becomes iterative and intelligent. Instead of a single search, the system can now perform multiple searches, analyze the retrieved information, and make decisions about whether it has gathered enough evidence to formulate an answer. If not, it can actively decide to search again, refining its approach with each step. This intelligent agent can even question the necessity of traditional embedding techniques, focusing instead on a more direct, adaptive search strategy.
+
+### Putting Agentic RAG to the Test: A Policy Q&A Scenario
+
+To illustrate this new approach, we'll explore a practical demonstration using the OpenAI Agents SDK. Imagine needing to answer a specific question about company policies. We’ll curate a set of synthetic company policy documents, covering areas like travel, remote work, and approval matrices. This collection will serve as the knowledge base for our agentic RAG system. The agent will then interact with these documents, demonstrating its ability to search, read, and critically evaluate information to provide a well-grounded answer, showcasing how an agent can iteratively refine its search to tackle complex queries.
+
+### What To Watch
+
+The upcoming developments in agentic RAG will likely focus on how these intelligent agents can be integrated into existing workflows and how their decision-making processes can be further optimized for accuracy and efficiency. We can expect to see more sophisticated strategies for handling ambiguity and a deeper exploration of how agents can learn from their retrieval experiences.
