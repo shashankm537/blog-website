@@ -1,0 +1,28 @@
+---
+title: "Don’t Let Claude Grade Its Own Homework"
+date: "2026-07-16"
+category: "data_engineering"
+source: "https://towardsdatascience.com/dont-let-claude-gaslight-you/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/07/two_lamps_one_manuscript.jpg"
+disclaimer: "None"
+---
+
+## AI Writes Itself Into a Corner: How to Catch Hallucinations Before They Ship
+
+Imagine asking a team of assistants to draft a complex report, only to discover they've confidently invented half the supporting documents. That's precisely the challenge faced when relying on AI to generate detailed content, as one developer recently discovered when an automated review tool caught a crucial flaw in an AI-generated project strategy. The incident highlights a growing need for robust oversight when deploying AI, even for seemingly straightforward tasks.
+
+### The Perils of Plausible Fiction
+
+When a developer tasked several AI agents with creating a strategy folder for a side project, the output initially impressed. The ten generated documents were well-structured and internally linked, presenting a polished facade. However, the real trouble emerged when an automated reviewer flagged inconsistencies. The AI had fabricated file names for internal links, leading to dead ends and nonexistent documents. Out of 95 cross-references, a staggering 30 pointed to files that simply didn't exist, or were misnamed with convincing but incorrect labels. This "plausible fiction" is a hallmark of language models; they excel at generating text that *sounds* right, even if it's factually incorrect, making human review prone to missing subtle but critical errors.
+
+### The Solution: An AI Auditor for AI Output
+
+The volume of AI-generated content can quickly overwhelm human review capabilities. This developer's experience led to the implementation of a system designed to address this very problem: an automated reviewer, powered by another AI agent, integrated directly into the development workflow via GitHub Actions. This "Codex agent" meticulously examines each pull request, ensuring that all cross-links are valid and that the generated content adheres to established project structures. This approach offers a significant advantage over relying solely on human review, which can be time-consuming and susceptible to the same "plausible but wrong" errors the AI itself makes. It also surpasses self-review by introducing an independent, objective layer of scrutiny.
+
+### Building Trust in AI-Assisted Workflows
+
+This automated auditing system provides a critical safeguard, enforcing accountability and memory within the AI review loop. By systematically verifying links and cross-references, it prevents the propagation of AI hallucinations and ensures the integrity of the generated content. The developer's ongoing work in this area has yielded valuable insights into the cost, reliability, and practical implementation of such systems. The core principle is to leverage AI's efficiency for generation while employing a different AI, or a structured process, to validate and correct its output, creating a more robust and trustworthy AI-assisted development pipeline.
+
+### What To Watch
+
+Expect to see more sophisticated AI-driven auditing tools emerge as generative AI becomes more prevalent in professional workflows. The focus will likely shift towards developing systems that can not only catch errors but also understand context and intent, further refining the human-AI collaboration process.
