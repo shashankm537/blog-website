@@ -1,0 +1,24 @@
+---
+title: "OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests"
+date: "2026-07-19"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk66eU1Srifu4Rdpf7MZDjg3GdNMtQK6ZW-F283kxhZ7Z0W_8nWNJynZiQ7n0ov9OLNm315P4942h3-unMI0WZ1-LH8tdQ6sv2o6q0TxKT-bVKewzkQULKKXSJOee_oANuI3YquoDgSPHsPeXEdQcFRoy8czRQimH_f0sNHJ55-5LA153sQgUPkpBBEVE/s1600/openssl.jpg"
+disclaimer: "None"
+---
+
+**Tiny Flaw, Big Problem: OpenSSL's HollowByte Bug Can Cripple Servers**
+
+A minuscule, 11-byte request is all it takes to potentially bring down an unpatched OpenSSL server, consuming vast amounts of memory and leading to a system-wide freeze. This previously undisclosed vulnerability, dubbed "HollowByte," was recently brought to light by Okta's Red Team, exposing a silent fix released months ago.
+
+### The Anatomy of an Attack
+
+The HollowByte flaw exploits a fundamental aspect of the Transport Layer Security (TLS) handshake. When a server receives a TLS message, it typically reads a 4-byte header that declares the size of the message's body. In vulnerable OpenSSL versions, the server would allocate a significant chunk of memory – up to 131 KB – for this incoming message *before* verifying its authenticity or even receiving the full data. An attacker could send a header indicating a large body, but then immediately disconnect, leaving the server holding onto a large, allocated memory buffer for data that would never arrive.
+
+### Memory Leak That Won't Quit
+
+What makes HollowByte particularly insidious is its interaction with the GNU C Library (glibc) on many systems. While OpenSSL would free the allocated buffer after the connection dropped, glibc's memory management can hold onto these smaller and medium-sized chunks for reuse. The HollowByte attack, by varying the claimed message size with each connection, effectively prevents glibc from efficiently reusing these freed memory fragments. This leads to heap fragmentation, a dramatic increase in the server's resident set size, and a persistent memory drain that can last long after the attack has ceased. Okta's tests demonstrated that even large servers could have substantial portions of their memory rendered unusable and inaccessible until the affected process was restarted.
+
+### What To Watch
+
+The implications of HollowByte are significant, particularly for organizations relying on OpenSSL for secure communication. The fact that the fix was applied without public disclosure means many systems could still be vulnerable. Security teams will need to meticulously audit their OpenSSL installations and ensure they are running the patched versions. Expect to see increased scrutiny of TLS handshake processing and memory allocation strategies in server software moving forward.
