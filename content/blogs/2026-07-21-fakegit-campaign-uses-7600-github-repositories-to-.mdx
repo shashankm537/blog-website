@@ -1,0 +1,28 @@
+---
+title: "FakeGit Campaign Uses 7,600 GitHub Repositories to Spread SmartLoader Malware"
+date: "2026-07-21"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/07/fakegit-campaign-uses-7600-github.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjraCuGeWGgh9OrpC0vpcC6fFNsSdQEGhB_GPY0ZbuAzcOyqyTyHFA8fl97bDKYihy0MZGiU9_5a4s4x6oziT9-cCv1n2dpGZpGtvuipWUYoEObUWtQt0ZmNczKsM7wzqdtLbAvrIfJrFpCDzPD-koB8qxdpFYZ0w5EtnYW2Z4RTPz0v-JFVyFgyg3rQk8/s1600/github.jpg"
+disclaimer: "None"
+---
+
+## Fake Git Campaign Mimics Legitimate Projects to Deploy Widespread Malware
+
+Cybersecurity experts have uncovered a sophisticated and far-reaching operation dubbed "FakeGit," which has weaponized thousands of GitHub repositories to distribute potent malware. This campaign is notably using seemingly legitimate AI tools and server projects as bait, tricking both humans and artificial intelligence into downloading malicious software.
+
+### The Deceptive Arsenal: Thousands of Bogus Repositories
+
+The sheer scale of the FakeGit campaign is alarming, with researchers identifying nearly 7,600 compromised GitHub repositories. These malicious repositories are cleverly disguised, often mimicking popular open-source projects or legitimate developer tools. A significant portion, over 800, are specifically designed to appear as artificial intelligence (AI) skills or Model Context Protocol (MCP) servers. This intricate deception aims to lure developers and AI agents into downloading what they believe are useful tools, but which actually contain the SmartLoader malware.
+
+### SmartLoader's Insidious Reach and the Rise of AI Deception
+
+Once downloaded, SmartLoader establishes a foothold on compromised systems, enabling attackers to deploy further malicious payloads. One such payload is StealC, an information-stealing malware capable of pilfering sensitive data from infected machines. What makes FakeGit particularly concerning is its evolution, a tactic known as "AgentBaiting." This new strategy leverages AI's inherent curiosity and its drive to discover new functionalities. AI models, when searching for new skills or servers, can now inadvertently stumble upon these fake GitHub repositories. This means an AI agent, acting on behalf of a user, can be tricked into downloading malware without any direct human interaction, a significant escalation in the sophistication of these attacks.
+
+### Who's Falling for the Trick?
+
+Testing has shown that leading AI models like Anthropic Claude Code, Google Gemini, and OpenAI ChatGPT are susceptible to this AgentBaiting technique. These powerful AI systems have surfaced these malicious repositories even when not explicitly directed to them via links. This represents a worrying shift where the social engineering tactics previously used to trick humans are now equally effective against the AI agents that are increasingly assisting them. The creators of FakeGit have managed to create a system where the very tools designed to enhance productivity can be turned into vectors for cybercrime.
+
+### What To Watch
+
+The widespread use of GitHub by developers means this threat landscape will likely continue to expand. Cybersecurity teams will be closely monitoring the evolution of AgentBaiting and the development of new defensive strategies to counter AI-driven malware distribution. Developers are also urged to exercise extreme caution when sourcing code and dependencies, verifying the legitimacy of projects and their contributors before integration.
