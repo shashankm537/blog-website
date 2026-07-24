@@ -1,0 +1,26 @@
+---
+title: "When Data Science Makes Us Sad: The Story of an Overbooked Flight"
+date: "2026-07-24"
+category: "data_engineering"
+source: "https://towardsdatascience.com/when-data-science-makes-us-sad-the-story-of-an-overbooked-flight/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/07/jeshoots-com-mSESwdMZr-A-unsplash-scaled-1.jpg"
+disclaimer: "None"
+---
+
+## The Algorithm Giveth, and the Algorithm Taketh Away: Why Your Flight Might Be "Accidentally" Overbooked
+
+Ever found yourself on social media watching a passenger get bumped from an overbooked flight, feeling a pang of sympathy and perhaps a knot of dread? You might dismiss it as a rare hiccup, but the reality is far more calculated. Airlines, driven by sophisticated data science, are strategically selling more tickets than seats available, not as a mistake, but as a deliberate business decision.
+
+### The Data-Driven Gamble: Maximizing Profits, Minimizing Seats
+
+At its core, this isn't about operational blunders; it's about leveraging statistical probabilities to boost revenue. Airlines like "DS Airlines" in our hypothetical scenario, with a capacity of 300 seats, might sell 304 tickets. This isn't a random act of defiance against the laws of physics; it's a carefully considered risk. Based on historical data, they understand that, on average, 95% of passengers will show up for their flight. This percentage, combined with complex mathematical models, allows them to predict the likelihood of a certain number of no-shows and intentionally oversell to capture potential lost revenue.
+
+The airline's decision to sell extra tickets is essentially a gamble. They are betting that the number of passengers who *don't* show up will be just enough to accommodate those extra ticket holders. While it might seem unfair to the passenger who gets bumped, for the airline, the potential financial gains from those extra ticket sales, even after accounting for compensation to bumped passengers, can amount to millions. This practice hinges on understanding distributions and calculating expected values – key concepts for anyone delving into the world of data analytics.
+
+### The Mathematics Behind the Mismatch
+
+So, how exactly does this work? Imagine DS Airlines selling 304 tickets for a 300-seat plane, with a 95% show-up rate. The crucial assumption is that each passenger's decision to fly is independent of others. This allows us to apply probability distributions to model the situation. The flight is considered "overbooked" if 301 or more passengers show up. Data scientists use these probabilities to calculate the "expected value" of overbooked passengers, which is essentially the average number of passengers they anticipate will be turned away. This statistical foresight allows them to quantify the risk they are taking and ensure that, in the long run, this strategy is financially beneficial, even with the occasional passenger inconvenience.
+
+### What To Watch
+
+The airline industry's reliance on data science for operational decisions is only set to increase. Expect to see more sophisticated algorithms influencing everything from pricing and scheduling to baggage handling. For passengers, this means a continued need to be aware of the statistical realities of air travel and perhaps a greater emphasis on booking flexible tickets or arriving early.
