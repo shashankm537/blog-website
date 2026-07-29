@@ -1,0 +1,24 @@
+---
+title: "Two Compromised joyfill npm Packages Run RAT When Imported Into Node.js"
+date: "2026-07-29"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/07/two-compromised-joyfill-npm-packages.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbnnos_l5g9tfmBH7efqHHPJs-C6Ti9zjG9iifZXs0QLLoUn7L1BwkunpqbD55rRvqSiJx0R_DTAl12TBnL9MN0DkDtzhwnm8Xgbsbu8LZuKyRDnVtq3cbeMlEmNJEmZgXy3BeOILj2kM24GojxXfDJDr93XsEiORhP9q1sYo814jzq4UsQCS0RRZmhp5k/s1600/npm-hack.jpg"
+disclaimer: "None"
+---
+
+## Malicious Code Lurking in Popular Dev Tools: Two Joyfill Packages Compromised
+
+Developers building with the popular Joyfill framework should be on high alert. Beta versions of two essential npm packages, `@joyfill/layouts` and `@joyfill/components`, have been found to contain a dangerous remote access trojan (RAT) capable of infecting systems upon import. This discovery highlights a sophisticated attack vector that bypasses typical security measures, raising significant concerns for the developer community.
+
+### A Hidden Threat: How the RAT Operates
+
+Unlike many malicious packages that rely on specific commands or hooks to activate, these compromised Joyfill libraries harbor a more insidious threat. The malicious code is embedded directly within the JavaScript libraries themselves and executes the moment Node.js loads them. This "import-time" execution means that simply incorporating these packages into a project is enough to trigger the infection. Security researchers have noted that the RAT uses a multi-blockchain system involving Tron, Aptos, and BNB Smart Chain to resolve encrypted commands, a technique previously linked to sophisticated malware families like PolinRider.
+
+### The Two-Pronged Attack: Payload and Execution
+
+Once activated, the implant launches a two-part assault on the infected system. One path leads to the recovery and execution of a substantial JavaScript payload, displaying strong resemblances to known DEV#POPPER malware. Simultaneously, a separate Node.js process is initiated, reaching out to a specific IP address to retrieve and decrypt an additional payload. This secondary payload is then executed, further compromising the system's security and potentially opening the door for broader malicious activities, such as data theft or persistent backdoor installation. The method of retrieving the initial command through blockchain transactions, with fallbacks to different chains, demonstrates a high level of technical sophistication.
+
+### What To Watch
+
+Developers are strongly advised to immediately audit their projects for the specific compromised versions of `@joyfill/layouts` and `@joyfill/components`. It's crucial to remove or update these packages to secure, non-compromised versions. The ongoing investigation will likely focus on identifying the origin of these compromised packages and understanding the full extent of the threat actor's capabilities and targets. Security teams will also be scrutinizing how this multi-blockchain resolution technique is being used in other malware campaigns.
