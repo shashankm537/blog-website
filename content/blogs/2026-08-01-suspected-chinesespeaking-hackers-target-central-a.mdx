@@ -1,0 +1,28 @@
+---
+title: "Suspected Chinese-Speaking Hackers Target Central Asian Governments With OctLurk and SilkLurk"
+date: "2026-08-01"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/suspected-chinese-speaking-hackers.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmBagWdesuJqVgNAHPh7t75IGrajY_oJeL9HHI7r23AK7CuLUN22-GBwDCWJWTlIutBApsdhSGproqxtR6kV_Dg04FT2zc6vZXZCQed8Kx3bD-jw-VXkYfAHlJsNgcQOcqRFW8TTh1kyN34MisnGx3ImU9vejv_oNy4jN0sPNcPM7jclq7klrMmGrnROjk/s1600/chinese-hackers.jpg"
+disclaimer: "None"
+---
+
+## Shadows in Cyberspace: Unmasking Sophisticated Attacks on Central Asian Governments
+
+A shadowy new threat has emerged, specifically targeting government bodies across Central Asia with sophisticated cyberattacks. Since the beginning of 2025, these campaigns have ensnared nations including Afghanistan, Kyrgyzstan, Tajikistan, Uzbekistan, and Kazakhstan, along with targets in Syria. The attackers, believed to be Chinese-speaking, are employing novel tools to infiltrate sensitive networks and exfiltrate data.
+
+### The OctLurk and SilkLurk Arsenal
+
+At the heart of these recent incursions are two previously unknown backdoors, dubbed OctLurk and SilkLurk by cybersecurity researchers at Kaspersky. These malicious software tools are designed for stealth, capable of downloading and deploying additional modules to execute a wide range of harmful activities. This includes taking control of command shells, manipulating files, simulating user actions with keyboard and mouse inputs, probing networks for vulnerabilities, stealing login credentials, logging keystrokes, and even accessing sensitive browser data and email communications. Lurking alongside these backdoors is a specialized proxy utility named LurkProxy, which appears to be used to mask the attackers' network traffic, making their operations even harder to trace.
+
+### A Carefully Orchestrated Infiltration
+
+While the initial entry point for these attacks remains a mystery, researchers have pieced together some of the operational tactics. OctLurk, for instance, is injected directly into a compromised system's memory and deployed via a loader program. Before unleashing its malicious payload, the attackers verify internet connectivity to a specific domain, "dns.ssentialserv[.]xyz," before executing a batch script that activates LurkProxy. This proxy then establishes a crucial link to a remote command-and-control server, "154.196.162[.]76," allowing the attackers to steer their operation. Once active, OctoLurk begins its reconnaissance, gathering system information, encrypting it, and sending it back to a hardcoded command server, "dns.multitoconference[.]com," through a secure stream socket connection.
+
+### Who's in the Crosshairs?
+
+The victims of these targeted assaults represent a diverse cross-section of government operations. From healthcare providers and research institutions to ministries of foreign affairs and law enforcement agencies, the attackers are casting a wide net. Urban planning departments, facility management offices, and public educational establishments have also been identified as targets. This broad focus suggests a comprehensive effort to gather intelligence and potentially disrupt critical government functions across the region. The lack of immediate ties to any known hacking groups further amplifies the concern, pointing to a potentially new and organized adversarial force.
+
+### What To Watch
+
+The cybersecurity community will be closely monitoring for any further attribution of these attacks to specific groups or state actors. Continued analysis of OctoLurk and SilkLurk's capabilities, as well as the discovery of new infection vectors, will be crucial in developing effective defenses. The ongoing sophistication and regional focus of these campaigns suggest that government entities across Central Asia will need to bolster their cybersecurity posture significantly.
