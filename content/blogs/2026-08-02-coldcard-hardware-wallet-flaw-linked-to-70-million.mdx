@@ -1,0 +1,28 @@
+---
+title: "Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes"
+date: "2026-08-02"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiea5Kw_2TLtPI4Ts3s3anmPIQr3S8VxO0G9yL-UV1dSlRrW1Z_L41XoHcSFuk2ThCBDKLFy-xZl_y7DnA0FM2nWHk4G1TpV2iMx6-X6EDT3gK7s0pJu6e1wMUoEsuPifcXseXuqOIHL3W9voWoD_se5gKJPyii4X0mJY7sxJ3uOPlTWVfAyrKs4ixa-18/s1600/coldcard.jpg"
+disclaimer: "None"
+---
+
+## Millions Vanish: Coldcard Wallet Flaw Fuels Massive Bitcoin Heist
+
+In a startling display of vulnerability, over $70 million in Bitcoin was siphoned from numerous addresses in a swift, coordinated attack. The cryptocurrency vanished in just 41 minutes on July 30th, leaving a trail of emptied wallets and raising serious questions about the security of digital asset storage.
+
+### The Unraveling of a Hardware Wallet's Security
+
+The audacious theft, which saw 1,196 Bitcoin addresses drained of approximately 1,082.65 BTC, has been traced to a critical flaw within the Coldcard hardware wallet. Research conducted by Galaxy Research has pinpointed a firmware error that occurred during a March 2021 update. This error inadvertently rerouted the crucial seed generation process from the device's secure hardware random number generator (RNG) to a predictable software-based pseudorandom number generator (PRNG).
+
+This misconfiguration meant that instead of relying on genuine randomness for creating a wallet's unique recovery phrase, the device was using a system susceptible to prediction. Security experts explain that an attacker, by understanding certain device parameters like its unique identifier, timer status, and previous random number generation history, could potentially recreate candidate seed phrases offline. These generated phrases could then be tested against publicly available blockchain data to identify matching addresses that were subsequently drained.
+
+### Coinkite's Response and Crucial User Action
+
+Canadian firm Coinkite, the maker of the Coldcard wallet, moved swiftly to address the issue. An emergency firmware update was made available for all affected models and release tracks on July 31st. However, Coinkite has stressed that this update, while crucial for future security, does not retroactively fix seeds that were compromised by the flaw.
+
+For users who may have been affected or are concerned about their security, the directive is clear: generate a completely new seed phrase on the patched firmware and immediately transfer all existing Bitcoin to the new, secure wallet. Restoring an old, potentially compromised seed onto updated firmware or even another wallet would carry the same underlying weakness forward, leaving assets vulnerable. To date, no public reports have confirmed the reconstruction of a victim's specific seed phrase that directly correlates with a drained address.
+
+### What to Watch
+
+The cryptocurrency community will be closely monitoring the fallout from this incident. Further analysis of the flaw's exploitability and the extent of any potential further compromises is expected. Coinkite's ongoing efforts to support users and enhance their security protocols will also be a key focus. Investors and users of hardware wallets will likely be scrutinizing the security practices of all manufacturers with renewed intensity.
