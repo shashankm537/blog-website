@@ -1,0 +1,24 @@
+---
+title: "18 Malicious npm Packages Deliver Cross-Platform RAT to Alibaba Tool Users"
+date: "2026-08-04"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/18-malicious-npm-packages-deliver-cross.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhb0HLXOvc5Gir8E_IXoYIRMQG7CsNL7gJEkPytfRRQ67OWrIoyrGAX78K0Ca0VJ7hhpyru2Vck7ntHKLyBLhGezuyOD_znWoB88KhAdEWu8MyhVbiEia2GfbRVeDPhaCEAHfhY637LqeIyso03edEkOGL3p0c3O6_Nn7oJ6rNmyve-6_pqziBCokfiKoKI/s1600/npm-git.jpg"
+disclaimer: "None"
+---
+
+## Alibaba Devs Targeted by Sophisticated npm Attack: RAT Lurks in Official-Looking Packages
+
+Cybersecurity experts have uncovered a concerning new threat targeting developers who utilize Alibaba's tools. A coordinated campaign has seen 18 malicious packages infiltrate the npm ecosystem, delivering a potent cross-platform remote access trojan (RAT) directly to unsuspecting users. This sophisticated software supply chain attack appears specifically aimed at Chinese-speaking developer communities.
+
+### Deceptive Packages Mimic Legitimate Tools
+
+At the heart of this attack is a tactic of impersonation. One key package, named "lib-mtop," cleverly mirrors the name of a legitimate private package within Alibaba's "@ali" scope. While initially appearing inactive, recent updates in March and April introduced hidden malicious code. Researchers are still investigating whether this was the result of a compromised account or a malicious insider, but the outcome is clear: these updates injected a loader designed to discreetly download and execute a remote JavaScript payload. This insidious method leverages the trust developers place in familiar package names.
+
+### A Deeper Web of Malice
+
+The threat extends beyond "lib-mtop." The same developer account, identified as "ch4ce," is responsible for several other suspicious packages: "aone-kit," "aone-kit-cli," "aone-sandbox," and "local-config-parser." The first three are essentially empty placeholders designed to mislead, declaring dependencies on private Alibaba packages within their configuration files. The package "local-config-parser," while appearing to offer a legitimate function for parsing JSON configurations, secretly harbors malicious dependencies. When bundled together within a project's dependency tree, these seemingly harmless components combine to create a potent RAT, specifically designed to infiltrate the systems of developers likely associated with the Alibaba Group.
+
+### What To Watch
+
+The discovery highlights the ongoing dangers within software supply chains. Developers using npm, particularly those in or connected to Chinese-speaking environments, should exercise extreme caution when updating dependencies, especially those with names resembling official or internal packages. Vigilance in code review and a proactive approach to security patching will be crucial in mitigating future threats of this nature.
