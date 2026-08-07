@@ -1,0 +1,24 @@
+---
+title: "New Zapscape KVM Flaw Could Let Privileged L1 Guest Code Escape to Linux Hosts"
+date: "2026-08-07"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/new-zapscape-kvm-flaw-could-let.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5BBX-j7uA7NqPF9tVWhx3y09F3whJ3zweRoWGyI2kJDxhW6ymOG1oumq5Oz0sZWtCAKSCALcd9TTl7Kf5Mo3aqE3aWKH8jfKWt2uUD-CUa6tmid-3MvMTM08EAEhg5iLQ2mlEgFkVeuVKv1QkRqr2T0Ya9JcNtMYheggInGndCG0n-N7BPjyH9vbKCg8/s1600/Zapscape.gif"
+disclaimer: "None"
+---
+
+## New "Zapscape" Vulnerability Offers a Dangerous Escape Route for Virtual Machines
+
+A newly discovered flaw within the Linux kernel's virtualization technology, dubbed "Zapscape," presents a serious security risk. This bug could allow an attacker who has already gained privileged access within a virtual machine to break free from its isolation and execute malicious code directly on the host system. The danger is particularly acute in scenarios where nested virtualization is enabled and exposed to potentially untrusted virtual environments.
+
+### Understanding the "Zapscape" Threat
+
+The vulnerability, officially designated CVE-2026-64561, targets a critical component of KVM (Kernel-based Virtual Machine) on x86 architectures. Specifically, it affects the way KVM handles memory management for nested virtual machines. This involves "shadow memory management unit" (MMU) and the complex process of translating memory addresses for virtual guests. Security researcher Hyunwoo Kim, who brought this issue to light, demonstrated that an exploit path exists, enabling an attacker with root privileges within a compromised L1 guest to command the host with the same level of authority.
+
+### The Technical Details of the Escape
+
+At its core, Zapscape is a flaw in the ordering of operations within KVM's shadow MMU bookkeeping. When a virtual machine triggers a page fault – an error that requires special handling – KVM attempts to manage the memory. The vulnerability allows KVM to reclaim memory pages that are still actively being used by the fault-handling process. This creates a critical window where KVM can operate under an invalidated memory root, leading to a "use-after-free" condition. This means the system attempts to use memory that has already been freed, creating a dangling pointer that can be exploited for code execution on the host. Intel systems require specific configurations involving EPT page-walk lengths to be exposed to the L1 guest for this vulnerability to be exploitable, while AMD systems are not subject to this same condition.
+
+### What To Watch
+
+The upstream fix for Zapscape has already been integrated into the Linux kernel. System administrators running KVM hosts, especially those that expose nested virtualization to potentially untrusted guests, should prioritize updating to a patched stable kernel or ensure their vendor packages include this critical security fix. This is a crucial step in reinforcing the security of virtualized environments and preventing potential host system compromises.
