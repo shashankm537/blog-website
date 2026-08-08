@@ -1,0 +1,28 @@
+---
+title: "ClickFix Attacks Deliver macOS Stealer That Can Drain Crypto Wallets"
+date: "2026-08-08"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/clickfix-attacks-deliver-macos-stealer.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKQGTQ6AquoAvAeMWXXITPacYsdChgFUpg7MLwKkfb2AylEuwQTk9av5GqMSdgtsB_tr_6QC70DrJkEo02t-Wo67z1gumix6FKKlOPSWo4fLEUHCibBoTrf1zCdmn72ESzo5CzCKKEgyETZ0FeVD_3QLfCNit7vIwlMA7MmwGYg2JGbeYOBrjSHmOnfpWl/s1600/macos.jpg"
+disclaimer: "None"
+---
+
+## New macOS Malware Lurks in Terminal, Targeting Crypto and Your Secrets
+
+Cybercriminals are employing a devious new tactic on Macs, luring unsuspecting users into executing commands that unleash sophisticated malware. This insidious program, written in Go, is designed to pilfer not only your browser passwords and sensitive Apple data but also to stealthily drain your cryptocurrency holdings.
+
+### The Deceptive Command Line Attack
+
+The infiltration begins with a seemingly harmless request: pasting a specific command into macOS's Terminal application. This isn't a standard user action, but once executed, it kicks off a chain reaction. A script then meticulously gathers information about your Mac, essentially profiling its system. This data is then used to download a malicious payload specifically tailored to your computer's processor, ensuring maximum compatibility and stealth.
+
+### Beyond Passwords: A Direct Assault on Crypto Wallets
+
+While stealing passwords, iCloud Keychain data, and cached credentials is a serious threat, this new malware boasts a more alarming capability. Security researchers have identified a "DRAIN" routine that actively seeks out cryptocurrency wallets. If funds are detected, the malware systematically siphons off a portion, or even the entirety, of the balance into an attacker-controlled wallet. This function is reportedly capable of targeting a wide range of popular cryptocurrencies, including Bitcoin, Ethereum, and Monero, among others.
+
+### Exploiting Trust for Deeper Access
+
+To further its malicious aims, the malware employs a classic social engineering trick. It attempts to gain elevated system privileges by presenting the user with a fake "unexpected system error" prompt. This deceptive message pushes the victim to enter their administrative credentials, under the guise of fixing a problem, thereby granting the attacker deeper access to the system and its most sensitive information.
+
+### What To Watch
+
+Expect to see variations of this Go-based stealer emerge, potentially targeting other operating systems or employing different initial infection vectors. The sophistication of the cryptocurrency draining function highlights the increasing focus of cybercriminals on digital assets. Users are advised to be extremely cautious about executing commands from unknown sources in their Terminal and to maintain robust security practices for their digital wallets.
