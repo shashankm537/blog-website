@@ -1,0 +1,28 @@
+---
+title: "Before Q, K, and V: Reconstructing the Transformer"
+date: "2026-08-09"
+category: "data_engineering"
+source: "https://towardsdatascience.com/before-q-k-and-v-reconstructing-the-transformer/"
+image: "https://towardsdatascience.com/wp-content/uploads/2026/08/antonio-janeski-ANP0t4EGMBE-unsplash-scaled-1.jpg"
+disclaimer: "None"
+---
+
+## Decoding the Transformer: Why K, Q, and V Are More Than Just Buzzwords
+
+The Transformer architecture has revolutionized artificial intelligence, powering everything from sophisticated language translation to advanced image generation. But beyond the catchy acronyms like "keys," "queries," and "values," lies a deeper understanding of *why* these components are essential. New research is peeling back the layers, revealing the fundamental design pressures that led to the Transformer's elegant structure.
+
+### The Limits of Sequential Processing
+
+Before the Transformer dominated the AI landscape, recurrent neural networks (RNNs) were the go-to for processing sequential data. While innovations like LSTMs improved their ability to handle long sequences, a core limitation persisted: RNNs compress past information into a fixed memory state. This "squishing" of historical data, while functional, inherently loses granularity, making it difficult for the model to recall specific details from earlier in a sequence. This fundamental constraint paved the way for a new approach.
+
+### Unpacking the Attention Mechanism
+
+The breakthrough of the Transformer lies in its attention mechanism, which allows models to weigh the importance of different parts of the input data. The concepts of "keys" and "queries" emerge directly from the need for tokens – individual units of data like words or pixels – to effectively communicate and relate to each other. This communication is not arbitrary; queries arise from a fundamental need to resolve symmetry issues in how information is accessed. Furthermore, the introduction of "values" and distinct attention heads offers a more efficient way to manage and retrieve this information, moving away from a single, unwieldy dynamic weight matrix towards a set of reusable, specialized transformations.
+
+### The MLP as a Hidden Key-Value Store
+
+Interestingly, even the often-overlooked feedforward component of the Transformer, the Multi-Layer Perceptron (MLP), plays a crucial role. This block can be conceptualized as an internal key-value store. It effectively stores and retrieves information, acting as a parallel mechanism to the attention layers. Understanding this connection further solidifies the interconnectedness and purposefulness of each part of the Transformer's design.
+
+### What To Watch
+
+As researchers continue to deconstruct the Transformer, expect further insights into its core principles. This deeper understanding will not only demystify its current success but also accelerate the development of next-generation AI architectures that build upon, or even surpass, the Transformer's capabilities.
