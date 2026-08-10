@@ -1,0 +1,24 @@
+---
+title: "New CSS Attacks Can Break Webmail Defenses to Steal Passwords and Tokens"
+date: "2026-08-10"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/new-css-attacks-can-break-webmail.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCUnWbFb6UGu3ML1MqcuVXYwk0yoD6WzgXIQmi8ijkZQjS6M3g1F3kgV-RanNgyP1bdpNxDOOqMJzJnutZGh4MUVyYCbbu98sNXtAp-GWxueyKH9fDo3z9HmBl4tL-rj91kb11bhdhRvWGAYe56YGYMEzJgGIZeUqj9eGH10Bynj0YE6WMLl0J7O-HhLc/s1600/css-bomb.jpg"
+disclaimer: "None"
+---
+
+# Webmail Vulnerabilities Exposed: New CSS Attacks Threaten User Data
+
+New research has unveiled a significant flaw in webmail security, demonstrating how specially crafted emails can bypass defenses to steal sensitive information like passwords and authentication tokens. This groundbreaking work, presented at Black Hat USA 2026, highlights potential risks across major email platforms, including Outlook, Gmail, and Yahoo Mail.
+
+## Escaping the Inbox: How Emails Can Hijack Interfaces
+
+The core of this security revelation lies in the clever manipulation of HTML and CSS within emails. Researchers have discovered ways to make content "escape" its designated message boundaries and interact with the webmail interface itself. This breach allows for malicious actors to potentially capture user credentials when they are entered, hijack authenticated sessions by stealing tokens, and even manipulate AI features that process email content. The attacks exploit the trust users place in their email providers to keep their data secure.
+
+## Real-World Implications and Provider Responses
+
+The implications of these findings are far-reaching. For instance, one documented exploit chain for Outlook could spoof a Microsoft sign-in page, tricking users into revealing their passwords. Another demonstrated how a Yahoo or AOL user could inadvertently expose a Medium login token, granting an attacker access to their account. While this research is currently proof-of-concept and no malicious exploitation has been reported, the availability of public demonstrations is a cause for concern. Some providers, like Fastmail and Proton Mail, have already addressed certain vulnerabilities, but others, including Outlook and Gmail, still exhibit exploitable weaknesses.
+
+## What To Watch
+
+The ongoing efforts to patch these vulnerabilities will be crucial. Users should remain vigilant for any security advisories from their email providers. Moving forward, expect increased focus on robust sandboxing techniques for email content and stricter controls over CSS and HTML elements within webmail interfaces. The industry will likely be examining how to better align the sanitization of incoming content with what browsers actually render, closing the gap that these attacks exploit.
