@@ -1,0 +1,28 @@
+---
+title: "Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack"
+date: "2026-08-12"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4HtkIdWjqoYaSkO4edq9d5ZotqTE-LNMM14UlVoPaVKw2hwBahFYrPkB3jttURH0gcBXxCDtyHhiGMAIrxCX74gYCb_ivX4INmfRzt7HRb-bPTNt1lV-nUQm_pHQQHrhUwx4JWS7DtAzOZ1etx-yjPAVrNJXGBltqXjHPSI5NcfnWQqYurz0LK-dRRMo/s1600/aug-ms-patch.jpg"
+disclaimer: "None"
+---
+
+## Urgent Security Update: Microsoft Races to Patch Exploited Windows Driver Flaw
+
+Microsoft has just rolled out its latest wave of security patches, and this month's update is particularly critical. Among the 398 vulnerabilities addressed, a serious zero-day flaw in a core Windows driver is already under active attack, giving attackers elevated privileges on compromised systems.
+
+### A Zero-Day Under Fire
+
+The most pressing concern is a vulnerability within a fundamental Windows kernel driver responsible for network socket operations. This flaw, tracked as CVE-2026-68820, allows an attacker who has already gained a foothold on a system to escalate their access to the highest administrative level (SYSTEM). This type of privilege escalation is a prime target for malicious actors, as it grants them complete control. Microsoft has prioritized this fix, emphasizing its active exploitation, even though it carries a lower severity score than some other patched vulnerabilities. Research suggests that the infamous Lazarus Group may have leveraged this zero-day in their "Operation Dream Job" campaign.
+
+### High-Severity Vulnerabilities Also Addressed
+
+Beyond the actively exploited driver bug, Microsoft's update also tackles four other significant vulnerabilities. These flaws, each boasting a critical CVSS score of 9.8, require no user interaction whatsoever – no clicks, no passwords, and no prior account access are needed for an attack. They impact key Windows components including the DNS Server, Deployment Services, the QUIC transport protocol, and the High Performance Computing (HPC) Pack. While not flagged as exploited at the time of the patch release, their unauthenticated remote code execution capabilities make them extremely dangerous and a priority for system administrators. Additionally, the update includes a patch for the remote code execution aspect of a SharePoint vulnerability, following a previous fix for an authentication bypass.
+
+### A Sweeping Security Effort
+
+In total, this monthly release addresses a massive 398 newly identified CVEs, with a staggering 62 of those classified as Critical. The sheer volume underscores the ongoing battle against cyber threats and the importance of Microsoft's proactive patching schedule. While the actively exploited zero-day understandably takes center stage, IT professionals should also be diligently applying the remaining updates to fortify their systems against a wide range of potential attacks.
+
+### What To Watch
+
+Organizations should immediately prioritize the deployment of these patches, especially the fix for the exploited Windows driver. Administrators should monitor their security logs for any suspicious activity that might indicate exploitation of these vulnerabilities. Furthermore, staying informed about any potential new attack vectors or tools that leverage these or similar flaws will be crucial in maintaining a strong security posture.
