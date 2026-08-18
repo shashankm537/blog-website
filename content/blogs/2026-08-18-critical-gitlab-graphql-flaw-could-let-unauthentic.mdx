@@ -1,0 +1,28 @@
+---
+title: "Critical GitLab GraphQL Flaw Could Let Unauthenticated Attackers Delete Public Projects"
+date: "2026-08-18"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLiZpsYdSdkh6GE1rDDV3XVwWiGdjWBlx3B1irY9V5RtHt1cv7sQYPaa16y78EJdluo3FTMr5Wq0O2ZCWZjRMdrewgLrGJS3Ii_NLOQKQKN18PEGHhDiSyJtvf8TpdFrrIplaynGWNVmUxdAkyL7E8h_GtKfog8EE_TV25SySHFqbQgK3ChyphenhyphenKaKktnUic/s1600/gitlab.jpg"
+disclaimer: "None"
+---
+
+## Critical GitLab Flaw Exposes Public Projects to Unauthenticated Deletion
+
+A serious security vulnerability has been patched by GitLab, potentially allowing unauthorized individuals to delete or alter public projects and user data without any prior authentication. The software giant rushed out an emergency update to address this critical issue, underscoring the severity of the threat.
+
+### The Danger of an Unseen Door
+
+The vulnerability, now designated CVE-2026-19478, carries a critical severity rating and a high CVSS score of 9.4. This means it's a significant risk that can be exploited remotely over a network by an attacker who doesn't need any login credentials. Crucially, the attack can be carried out without any user interaction, meaning someone could be targeted and have their project data compromised without ever clicking a malicious link or performing any action. GitLab has stated that under specific circumstances, a malicious actor could leverage a flaw within their GraphQL system to gain unauthorized access and manipulate public repositories.
+
+### Who Needs to Act and What's Covered
+
+This urgent fix is specifically for **self-managed GitLab installations**. If you are running your own version of GitLab Community Edition (CE) or Enterprise Edition (EE), it is imperative to update. The security patches are available in specific versions: GitLab 19.2.4, 19.1.6, 19.0.8, and 18.11.11. However, it's important to note that older versions, specifically those from 18.2 up to but not including 18.11.11, and 19.0 before 19.0.8, and 19.1 before 19.1.6, remain vulnerable. Unfortunately, the updates do not extend to the 18.2 through 18.10 branches. For those using GitLab.com or GitLab Dedicated, rest assured that these platforms are already running the patched version, and no action is required on your part.
+
+### A Second Vulnerability Also Addressed
+
+Alongside the critical flaw, GitLab also patched a second, less severe vulnerability (CVE-2026-19650). Rated as "High," this issue has a CVSS score of 7.1 and relates to a cross-site request forgery (CSRF) weakness within the GraphQL multiplex query handler. While not as immediately dangerous as the first, it still poses a risk and has been addressed in the same security update.
+
+### What To Watch
+
+While GitLab has confirmed the fix and has not reported any active exploitation of these vulnerabilities, the software industry is always on alert for newly discovered exploits. Security researchers will likely be scrutinizing the patch details to understand the exact nature of the GraphQL directive exploited. The swift, out-of-band release suggests a proactive approach by GitLab, but it's a stark reminder of the constant battle to secure online platforms.
