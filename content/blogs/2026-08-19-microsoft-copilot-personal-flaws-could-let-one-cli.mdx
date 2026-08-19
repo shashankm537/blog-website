@@ -1,0 +1,24 @@
+---
+title: "Microsoft Copilot Personal Flaws Could Let One Click Exfiltrate Data From Connected Apps"
+date: "2026-08-19"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/microsoft-copilot-personal-flaws-could.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAc2Z6RvtNlJnjkfp-kCEhx8x8Q9XPLHY-oQb8NXu6cb-C5BTfa9HnmWq3G1GT3mPsHLV6Xf6tyBui-ljplsYEo9Qt8kBiNKXOwvTzACMisyS0NQ5U3bGg8O6yVEPStEPbYw4W-4ZasDNssDr2JTJD7GTo6QEpER1L-9Xci-mNSk3A5t_aLXGIHwo04FI/s1600/copilot.jpg"
+disclaimer: "None"
+---
+
+# Microsoft Copilot's "CoSnitch" Flaws Unveiled: A Single Click to Data Exposure?
+
+Security researchers have revealed a critical vulnerability in Microsoft's personal Copilot assistant that could allow attackers to silently steal data with just one click. Dubbed "CoSnitch," these newly disclosed flaws, if exploited, could grant unauthorized access to information within apps and services connected to a user's Copilot session.
+
+## The "Meta-Hacking" Discovery
+
+The vulnerability stems from an obscure, undocumented URL parameter that Microsoft's own AI assistant inadvertently revealed during testing by Varonis Threat Labs. Researchers employed a novel technique they call "meta-hacking," persistently questioning Copilot about why certain prompts couldn't run autonomously. This persistent inquiry led Copilot to disclose a parameter, `autorun=1`, along with specific session conditions and supposed safeguards that were meant to prevent its use. By crafting a malicious URL incorporating this parameter, researchers found they could trigger an automated prompt execution.
+
+## A Silent Data Snatcher
+
+The CoSnitch vulnerabilities, grouped into three distinct issues by Varonis, leverage the `autorun=1` parameter in conjunction with an existing `q` parameter. While the `q` parameter alone merely pre-fills Copilot's input box, the combination with `autorun=1` allows a prompt to execute without any user interaction. Crucially, the prompt continues to run to completion even if the user closes the Copilot tab immediately after the malicious link loads. This means data could be exfiltrated silently in the background, with the user having no immediate indication of the breach. It's important to note that this discovery pertains to the consumer version of Copilot accessible via copilot.microsoft.com and not the enterprise-focused Microsoft 365 Copilot.
+
+**What To Watch**
+
+Microsoft has acknowledged the vulnerabilities and released patches on August 18, 2026, which are tracked under CVE-2026-24301. While Varonis has found no evidence of CoSnitch being exploited in the wild, users are strongly advised to ensure their Copilot installations are up-to-date to benefit from these security fixes. Future investigations may focus on whether similar weaknesses exist in other AI-powered assistants or if attackers find new methods to exploit the evolving landscape of AI integration.
