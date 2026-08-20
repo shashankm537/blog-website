@@ -1,0 +1,24 @@
+---
+title: "Cloudflare Workers Spectre Attack Leaks JWT From Co-Located Worker at 12 Bits/Second"
+date: "2026-08-20"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/cloudflare-workers-spectre-attack-leaks.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi50HcHSWt796lc8zQ8Anp_fHUqgV-BM0xiS1NxJW8zRDgBRJ9ovZOECiIhdQt0aVTUdhduJYP1o5wTa5RpDoCwhihq8rKqWmh73E9E8UzafyDcq1n1khCEIDCikK2L6NEt1mbIuMRm6F36bap74JtZawFqqCPvWF72SAm25BzREVerWYaRIDEo1O89V4k/s1600/jwt.jpg"
+disclaimer: "None"
+---
+
+## A Tiny Breach: Spectre Attack Exposes Vulnerabilities in Cloudflare Workers
+
+Cybersecurity researchers have unveiled a concerning remote Spectre attack that managed to siphon a sensitive JSON Web Token (JWT) from a co-located Cloudflare Worker. The speed of this leak, while still relatively slow at 12 bits per second, represents a significant leap from previous demonstrations, highlighting an evolving threat landscape for cloud-based services.
+
+### The Anatomy of the Attack
+
+The experiment, meticulously crafted by researchers, involved setting up two Workers: one acting as the attacker and the other as the victim. The JWT, a digital credential commonly used for authentication, was deliberately placed within the victim Worker's memory. Crucially, the researchers emphasized that no actual customer data was accessed during this controlled demonstration. However, the proof-of-concept vividly illustrated that the existing isolation mechanisms, known as Dynamic Process Isolation (DyPrIs), were not robust enough to prevent this type of memory leakage. This means a malicious script running in one Worker could potentially observe data processed by another, even when ostensibly separated.
+
+### Cloudflare's Swift Response and Past Vigilance
+
+Upon learning of the findings, Cloudflare moved quickly to patch the vulnerability. They announced that the attack has been mitigated in their production environment by enhancing DyPrIs, integrating the V8 Sandbox more effectively, and deploying Memory Protection Keys (MPK) for in-process isolation. This proactive approach is underpinned by Cloudflare's assertion that they have found no evidence of this specific attack being actively exploited in the wild over the past three years, suggesting their existing security measures, while needing refinement, had likely prevented broader impact. The company relies on language-level isolation within V8 isolates for its Workers, a design choice that prioritizes speed but requires careful management to prevent unintended data sharing.
+
+### What To Watch
+
+The successful demonstration of this Spectre variant against Cloudflare Workers serves as a potent reminder of the ongoing battle between attackers and defenders in the cloud. Expect to see continued research into side-channel attacks and how they can be leveraged against modern serverless architectures. For Cloudflare and other cloud providers, the focus will undoubtedly be on strengthening isolation technologies and exploring new techniques to ensure that the promise of speed and efficiency doesn't come at the expense of fundamental security. The industry will be watching closely to see how these advancements are implemented and how effectively they can stay ahead of emerging threats.
