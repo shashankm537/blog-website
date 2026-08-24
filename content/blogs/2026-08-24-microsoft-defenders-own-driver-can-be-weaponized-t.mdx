@@ -1,0 +1,26 @@
+---
+title: "Microsoft Defender's Own Driver Can Be Weaponized to Delete Security Software at Boot"
+date: "2026-08-24"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/microsoft-defenders-own-driver-can-be.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCbsmb6Wk8pQKWQmByAl5wnZQEVjS7ZYiHrlsHRM7VlcoPL7s30TaoTReoaQ4LI8Oy3KfKlIRHn9sN_7bjEKd_FWPHi1V0JR6LERepKBWSdJOk6cSUNgfIN2KVc6ydfbTILTy11owREYfpO7K11gFQV00l6qf1zl5rzF28jPhcN744yTvRAA-EjyDSBXs/s1600/windows.jpg"
+disclaimer: "None"
+---
+
+## Security Alert: Microsoft Defender's Own Tool Can Be Used Against It
+
+A chilling discovery has emerged from the cybersecurity trenches, revealing that a core component of Microsoft Defender, the very software designed to protect Windows systems, can be cleverly manipulated. Researchers have unearthed a method that weaponizes a legitimate Microsoft driver to bypass security measures and potentially delete critical security software during the system's boot-up process.
+
+### A Driver in the Crosshairs
+
+The vulnerability lies within a driver named BTR.sys, also known as the Boot Time Removal Tool. This is not a third-party piece of software; it's an integral part of Windows, specifically used by Microsoft Defender to clean up malware that lingers after a system restart. Because it's a trusted, signed Windows component, it's incredibly difficult to block without inadvertently disabling Defender itself, creating a significant defensive dilemma.
+
+Check Point Research, the cybersecurity firm behind this revelation, demonstrated how this driver's internal communication protocols can be exploited. By understanding and replicating these undocumented commands, attackers could theoretically instruct BTR.sys to remove other security programs or vital system files before the operating system even fully loads. This bypasses standard security checks, making it a powerful tool for malicious actors.
+
+### No Known Real-World Attacks… Yet
+
+While the implications are serious, it's important to note that Check Point Research has found no evidence of this specific technique being used in actual cyberattacks to date. This suggests that threat actors are either unaware of this capability or have not yet developed the tools to exploit it. However, this lack of current abuse doesn't diminish the potential threat, emphasizing the importance of addressing such vulnerabilities proactively. The research team has even developed a proof-of-concept tool to showcase the method's feasibility.
+
+### What To Watch
+
+The cybersecurity community will be closely monitoring Microsoft's response to this disclosure. Expect to see Microsoft investigate the findings and potentially release patches or updates to harden BTR.sys against such manipulation. Security professionals will also be developing new detection methods to identify any attempts to leverage this technique, even if it remains theoretical for now.
