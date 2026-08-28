@@ -1,0 +1,26 @@
+---
+title: "Two Unitree G1 EDU Humanoid Robot Flaws Enable Root RCE, One Starts Over Bluetooth"
+date: "2026-08-28"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/two-unitree-g1-edu-humanoid-robot-flaws.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKqNVrCXSaUDXfrGPJkoRoXBPQW4qwhdYqm2SMVaunZNwBrQ4FbURK-gtVawzaje20fK_m9q2dKepfj-dxmkvfKL4se3ZQ1YAI3iogqCft1UjVadJa_uBoQxFuoBpWfx2Dh3S4-jQLa7c4E9OOyQfVAT5BVKVShPykiPWEuYcchIPHFC4e5GduyW4iBio/s1600/Humanoid.jpg"
+disclaimer: "None"
+---
+
+## Humanoid Robots Exposed: Serious Flaws Found in Unitree G1 EDU
+
+Security researchers have uncovered critical vulnerabilities in the Unitree G1 EDU humanoid robot, potentially allowing attackers to gain full control. Two distinct methods, one leveraging Bluetooth, have been identified that could grant unauthorized root-level access to the robot's core systems. This discovery raises significant concerns for owners of these advanced educational and research robots.
+
+### The Digital Backdoor: Two Paths to Root Access
+
+Security expert Olivier Laflamme has detailed two independent ways to achieve root remote code execution (RCE) on the Unitree G1 EDU. The first, tracked as CVE-2026-76639, exploits a flaw in the robot's internal communication system, specifically within components named `chat_go` and `bashrunner`. This allows for a network-adjacent attack, meaning an attacker doesn't need physical proximity.
+
+The second, more concerning vulnerability, CVE-2026-76640, utilizes Bluetooth Low Energy (BLE). This method allows an attacker to initiate a connection and execute commands on the robot's primary control unit, the Locomotion PC, even without prior pairing. This Bluetooth-based exploit is particularly alarming due to its accessibility and potential to bypass initial security measures.
+
+### An Unconfirmed Fix and Cloud Concerns
+
+While Unitree has acknowledged the security issues, there's currently no confirmed firmware update available to address these specific vulnerabilities. This leaves G1 EDU owners in a difficult position, awaiting a definitive solution. Adding to the complexity, Laflamme's research also highlighted a past issue with Unitree's cloud service, which in July 2026, failed to properly verify robot ownership during account-to-robot transfers. Although this cloud-based vulnerability appears to have been patched, the earlier incident points to potential weaknesses in how ownership and access are managed for these sophisticated machines.
+
+### What To Watch
+
+The immediate focus will be on whether Unitree can quickly release and verify a patch for these critical vulnerabilities. Owners of the G1 EDU should remain vigilant for official communications from Unitree regarding firmware updates. Further research may also explore the broader implications of these flaws on other Unitree products and the general security posture of commercially available humanoid robots.
