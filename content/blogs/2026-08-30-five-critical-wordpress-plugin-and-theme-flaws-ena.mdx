@@ -1,0 +1,26 @@
+---
+title: "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE"
+date: "2026-08-30"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiROOqCRPV4u9cWfJL8nvCYKi4Ake-ki3_uh8Qn8RJ0P20h3Mz_qxVfF856pJ9DQZMHy922CeLwOHDc37Gpb4p1UCTMx6cMT5HeeAP_w4RitCuQficYcGDDkqpDVfW_nA3M7qWT-WyM6A5Adk3J2e8kMWSG1GSUOatrcVBmc7fmb2-ovadVS3fOdkd1ubFx/s1600/wordpress-themes.jpg"
+disclaimer: "None"
+---
+
+## Critical WordPress Vulnerabilities Threaten Site Security: Are You at Risk?
+
+A wave of serious security flaws has been uncovered across several popular WordPress plugins and themes, potentially opening the door for attackers to seize control of websites or execute malicious code. Security researchers are sounding the alarm, urging users of affected software to update immediately to avoid severe consequences.
+
+### Unpacking the Major Threats
+
+The vulnerabilities, identified by cybersecurity experts at Wordfence and Patchstack, span a range of critical functionalities. One of the most alarming involves the **WPMU DEV Dashboard plugin**. A severe authentication bypass flaw, rated with a near-perfect CVSS score of 9.8, could allow an unauthorized attacker to gain administrator privileges on affected sites. This is particularly concerning for sites utilizing WPMU DEV's Hub Single-Sign On (SSO) feature when an administrator account is mapped.
+
+Another significant threat lies within the widely-used **Avada theme**. This theme, when paired with the Fusion Builder plugin, harbors an arbitrary file write vulnerability. This critical flaw, also with a CVSS score of 9.8, could enable an unauthenticated attacker to upload and execute malicious PHP files on the server, leading to a complete site compromise and remote code execution. The affected versions range up to 7.16 for the Avada theme and 3.16 for the Fusion Builder plugin.
+
+### A Wider Net of Vulnerabilities
+
+Beyond these high-severity issues, other plugins are also facing security scrutiny. **TranslatePress**, **Pods**, and **GiveWP** have also been found to have exploitable weaknesses. While specific details for these vulnerabilities are still emerging, their presence underscores the broad nature of the current security challenges facing the WordPress ecosystem. The potential impact of these flaws includes everything from unauthorized access to user accounts to the ability for attackers to inject their own content or functionality onto your site.
+
+### What To Watch
+
+The immediate focus for WordPress site owners should be on updating the WPMU DEV Dashboard plugin (versions prior to 5.0.2), the Avada theme (versions prior to 7.16.1 if using Fusion Builder), and the Fusion Builder plugin (versions prior to 3.16.1). Beyond these specific updates, users should remain vigilant for any further security advisories regarding TranslatePress, Pods, and GiveWP. Keeping all WordPress core, themes, and plugins updated is a fundamental security practice that can prevent many potential breaches.
