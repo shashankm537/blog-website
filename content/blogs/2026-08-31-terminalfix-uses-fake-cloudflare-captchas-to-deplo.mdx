@@ -1,0 +1,26 @@
+---
+title: "TerminalFix Uses Fake Cloudflare CAPTCHAs to Deploy Reverse-Tunnel Backdoor"
+date: "2026-08-31"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/08/terminalfix-uses-fake-cloudflare.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpxriybAzLw0daA0mtL3sZd04fy8Sal4s0mrBAz2-ksjwfP2V08YK_KbCJY57hKG28Kt6gn2mKq4HFSpkG2MNvA3Oz6MhNUe77_1Nvpahn2nnCFHPpxIlp5Ix4DvAZw08qXtxt1M-4zCtSENbBkODQyP_WDp9j3PXACc0XKYk1BK1K-2Xabho1cBPqerW9/s1600/cf-clickfix.jpg"
+disclaimer: "None"
+---
+
+## Malicious Actor TerminalFix Tricks Users with Fake CAPTCHAs, Deploys Stealthy Backdoor
+
+Cybersecurity researchers have uncovered a sophisticated new threat, dubbed TerminalFix, that is exploiting a clever trick to infect unsuspecting users. This campaign bypasses traditional defenses by disguising malicious commands as legitimate security checks, ultimately deploying a powerful backdoor that grants attackers deep access to victim networks. Organizations across various industries are currently in the crosshairs of this evolving threat.
+
+### The Deceptive CAPTCHA Gambit
+
+The TerminalFix campaign starts innocently enough, luring victims to compromised websites. Once there, instead of the expected "I'm not a robot" checkbox, users are presented with a fake Cloudflare CAPTCHA. This fabricated verification process cleverly instructs users to copy and paste a seemingly innocuous PowerShell command into their Windows Terminal or PowerShell application. This seemingly small step is the critical gateway, as the copied command is, in fact, the initial trigger for a multi-stage attack.
+
+### A Cascade of Stealthy Infections
+
+Once executed, the malicious PowerShell command initiates a complex sequence designed for maximum stealth. It downloads a ZIP file containing a legitimate Windows executable alongside a malicious DLL. This combination exploits a technique called DLL sideloading, forcing the legitimate program to load the rogue code instead. The compromised DLL then retrieves further malicious components hidden within seemingly harmless PNG images hosted on external domains. These components establish persistence within the victim's system through registry modifications and scheduled tasks, perform reconnaissance within the network, and finally deploy a custom Python-based backdoor.
+
+This sophisticated backdoor, identified as "client.py," is capable of creating a reverse tunnel. This allows attackers to route arbitrary network traffic back to their controlled servers, effectively turning the victim's machine into a proxy for further malicious activities. The encrypted WebSocket channel ensures that this covert communication remains largely undetected by security monitoring tools.
+
+### What To Watch
+
+As TerminalFix continues to evolve, organizations should remain vigilant for suspicious CAPTCHA prompts on unfamiliar websites and exercise extreme caution before executing any commands, even those that appear to be for verification purposes. Security teams should focus on bolstering defenses against DLL sideloading and monitoring for unusual outbound network connections, particularly those using encrypted channels. The ongoing threat intelligence regarding the specific domains and IP addresses associated with this campaign will be crucial for proactive defense.
