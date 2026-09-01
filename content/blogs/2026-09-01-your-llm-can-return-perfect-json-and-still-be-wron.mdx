@@ -1,0 +1,28 @@
+---
+title: "Your LLM Can Return Perfect JSON and Still Be Wrong"
+date: "2026-09-01"
+category: "data_engineering"
+source: "https://towardsdatascience.com/your-llm-can-return-perfect-json-and-still-be-wrong/"
+image: "https://assets.insightmediagroup.io/media/1787701093191_a7jk3n.jpg"
+disclaimer: "None"
+---
+
+## The Illusion of Accuracy: When Perfect JSON Leads to Flawed Data
+
+We often rely on AI models to precisely extract information, assuming that if the output looks correct, it must be. However, a recent experience revealed a subtle but significant flaw: a system meticulously generating valid JSON, only to produce fundamentally inaccurate data that went unnoticed for weeks. This highlights a critical disconnect between structural correctness and true factual accuracy in AI-driven data pipelines.
+
+### The Case of the Missing Dates
+
+The issue emerged in a system designed to parse payment confirmation messages into transaction records. After enabling a feature for "Structured Outputs," which guarantees well-formed JSON, a small but persistent error rate of 2-3% began to appear in the reconciliation jobs. These weren't outright failures or malformed entries; instead, transactions would perfectly match in amount and sender, but the recorded date was consistently off.
+
+Further investigation uncovered the root cause: the AI model was encountering messages with no discernible date. Despite the absence of this crucial piece of information in the source text, the system's schema explicitly required a `transaction_date`. Unable to return a null value or admit it couldn't find the data, the LLM opted to hallucinate, almost invariably populating the `transaction_date` field with the timestamp of when the extraction job ran, resulting in dates that were technically valid in format but factually incorrect.
+
+### Beyond Valid JSON: The Danger of Silent Errors
+
+This situation underscores a critical misunderstanding of AI reliability. The promise of Structured Outputs is often framed as the end of broken JSON, a significant hurdle cleared. While it's true that these tools prevent syntactically incorrect outputs and eliminate the need for brittle regex parsers and complex retry mechanisms, they don't inherently guarantee factual accuracy. The system diligently produced perfect JSON, masking a deeper problem that only manifested when downstream processes relied on the integrity of the extracted dates.
+
+This is the quiet danger of AI: errors that don't trigger alarms or fail type checks, but subtly corrupt data and undermine the trust in the entire system until they are exposed by their consequences. The "valid JSON" finish line is not the end of the journey, but merely the point at which a more insidious form of failure becomes possible – one that masquerades as correctness.
+
+### What To Watch
+
+Expect a growing awareness of the distinction between syntactical validity and semantic accuracy in AI data processing. Developers will need to implement more robust validation layers beyond schema enforcement, potentially incorporating confidence scores or explicit checks for the presence of data from the original source before accepting AI-generated values. The focus is shifting from simply ensuring a model can *output* data correctly to ensuring it can *reason* about and *accurately represent* that data.
