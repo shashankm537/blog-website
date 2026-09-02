@@ -1,0 +1,28 @@
+---
+title: "Your JSON Is Valid but Your Data Is Wrong: Five Failure Modes LLM Structured Outputs Won't Catch"
+date: "2026-09-02"
+category: "data_engineering"
+source: "https://towardsdatascience.com/your-json-is-valid-but-your-data-is-wrong-five-failure-modes-llm-structured-outputs-wont-catch/"
+image: "https://assets.insightmediagroup.io/media/1787750259158_ns6qyj.webp"
+disclaimer: "None"
+---
+
+## Your AI's JSON is Flawless, But Is Its Information Trustworthy?
+
+Getting Large Language Models (LLMs) to spit out data in a neat, predictable format like JSON has been a major hurdle. While new techniques can now guarantee syntactically correct JSON every time, a recent analysis reveals a troubling truth: perfectly formed JSON doesn't automatically mean accurate data. This could be silently corrupting your applications and leading to unexpected errors.
+
+### The Illusion of Perfect Output
+
+For a long time, the biggest challenge with LLM-generated JSON was its tendency to be malformed. Think of it like a sentence with a missing comma or an extra closing bracket – the structure was off, and your program would reject it. Techniques like "constrained decoding" have largely solved this, forcing LLMs to adhere to strict grammar rules, ensuring the output is always valid JSON. This seemed like the holy grail, promising near-perfect schema compliance.
+
+However, this focus on structural correctness has masked a more insidious problem: data accuracy. Benchmarks from BAML have shown a surprising result: when LLMs were allowed to generate JSON more freely and then checked for errors afterward, they were actually more accurate on function-calling tasks than when forced into a rigid, syntactically perfect structure. The "always-valid" JSON was, ironically, less reliable in its content.
+
+### The Hidden Pitfalls: When Valid JSON Isn't Enough
+
+The issue lies in five specific failure modes that LLMs can exhibit, even when their JSON output is structurally sound. These errors can slip through your validation checks because they don't break the JSON format itself. For instance, an LLM might "hallucinate" an enum value – it picks a valid option from your predefined list, but it's the wrong one for the context. Or it might confidently fabricate free-text data that sounds plausible but is entirely made up, a phenomenon known as "confident fabrication."
+
+Other dangers include "cross-field contradiction," where individual data points are valid on their own but create an impossible scenario when combined, and "distributional collapse," where the LLM consistently defaults to safe, generic answers instead of providing nuanced or specific information. Lastly, "array hallucination" can lead to the LLM generating fabricated entries within a list instead of simply returning an empty array when no data is present. These subtle inaccuracies can propagate through your systems, leading to incorrect decisions and a loss of trust in your AI-powered tools.
+
+### What To Watch
+
+The focus is shifting from merely achieving syntactically correct LLM outputs to ensuring the semantic accuracy of the data. Expect to see more research and tools dedicated to detecting these subtle data integrity issues, moving beyond simple schema validation. Developers will need to implement more sophisticated post-processing checks and potentially explore hybrid approaches that balance the benefits of constrained decoding with more robust data verification methods.
