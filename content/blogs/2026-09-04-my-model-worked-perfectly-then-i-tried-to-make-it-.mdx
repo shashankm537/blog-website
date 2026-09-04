@@ -1,0 +1,28 @@
+---
+title: "My Model Worked Perfectly. Then I Tried to Make It Useful."
+date: "2026-09-04"
+category: "data_engineering"
+source: "https://towardsdatascience.com/my-model-worked-perfectly-then-i-tried-to-make-it-useful/"
+image: "https://assets.insightmediagroup.io/media/1788084041405_ighu7h.jpg"
+disclaimer: "None"
+---
+
+## From Data Analytics to Data Engineering: A Journey of Real-World Application
+
+A recent deep dive into data engineering has yielded some fascinating practical results, moving beyond theoretical exercises to build functional tools. This transition has involved tackling complex projects head-on, proving that hands-on experience is key to mastering new technical domains.
+
+### Building the Foundation: Automated Data Pipelines
+
+The journey began with a deliberate shift from pure data analytics to the more robust field of data engineering. To solidify understanding, two significant projects were undertaken. The first involved constructing an Extract, Transform, Load (ETL) pipeline specifically for GitHub repositories, successfully automating the extraction and storage of repository data into a SQLite database, all orchestrated by GitHub Actions for regular execution. Following this, a similar pipeline was developed to capture articles from RSS feeds, pushing this information into a Kestra database on an hourly basis, demonstrating a command of scheduled data ingestion.
+
+### Unlocking Machine Learning: Predicting Customer Churn
+
+With a solid grasp of ETL principles, the focus shifted to the captivating world of machine learning. Driven by a desire to combine existing skills with new learning, a churn prediction model was developed for a hypothetical telecom company, "Northline Mobile." This model was trained on a dataset of 7,043 customers, utilizing information such as contract types, customer tenure, monthly charges, and service add-ons to predict whether customers would leave the service. After rigorous cross-validation against unseen data, the model achieved an impressive 81% accuracy, offering valuable insights into customer behavior.
+
+### The Gap Between Model and Utility
+
+While the 81% accuracy marked a significant personal victory in machine learning, the model’s practical application remained a challenge. The current setup requires manual intervention, necessitating the opening of Jupyter notebooks to access predictions. This highlights a common hurdle in data science projects: translating a high-performing model into an accessible and usable tool for everyday business operations. The next steps will focus on bridging this gap to make the insights actionable.
+
+### What To Watch
+
+Expect to see efforts focused on deploying this churn prediction model into a more user-friendly format. This could involve building a simple web interface or integrating the model into existing business intelligence dashboards, making Northline Mobile's customer insights readily available to the team.
