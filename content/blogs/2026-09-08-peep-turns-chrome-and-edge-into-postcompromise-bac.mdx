@@ -1,0 +1,28 @@
+---
+title: "PEEP Turns Chrome and Edge Into Post-Compromise Backdoors for Host Command Execution"
+date: "2026-09-08"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/09/peep-turns-chrome-and-edge-into-post.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhA3-5bNylOMc_s8MAT2ibQnV33cnJXadwKPRXjYgAL0GcZWOXuwtM-s5HS4ryVu5ewnhfAqBtOiuSseLcUSyDIfxf5XKF6mAwrpyG-v3Y-siqjJY8I5zVEMXwfkKPwBNAqaO2sQFI-q2oA4MWiagZFUlknIPKADDfvOo8s2Ifsa_xBAojg1rD5ZGUErC85/s1600/chrome-malware.jpg"
+disclaimer: "None"
+---
+
+# New Browser "Extension" Masks Sophisticated Backdoor for Hackers
+
+Security researchers have unveiled a chilling new threat lurking within popular web browsers like Chrome and Edge. Dubbed PEEP, this sophisticated toolkit operates as a malicious extension, masquerading as a harmless "Smart Bookmarks" tool to grant attackers deep access to your computer and online activities.
+
+## Stealthy Installation and Deception
+
+PEEP's insidious nature lies in its ability to bypass standard security checks. Instead of relying on official browser app stores, it uses a specialized installer to embed itself directly into browser profiles. This clever tactic exploits vulnerabilities in how browsers manage their settings, effectively tricking the system into accepting the malicious code without user permission or any alert from the browser's security mechanisms. Once inside, it effectively creates a secret backdoor.
+
+## Beyond the Browser: Host-Level Control
+
+This "extension" is far more than just a data thief. It leverages a native messaging component to extend its reach from just browser data to the entire host system. This means attackers can execute commands directly on your computer, manage files, and pilfer sensitive credentials. The PEEP agent constantly communicates with its command and control servers, acting as a persistent remote access tool, ready to receive instructions and exfiltrate everything from browsing history to active session cookies.
+
+## A Powerful Evolution
+
+PEEP builds upon existing open-source frameworks, notably RedExt, known for its use in previous cyberattacks. However, PEEP significantly enhances this foundation with its own installation routines, a robust host bridge, telemetry for monitoring, and a dedicated update channel. This makes it a much more formidable and adaptable tool for attackers. Crucially, PEEP doesn't initiate the breach itself; it's a "post-compromise" tool, meaning an attacker must first gain access to a system through other means before deploying PEEP to maintain and expand their control.
+
+### What To Watch
+
+While the specific threat actor behind PEEP remains unconfirmed, clues within the code suggest a connection to Chinese-speaking groups. The ongoing evolution of such browser-based threats highlights the constant need for vigilance and robust endpoint security solutions. Users should be wary of installing extensions from unknown sources and ensure their browsers and security software are always up to date.
