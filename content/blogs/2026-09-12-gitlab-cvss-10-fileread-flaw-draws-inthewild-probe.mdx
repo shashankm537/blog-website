@@ -1,0 +1,36 @@
+---
+title: "GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure"
+date: "2026-09-12"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioFH6aWhF9NgRW1O3yFExc7paTA9akN5-3IUQF8mvEiSTaFJjKvm6YQzFX6MP2uimYplHe1MJXz6eZtPtnxaLy25jJBhU6KuhsWFpIlnqhbn6OI6QTcfp6Olp1-VDUEF4KEYFF7hQDBdmgtxibsg9MkvbcOJIlR8Of2Flyw2m9zYfXC6gUm-TV8XA6vU43/s1600/gitlab-wild.jpg"
+disclaimer: "None"
+---
+
+## Critical GitLab Flaw Under Attack: Hackers Already Probing for Sensitive Data
+
+Just hours after its public disclosure, a severe security vulnerability in GitLab is already attracting malicious attention. This maximum-severity flaw, allowing attackers to potentially read sensitive files on vulnerable servers, has prompted immediate patching by the company and urgent alerts from security researchers.
+
+### The Devastating Path Traversal Vulnerability
+
+The critical issue, tracked as CVE-2026-85706, boasts a perfect CVSS score of 10.0, signifying the highest possible severity. At its core, this is a "path traversal" vulnerability. In simpler terms, it means an attacker could trick the GitLab repository commits API into revealing files it shouldn't have access to. The vulnerability arises from "improper path confinement and missing authentication enforcement" within this specific API. This allows an unauthenticated user to potentially read any file on the GitLab server, provided certain conditions are met.
+
+### Immediate Real-World Exploitation and Impact
+
+Security firm watchTowr reported that probes for this vulnerability began as early as 06:00 UTC on September 11, 2026, mere hours after GitLab made the flaw public. Attackers are actively trying to exploit this weakness to access log files and crucial GitLab configuration files. The ultimate goal? To steal credentials, sensitive secrets, and any other valuable information stored on the compromised server. This exploit is particularly concerning as it only requires the existence of at least one public project on the GitLab instance.
+
+This isn't an isolated incident; it's the second critical GitLab vulnerability to be actively exploited in recent weeks, following a similar situation with a GraphQL code injection flaw. The allure for attackers is clear: unauthorized access to GitLab can unlock a treasure trove of sensitive data, including source code, CI/CD secrets, and the ability to inject malicious code into build pipelines, potentially compromising entire downstream systems.
+
+### Affected Versions and What's Been Fixed
+
+GitLab has moved quickly to address this and other security concerns. The critical path traversal flaw (CVE-2026-85706) is fixed in the following updated versions:
+
+*   GitLab Community Edition (CE) and Enterprise Edition (EE) versions 19.1.8 and later
+*   GitLab CE/EE versions 19.2.6 and later
+*   GitLab CE/EE versions 19.3.2 and later
+
+Additionally, GitLab has patched a separate critical insecure deserialization bug (CVE-2026-87719, CVSS score: 9.9) in GitLab EE in the same releases. This second flaw could also lead to significant security breaches.
+
+### What To Watch
+
+The immediate priority for all GitLab users is to update their instances to the patched versions to protect against ongoing and future exploitation attempts. Security teams will be closely monitoring for any further exploitation of this vulnerability and assessing the extent of any potential breaches that may have occurred before patches were applied.
