@@ -1,0 +1,28 @@
+---
+title: "Your Model Isn't Done Until Someone Else Can Call It"
+date: "2026-09-14"
+category: "data_engineering"
+source: "https://towardsdatascience.com/your-model-isnt-done-until-someone-else-can-call-it/"
+image: "https://assets.insightmediagroup.io/media/1789119354368_2rkxk5.jpg"
+disclaimer: "None"
+---
+
+## Beyond the Code: Making Your AI Model Truly Work in the Real World
+
+Building a machine learning model is only half the battle; making it accessible and reliable for others is the true test of its worth. This journey from a functional prototype on a personal machine to a robust, deployable service involves unglamorous but essential steps, including the often-overlooked power of containerization.
+
+### From Laptop Toy to Accessible API
+
+My recent exploration into the practicalities of deploying machine learning models led me to build a customer churn prediction API. While I successfully trained the model and created an endpoint that returned predictions on my own laptop, the reality quickly set in: the model was essentially a digital toy, useful only to me. It couldn't handle the basic demands of real-world use, like surviving a system sleep cycle, let alone being accessible to external users via a web address. This article details the crucial, albeit less glamorous, process of transforming that prototype into a functional, reachable service.
+
+### The Magic of Containerization with Docker
+
+The core challenge lies in the environment. My working model relied on specific Python versions, meticulously installed packages, and particular file structures – elements that are unlikely to be replicated on a different machine or a cloud server. This is where Docker steps in, acting as a universal translator for my application. By packaging the model and its dependencies into a self-contained unit, Docker ensures that my churn predictor runs consistently, regardless of the underlying system it's deployed on, thus solving the critical problem of environmental inconsistencies.
+
+### Navigating the Deployment Minefield
+
+The path to a deployed API is rarely smooth, and this project was no exception. Beyond the initial concept of wrapping the model in a FastAPI application, the real work began with containerizing it and migrating it to a live server. This process unearthed three unexpected roadblocks that significantly tested my resolve. These unforeseen issues, ranging from configuration mishaps to networking quirks, underscored the complexity of moving a project from a development sandbox to a production-ready state.
+
+### What To Watch
+
+The immediate next steps involve thoroughly testing the deployed API under various load conditions and refining any performance bottlenecks. Further exploration will likely focus on implementing robust monitoring and logging to ensure the service remains stable and to quickly identify and address any future issues.
