@@ -1,0 +1,28 @@
+---
+title: "Claude Opus 5 Helped Researchers Take Over OpenAI Staff Accounts via Chained Flaws"
+date: "2026-09-20"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/09/claude-opus-5-helped-researchers-take.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAElV4rXwWf_kTjj5e0UJFsEG-a0B7MUsCFqhFLYEA76kk2A7UeXbaG0DfRt-Syf7dxx4bHUanr0lVvwIUFyFgtPIfhyphenhyphenx61ccuo3oDZr6-wKROoEAVWjrAcKWuZ5WdlvL_pmKC91i9juBrsnI3FiLTGGgjnnJRAnjTgAxAbMjcbCTxZSWybZPPtG8HN1E/s1600/claude-openai.jpg"
+disclaimer: "None"
+---
+
+## AI Hallucination or Security Nightmare? How an AI Helped Expose OpenAI's Weaknesses
+
+In a startling demonstration of the sophisticated ways AI can be used and misused, security researchers have successfully exploited flaws within OpenAI's systems, gaining access to employee accounts. This isn't a scene from a sci-fi thriller; it’s a wake-up call from the cybersecurity frontline, proving that even the most advanced tech giants are not immune to novel attack vectors.
+
+### The Unlikely Pathway to Internal Access
+
+The breakthrough came not from a direct assault on OpenAI's core AI models, but from a clever chaining of vulnerabilities, orchestrated with the assistance of Anthropic's Claude Opus 5. Researchers from the firm Hacktron initiated their investigation by identifying a bug within the software powering OpenAI's public help forum. This initial breach, seemingly minor, proved to be the crucial first step, allowing them to pivot towards a more significant weakness: OpenAI's own internal login system. By expertly linking these two distinct flaws, the team was able to access the ChatGPT and Codex accounts of several OpenAI employees, ultimately reaching an internal code repository.
+
+### Responsible Disclosure and a Valuable Lesson
+
+Crucially, Hacktron emphasized that this was a security research exercise, not a malicious attack. The team diligently reported their findings to OpenAI, providing proof of access through a harmless code submission rather than engaging in any destructive actions. Their exploration of the internal repository was limited, intentionally avoiding any access to source code, customer data, or any actions that could disrupt operations. OpenAI acted swiftly upon receiving the report, confirming a fix within approximately 14 hours and subsequently awarding the researchers a $6,500 bounty for their efforts in uncovering these critical vulnerabilities. This prompt resolution highlights OpenAI's commitment to addressing security concerns, even when they originate from unexpected sources.
+
+### The Wider Implications of the Exploit
+
+The implications of this research extend beyond the immediate access gained. The researchers revealed that the same chain of vulnerabilities could have potentially led to broader access, reaching other integrated services such as GitHub, Slack, and email accounts used by OpenAI staff. This underscores the interconnectedness of modern digital infrastructure and how a single, seemingly isolated vulnerability can have cascading effects. The fact that the initial breach originated from a public-facing forum, rather than a direct attack on core AI infrastructure, serves as a significant reminder for all organizations about the importance of securing every entry point.
+
+### What To Watch
+
+With this demonstration of sophisticated AI-assisted vulnerability research, the focus will undoubtedly shift to how quickly and effectively OpenAI and other AI development companies can implement more robust security measures. We can expect increased scrutiny on the security of public-facing tools and single sign-on systems, as well as a deeper dive into the potential for AI models themselves to be weaponized for cyberattacks. The industry will be watching to see how this event shapes future bug bounty programs and internal security protocols.

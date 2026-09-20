@@ -1,0 +1,28 @@
+---
+title: "One Vendor, Four Spellings: How Deterministic Stages Beat Similarity Scores"
+date: "2026-09-20"
+category: "data_engineering"
+source: "https://towardsdatascience.com/one-vendor-four-spellings-how-deterministic-stages-beat-similarity-scores/"
+image: "https://assets.insightmediagroup.io/media/1789283071488_524xny.png"
+disclaimer: "None"
+---
+
+## The Case of the Chameleon Website: How Smart Data Handling Tackled a $10,000 Vendor List Headache
+
+Keeping a database of thousands of vendors pristine is a surprisingly tough, and expensive, challenge. For one agency, managing a list of over 10,000 independent publishers meant a constant battle against duplicate entries and inconsistent naming, costing them money when invoices were paid twice or crucial pricing history was lost. This headache was amplified by the influx of data from new marketplace integrations, introducing even more variations of the same website into their system.
+
+### The Multi-Faceted Problem of a Single Supplier
+
+Imagine trying to find one specific book in a library where the same title might be listed as "Sci-Fi Novel," "Science Fiction Stories," or even "Sci Fi Tales." That's the reality for data managers dealing with suppliers. Websites, in particular, are notorious for appearing in multiple forms: different domain spellings, the inclusion or exclusion of "www," subdomains, and even random tracking parameters attached to URLs. When a crucial price negotiation is only recorded under one obscure variation, its value is lost to the team.
+
+This complexity is exacerbated when syncing external data sources, which often have their own inconsistencies. One marketplace, for instance, openly admits its pricing data is only accurate about 90% of the time. This means rigorously cross-checking information is not just ideal, but essential. However, effective cross-checking hinges on the ability to reliably identify when different data points actually refer to the same entity – a problem known in data science as entity resolution.
+
+### Beyond Fuzzy Matches: Deterministic Logic as the First Line of Defense
+
+While sophisticated algorithms exist to score the similarity between two pieces of text, they often fall short when faced with the sheer volume and variability of real-world data. The agency discovered that a purely similarity-score-based approach proved insufficient. Instead, they implemented a strategic, two-step deterministic process. These straightforward, rule-based stages were incredibly effective, automatically cleaning up a significant portion of the duplicates without relying on complex scoring.
+
+This initial deterministic phase successfully eliminated a staggering 76% of the duplicate vendor records for free. It was only after this robust cleanup that the more complex fuzzy matching was employed. Even then, the system didn't automatically merge records; instead, it generated a ranked queue of potential duplicates for human review, a far more manageable and accurate workflow than trying to set a universal similarity threshold.
+
+### What To Watch
+
+The success of this deterministic approach highlights a valuable lesson for data management: simple, logical rules can often be more powerful than complex algorithms for initial data cleaning. This case study offers a blueprint for tackling similar data integrity issues, suggesting a focus on upfront, rule-based cleaning before resorting to more computationally intensive methods. Expect to see more organizations adopting similar tiered strategies for entity resolution.
