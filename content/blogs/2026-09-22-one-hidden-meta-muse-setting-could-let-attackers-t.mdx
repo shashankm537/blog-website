@@ -1,0 +1,24 @@
+---
+title: "One Hidden Meta Muse Setting Could Let Attackers Turn the AI Assistant Into a Backdoor"
+date: "2026-09-22"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/09/one-hidden-meta-muse-setting-could-let.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjZLVTtI-AEbGRQqJ7aGa0tbXedD5L6P7VCEKIOGXOBZe7S3mhA-PnoHVEoZf3LBMzhcZSIX5sCTveGyZ-8qAqyAVaMXfEoxPL70OIESq-Iolqjkv8GuDjcVs1Jgh3k3SoOOGPDWFr6Lmk83avLqG1whcaiDclv5waXYhCuEqXk569wfwV8Ilrmvv3IKE/s1600/muse.jpg"
+disclaimer: "None"
+---
+
+## AI Assistant's Hidden Weakness: A Gateway for Hackers on Your Mac?
+
+A newly discovered vulnerability in Meta's AI assistant, Muse, on macOS could allow attackers to hijack the tool and exploit the extensive permissions it's granted. Security researcher Patrick Wardle has demonstrated how a seemingly innocuous setting can be manipulated, turning the AI into a potential backdoor for malicious actors.
+
+### The Silent Hijack: How It Works
+
+The exploit hinges on a hidden preference file within the Muse Mac application. This setting, `endo_voyager_dictation_endpoint`, normally directs your voice commands to Meta's servers for processing. However, a piece of malware already present on a user's Mac can stealthily alter this setting. By redirecting the dictation endpoint to an address controlled by an attacker, any spoken prompt—whether for checking email, scheduling a meeting, or controlling smart home devices—is intercepted before it ever reaches Meta. This means the attacker gains access to your dictated commands and the broad permissions you've granted to Muse.
+
+### Exploiting Broad Access: The Real Danger
+
+Muse, launched recently in the US, is designed to integrate deeply with your digital life, accessing files, emails, messages, calendars, and even shopping and smart-home apps. This extensive access, while convenient for users, becomes a significant liability when compromised. As Wardle points out, normally, macOS security features prevent one application from intruding on another's data. However, by leveraging Muse, an attacker bypasses these restrictions. The commands originate from Muse, a legitimate, signed application, making it harder for security software to detect the malicious activity, as it doesn't appear as traditional malware.
+
+### What To Watch
+
+The primary concern moving forward is whether Meta will release a patch to address this vulnerability and secure the `endo_voyager_dictation_endpoint` setting. Users should remain vigilant about any unauthorized behavior from their AI assistants and ensure their macOS operating systems and all applications are kept up to date. While the exploit requires prior access to a Mac, the ease with which it can be enacted is a stark reminder of the evolving security landscape for AI-powered tools.
