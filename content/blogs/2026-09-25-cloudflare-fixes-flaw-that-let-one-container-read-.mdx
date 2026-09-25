@@ -1,0 +1,26 @@
+---
+title: "Cloudflare Fixes Flaw That Let One Container Read Another Customer's Leftover Disk Data"
+date: "2026-09-25"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/09/cloudflare-fixes-flaw-that-let-one.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJuj6tshfElqbwJCAvJf00nvl1Tng8D3yBW5uZZyVpwOqXJuzBB1df67IlNM1OSkHdGH11R6G8rseykpeXWUBu24sJvyxDL-uiqA7NC2ItwUUN2fMdaTWhqcHR2WYfpI6ihc0EVpEXfep1VFBygmh2-F6cAL1lwin0qQbmSebV5OmhqFmgBs3i0_WtdGI/s1600/cf-escape.jpg"
+disclaimer: "None"
+---
+
+## Cloudflare Container Flaw Briefly Exposed Customer Data
+
+A significant security vulnerability has been patched by cloud computing giant Cloudflare, which could have allowed one customer to access residual data from another's containers. While the breach was limited and unintended, it highlights the complexities of shared computing environments. Cloudflare has confirmed the fix is in place and no customer action is required.
+
+### How the Leak Happened
+
+The issue stemmed from the way Cloudflare manages disk space for its containerized services. When a customer's container was removed, the disk space it occupied was returned to a shared pool. However, a configuration oversight meant that this space wasn't being fully wiped before being reallocated to a new customer. This "thin provisioning" method, while efficient, inadvertently left behind fragments of data from previous occupants.
+
+Researchers discovered that by cleverly writing a small amount of data into unused disk space and then accessing the raw disk level, they could retrieve up to 60 kilobytes of leftover data from prior containers. This data wasn't actively being used by any current workload, and attackers couldn't specifically target another customer's information. Nevertheless, tests revealed that residual data was found on a substantial portion of servers examined, with recovered blocks containing elements like directory structures and database pages.
+
+### Cloudflare's Swift Response
+
+Upon being alerted to the vulnerability on September 4th through their bug bounty program, Cloudflare acted swiftly to address the problem. The company has deployed a fix across its entire service, ensuring that all containers now operate with properly wiped disk space. Cloudflare has emphasized that this was not a targeted attack and that the data exposed was residual, not live. The company is reassuring customers that their data is now secure and that no immediate action is needed on their part.
+
+### What To Watch
+
+With the vulnerability patched, the focus shifts to ongoing diligence in cloud security. Customers using services like Cloudflare Sandboxes, which were also affected, can continue to utilize them with confidence. Cloudflare's rapid response and transparent communication are positive signs, but the incident serves as a reminder of the continuous security challenges inherent in shared cloud infrastructure. We will be watching to see if any further implications arise from this incident, and how the industry continues to evolve its security protocols for containerized environments.
