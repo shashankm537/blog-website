@@ -1,0 +1,28 @@
+---
+title: "Lunex Stealer Abuses AMD Driver to Disable Security Monitoring and Steal Browser Credentials"
+date: "2026-09-27"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/09/lunex-stealer-abuses-amd-driver-to.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlKEfNLMvV7mEVtxmw1nS48l0bWRxvhvRH5MHdn20FjDTm6B0_5okfLjQ49AamYo9DPVC1aV1O2bl11Vd8776ziWsV96tcxQviDK0RjOnGK_Dyx_Zs2e2VBjgChf91_H2cHH0u_UoyAGlGlJkKnozWFqf-sxmXNW0QlnfY3Ilgdkg3p4qG7p3Z0SmdnJMq/s1600/stealer-malware.jpg"
+disclaimer: "None"
+---
+
+## Sneaky Malware Masters AMD Vulnerability to Steal Your Data
+
+In a sophisticated cyberattack, a notorious piece of malware dubbed "Lunex Stealer" is exploiting a weakness in AMD graphics drivers to disable security defenses and pilfer sensitive information from unsuspecting users. This new tactic, uncovered by cybersecurity researchers, paints a worrying picture of how attackers are increasingly leveraging legitimate software to achieve their malicious aims.
+
+### The Deceptive Entry Point
+
+The attack doesn't begin with a direct download of malicious software. Instead, victims are often lured to compromised Ukrainian websites. These sites present a seemingly innocuous Cloudflare verification check, similar to a CAPTCHA. However, this is a carefully crafted trap designed to trick users into downloading a malicious MSI installer. Once executed, this installer acts as a gateway for a series of actions, including the deployment of a loader component known as LunexLoader.
+
+### Evading Detection and Escalating Privileges
+
+LunexLoader is designed with stealth in mind. It employs techniques to bypass Windows User Account Control (UAC), a crucial security feature that typically prompts users for permission before making significant system changes. Furthermore, the malware utilizes a dangerous "bring your own vulnerable driver" (BYOVD) attack. This method involves abusing a legitimate, but vulnerable, driver from AMD Radeon Software, specifically a component identified as "PDFWKRNL.sys" and susceptible to the CVE-2023-20598 vulnerability. By exploiting this flaw, the attackers gain elevated privileges on the victim's system, allowing them to effectively blind and disable security monitoring tools without actually shutting them down. This leaves the system vulnerable and undetected as the main payload is deployed.
+
+### The Payload: Data Theft and Persistence
+
+With security defenses weakened and elevated privileges secured, the Lunex Stealer payload is unleashed. This stealer is capable of extracting a wide range of sensitive data, including credentials stored in seven different Chromium-based browsers. Beyond browser data, it also targets cryptocurrency wallets, posing a significant financial risk to victims. To ensure continued access and potentially exfiltrate more data, the malware establishes persistent remote filesystem access. It achieves this by installing a PowerShell-based Native Messaging Host directly within the victim's browser, creating a backdoor that can be exploited long after the initial infection.
+
+### What To Watch
+
+The ongoing use of BYOVD attacks, especially in conjunction with information stealers, is a concerning trend. Users should remain vigilant about clicking on links from unfamiliar sources, even if they appear to be legitimate verification processes. Keeping AMD graphics drivers and all other system software up-to-date is crucial, as vendors often release patches to address such vulnerabilities. Security researchers will undoubtedly continue to monitor Lunex and its evolving tactics, and we can expect further analysis of its capabilities and the development of more robust defenses against such sophisticated threats.
