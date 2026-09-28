@@ -1,0 +1,24 @@
+---
+title: "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation"
+date: "2026-09-28"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrnnWi_EE_zogEngdPWZDYXQTXqcArqvXtXYDj7_yLDzfVamEw9Nx7taRyM1SQf8-78qtxnt3nhNzcn36WnzYwZvFDQNvglCilw0Ltb4NjVkjjC8GH2nOUTnxIBPvRn8JVPcXJaidmbU0A6z-1RiX_OKgcpkzvL6xV7aM_YpQj6XdYIfalQH3h6o3b7pQ/s1600/citrix-zero-day.jpg"
+disclaimer: "None"
+---
+
+## Critical Flaws in Citrix NetScaler Under Active Attack: Urgent Patching Advised
+
+Citrix has confirmed that two severe security vulnerabilities in its NetScaler ADC and NetScaler Gateway products are actively being exploited by attackers. These "zero-day" flaws, meaning they were exploited before fixes were available, pose a significant risk to organizations relying on these devices for secure remote access and network management. Citrix has released patches, but the window for exploitation has already been wide open.
+
+### The Threat on the Network Edge
+
+Citrix NetScaler devices are a common sight at the perimeter of many corporate networks, serving as crucial gateways for VPN connections, load balancing, and user authentication. This strategic position makes them a prime target for cybercriminals seeking to gain unauthorized access to sensitive systems. The two exploited vulnerabilities, identified as CVE-2026-88771 and CVE-2026-88772, both carry a critical CVSS v4 score of 9.5, indicating their severity and potential for widespread damage.
+
+### Understanding the Vulnerabilities
+
+The first critical flaw, CVE-2026-88771, is an input validation issue that allows an attacker to execute arbitrary commands on the system without needing any prior authentication. This means any unpatched NetScaler ADC or Gateway device, regardless of its configuration, is vulnerable. The second vulnerability, CVE-2026-88772, is a memory overflow that can lead to either remote code execution or a denial-of-service attack, effectively crippling network access. This latter vulnerability specifically affects appliances with DTLS enabled, which is the default setting for VPN virtual servers on NetScaler Gateway.
+
+### What To Watch
+
+Organizations utilizing Citrix NetScaler products should prioritize applying the provided security updates immediately. Security researchers will undoubtedly be dissecting these vulnerabilities further, potentially uncovering more details about the attack methods and the actors involved. Administrators should also be vigilant for any unusual network activity that might indicate a compromise, even after patching.
