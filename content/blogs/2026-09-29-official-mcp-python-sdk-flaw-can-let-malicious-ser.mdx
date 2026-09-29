@@ -1,0 +1,30 @@
+---
+title: "Official MCP Python SDK Flaw Can Let Malicious Servers Steal OAuth Credentials"
+date: "2026-09-29"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/09/official-mcp-python-sdk-flaw-can-let.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2N5owhsoQXHTQV74afwfngdyitjwcW37BHLX2QKkq6xZAxP8_AOXAh1ODPj5DyvvmMUq3mKH9eR2B1r7owc6djzLViK2U4BY_hw3rTWmaHjhFEyyh8LPlUMPZ7MdWkqN7bjtQyMByBLrsI5m0mAU9y-IbrsAe9OPhZXHN63AWwuv_1OB5MSrpRdVZ9CM/s1600/mcp-python.jpg"
+disclaimer: "None"
+---
+
+## Urgent Security Alert: Flaw in Popular AI Integration SDK Could Expose Sensitive Login Credentials
+
+Developers building applications with the official Python SDK for the Model Context Protocol (MCP) should be aware of a critical vulnerability that could allow attackers to steal crucial OAuth credentials. This flaw, discovered by cybersecurity firm Cycode, could enable malicious servers to intercept sensitive information used to authenticate with legitimate online services.
+
+### How the Attack Unfolds
+
+The Model Context Protocol (MCP) is designed to bridge AI applications with external tools and data, and its official Python SDK is a key component for many developers in this space. The vulnerability lies in how certain versions of the SDK handle requests to login services. When an MCP client attempts to authenticate, it typically queries a server for the location of the legitimate authorization server. However, in affected versions of the SDK, this server's response wasn't always rigorously validated.
+
+This oversight allowed a compromised server to trick the SDK into sending vital authentication details—including the client secret, authorization code, and a crucial PKCE proof key—directly to an attacker-controlled endpoint instead of the intended, legitimate service. The client secret is particularly concerning as it often has a long lifespan, meaning compromised credentials could remain a risk until manually revoked.
+
+### The Ramifications of Stolen Credentials
+
+Once an attacker possesses these stolen credentials, they can impersonate the legitimate application and request valid access tokens from the actual login service. Cycode's research demonstrated that these obtained tokens carry the full scope of permissions originally granted to the application, potentially granting attackers broad access to sensitive data and functionalities. While the severity is rated as high (7.5) for unattended operations, it's slightly lower (6.5) for interactive sign-ins where a user must manually approve the login.
+
+### Immediate Action and Fixes
+
+The security advisory from the SDK's maintainers highlights that the vulnerability has been addressed. Versions 1.30.0 and 2.2.0 of the official MCP Python SDK have been released with the necessary fixes to patch this critical flaw. Developers are strongly urged to update to these patched versions immediately to protect their applications and user data from potential compromise.
+
+#### What To Watch
+
+Expect further analysis from security researchers on the potential widespread impact of this vulnerability. Organizations utilizing the MCP Python SDK should prioritize updating their environments and conduct security audits to ensure no instances of the vulnerable versions remain in production. The cybersecurity community will be closely monitoring any further developments or reports of exploitation related to this flaw.
