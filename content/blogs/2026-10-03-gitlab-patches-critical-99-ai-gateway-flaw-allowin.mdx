@@ -1,0 +1,24 @@
+---
+title: "GitLab Patches Critical 9.9 AI Gateway Flaw Allowing Command Execution on Self-Hosted Servers"
+date: "2026-10-03"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/10/gitlab-patches-critical-self-hosted-ai.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXhnbLdlAtkMBrrXYLiOxfbEdXI4PrEIq6dy3SL8Xa5SzPF6if9sf8GGu4PtkUTI3EYQHqBde4cDp4Y60OjgQBmqtZHTlL_gvgvlxNSeZ6nrRnriOmH3m23vq7f2bpylilVl39c_X-RNpvYQlRrC91gU_oHbk6e_ZbZ-7_fglpsQCFoLFp3sHkcn44960/s1600/gitlab-rce.jpg"
+disclaimer: "None"
+---
+
+## Critical Flaw in GitLab AI Gateway Exposes Self-Hosted Servers to Remote Command Execution
+
+A significant security vulnerability has been identified in GitLab's AI Gateway, potentially allowing attackers to execute commands on self-hosted servers. The flaw, which has been rated as critical, affects users who manage their own AI Gateway instances and underscores the importance of timely software updates.
+
+### Understanding the Vulnerability and its Impact
+
+GitLab's AI Gateway acts as a crucial bridge, connecting your GitLab instance to various AI models. For organizations that opt for self-hosted gateways, this setup allows them to retain greater control over their data, keeping AI requests and responses within their own infrastructure. However, this specific vulnerability, now officially tracked as CVE-2026-90970, presents a serious risk. A logged-in user, under specific circumstances and with access to the Duo Agent Platform, could potentially issue commands directly to the gateway. While GitLab has not disclosed any instances of this flaw being actively exploited in attacks, the severity of a 9.9 out of 10 CVSS score cannot be overstated.
+
+### Who Needs to Act and How to Fix It
+
+The critical news for most GitLab users is that this vulnerability **only affects those who are self-hosting their AI Gateway**. If you are using GitLab.com, GitLab Dedicated, or a self-managed instance where GitLab hosts the AI Gateway, you are not directly impacted and no action is required on your part. However, if you manage your own AI Gateway, prompt action is strongly recommended. GitLab has already released patches for the affected gateway versions. Users should update to versions 19.2.4, 19.3.2, or 19.4.1, depending on their current deployment. For those running Docker deployments, this involves stopping the old container, pulling the new image, and restarting. Helm chart users will need to update the image tag within their chart configuration. It's important to note that all gateway releases from 18.1.6 through the 19.1 line are considered vulnerable.
+
+### What To Watch
+
+The immediate focus will be on how quickly organizations with self-hosted AI Gateways implement the necessary updates. While no active exploitation has been reported, the potential for a critical flaw to be weaponized remains a constant concern in the cybersecurity landscape. Users should continue to monitor GitLab's official advisories for any further developments or security bulletins.
