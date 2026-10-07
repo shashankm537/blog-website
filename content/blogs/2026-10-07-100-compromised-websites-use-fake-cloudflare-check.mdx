@@ -1,0 +1,32 @@
+---
+title: "100+ Compromised Websites Use Fake Cloudflare Checks to Deliver LunexStealer"
+date: "2026-10-07"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/10/100-compromised-websites-use-fake.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4fqqLhgtSTncznc3k2vTS6LJlp8_v3RMx7LaYawiUYEMDuhQ1pOdqrYqlFeyAG5TPBmEnbkLI8vu43GMDxPvaZX6kABd1zQGpIAbVpD2pwtl5v4TohuwbBjlz4dMcjYUv11ogWwPoMoOFJn0aHmxX46xc5Y3ocuxOrg7ix9RrzPzfHtjlW2rAElAV-9-p/s1600/cf-malware.jpg"
+disclaimer: "None"
+---
+
+## Dodgy Websites Trick Visitors with Fake Security Checks, Unleashing Data-Stealing Malware
+
+A wave of over 100 compromised websites is actively deceiving visitors, employing fake security verification pages to stealthily deliver potent information-stealing malware known as LunexStealer. Cybersecurity experts are raising alarms as this sophisticated campaign, observed in September 2026, exploits user trust to infect systems and pilfer sensitive data.
+
+### The Deceptive Cloudflare Gambit
+
+The core of this attack hinges on a cunning deception. When users land on these compromised sites, they're met with what appears to be a legitimate Cloudflare security check, designed to confirm they are not bots. However, this verification is entirely fabricated, aiming instead to trick users into executing a malicious command disguised as part of the security process.
+
+This seemingly innocuous command triggers the download of a dangerous MSI package from a remote server. This technique, dubbed "ClickFix" by researchers, is a critical step in delivering the LunexStealer payload directly to unsuspecting users' devices. The malware's ultimate goal is to harvest personal and financial information, leaving victims vulnerable to further exploitation.
+
+### Sophisticated Evasion Tactics
+
+Beyond the initial deception, the attackers are employing advanced methods to maintain their stealth and control. They are utilizing a technique called "EtherHiding," which cleverly retrieves crucial operational details, like the domain of the fake verification page and the script's current operating mode, by querying smart contracts on the Polygon or Ethereum blockchain. This adds a layer of complexity and obscurity to the operation, making it harder for security analysts to trace and dismantle.
+
+The malware operates in distinct modes. Mode 0 keeps it inactive, while Mode 1 passively tracks website visitors, gathering intelligence about their browsing habits and referral sources. Only in Mode 2 does the full deception unfold, presenting the fake Cloudflare check, but only to Windows users arriving from search engine results and with strict limitations to avoid immediate detection.
+
+### The LunexStealer Payload
+
+Once the malicious MSI package is installed, it delivers the LunexStealer malware. Researchers have identified at least three variants, each with its own arsenal of malicious capabilities. Some simply install the stealer, while others employ more aggressive tactics. These advanced variants attempt to bypass Windows User Account Control (UAC), configure Microsoft Defender to ignore malicious activity, and even leverage legitimate but vulnerable AMD drivers to blind security software. This multi-pronged approach underscores the evolving sophistication of modern cyber threats.
+
+### What To Watch
+
+The ongoing investigation by CERT-UA and other cybersecurity agencies will likely focus on identifying the full scope of the compromised websites and the potential impact on victims. We can also expect continued analysis of the LunexStealer's capabilities and the development of new detection and mitigation strategies to counter these deceptive tactics. The reliance on blockchain technology for command and control suggests a trend towards more decentralized and resilient malware operations.
