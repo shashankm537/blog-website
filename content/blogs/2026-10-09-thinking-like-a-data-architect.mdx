@@ -1,0 +1,32 @@
+---
+title: "Thinking Like a Data Architect"
+date: "2026-10-09"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/thinking-like-a-data-architect"
+image: "https://substackcdn.com/image/fetch/$s_!G1wc!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F72b7d616-ec7d-4d7f-b3db-a9205517cae1_1600x900.png"
+disclaimer: "None"
+---
+
+## When Data Breaks People, It's the System, Not the User
+
+Frustrated teams struggling with data aren't usually the culprits; it's often the underlying architecture that's setting them up for failure. Understanding how data systems are built reveals why certain issues arise, and a key principle emerges: a well-designed system empowers users, while a poorly designed one creates unnecessary hurdles.
+
+### The System's Ripple Effect on Teams
+
+The way data architecture is structured dictates where the burden of work falls. It determines who needs to be the detective, figuring out which data is the most up-to-date, or who has to play mediator when different reports show conflicting numbers. This isn't about individual mistakes; it's about the system's inherent design. When teams face data challenges, the first step should be to examine what the system makes easy, what it makes difficult, and what it leaves entirely up to human interpretation.
+
+My own experiences, particularly while building observability tools at Slack, solidified this approach. The core idea is to test the system's effectiveness: after a user is alerted to an issue, what concrete actions can they actually take? An alert might accurately flag a problem, but if it doesn't clarify ownership or provide actionable next steps, it fails to facilitate a solution. The system identified the symptom but didn't offer a cure.
+
+### Shifting the Burden: From People to Promises
+
+This principle extends far beyond just alerts. Every design decision has consequences, and what streamlines one team's workflow might inadvertently complicate another's. This difficulty tends to accumulate in predictable areas: finding data, publishing new data, defining metrics, migrating systems, and recovering from errors. The common thread in addressing these challenges is to relocate the effort. Instead of expecting every data consumer to repeatedly perform the same tedious tasks, the system should shoulder that responsibility and deliver a consistent, reliable outcome.
+
+Ultimately, this is the core responsibility of data architects and data leaders. While they may not be on the front lines of daily data operations, their decisions directly shape where the effort and complexity land for everyone else.
+
+### Where the Work Landed: A Case Study
+
+Consider a common scenario: a team develops a new data transformation based on what they believe is the definitive source of truth. Weeks later, it's discovered that a different table should have been used. This isn't a failure of the team's understanding, but a consequence of a system that didn't make the "source of truth" readily apparent or easily discoverable. The system failed to guide them to the correct starting point.
+
+### What To Watch
+
+Expect to see more conversations focusing on proactive system design and how to embed solutions directly within data infrastructure. The ongoing shift towards empowering data users through robust architecture will likely continue to be a major theme, influencing how data platforms are built and managed.
