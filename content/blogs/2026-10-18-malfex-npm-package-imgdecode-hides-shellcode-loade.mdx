@@ -1,0 +1,28 @@
+---
+title: "MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon"
+date: "2026-10-18"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8fNb_yEvP6C_CENfQMUx3EDGofY1ejEHusnumTjCLnX3s8pevEbl_cgrtFHhzeEUhyphenhyphenyKe_X41OzQOGL5zlXeLLBnj_ZrLqH1IUag1QWm4QS9V2hgc5ucEzEZKjhstvtde8CFs8anPSZv9w3op67F8Q_MHVC_demESnH8lpAYLLpIRizCyvF5gsi5PDKzm/s1600/npm-dll.jpg"
+disclaimer: "None"
+---
+
+## Hidden Danger Lurks in Popular Code Repository: "imgdecode" Unmasked as Malware Loader
+
+Cybersecurity researchers have uncovered a sinister plot within the widely-used npm package registry, revealing a malicious package named "imgdecode" that silently deploys malware onto Windows systems. This discovery is part of a larger, ongoing attack campaign identified as MALFEX, designed to infiltrate and compromise computers through seemingly legitimate software components.
+
+### The Deceptive "imgdecode" Package
+
+At first glance, "imgdecode" appears to be a harmless utility for image processing. However, beneath its innocent facade lies a sophisticated piece of malware. Uploaded by a user provocatively named "malfexteste8" on September 30, 2026, this package has already seen nearly a thousand downloads, and disturbingly, remains accessible on the npm platform. Its core functionality involves a deceptive maneuver: a brief JavaScript file secretly loads a compiled Windows dynamic-link library (DLL). When a Node.js application attempts to integrate "imgdecode" on a Windows machine, this hidden DLL springs into action.
+
+### A Stealthy Infection Chain
+
+The malicious DLL's objective is chillingly precise: it contacts GitHub to download encrypted malicious code, known as shellcode. After retrieving this hidden payload, it decrypts the data and, with alarming stealth, injects it into a legitimate Windows process, `dllhost.exe`. This technique allows the malware to operate undetected within the system, making it exceptionally difficult to spot and remove. This sophisticated attack method highlights the growing sophistication of threats within the software supply chain, where even seemingly innocuous code repositories can become vectors for widespread compromise.
+
+### MALFEX: A Persistent and Evolving Threat
+
+The "imgdecode" package is not an isolated incident but a component of the broader MALFEX campaign, first brought to light by cybersecurity firms Checkmarx and CloudSEK. This campaign has been actively operating since August 6, 2023, with an unknown threat actor consistently publishing malicious packages across multiple npm publisher accounts. These attackers have demonstrated remarkable agility, quickly replacing compromised or removed packages with new versions within days of public disclosure. This adaptive behavior underscores the persistent and evolving nature of the MALFEX threat, posing an ongoing challenge for developers and security professionals alike.
+
+### What To Watch
+
+Expect security researchers to continue monitoring the npm ecosystem for further MALFEX-related packages and to develop more robust detection methods for such sophisticated supply chain attacks. Developers are strongly advised to scrutinize the dependencies they incorporate into their projects, prioritizing trusted sources and implementing thorough security checks.
