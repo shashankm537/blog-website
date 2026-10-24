@@ -1,0 +1,28 @@
+---
+title: "BlackX UEFI Bootkit Bypasses Secure Boot on Patched Windows Systems Missing Revocations"
+date: "2026-10-24"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj0cTK7D5hQFR-3qGTicTlfi6_CbnMIgCJWIojDeXmZr91hrIPqhhxZ72mAsnB6kBOcCdscZOL_VN8RhAdYIxq3d128rkaDweIApSaV5w3IzB1YGN3XNnlarG0IKN5VuDJy_RnPBxXZoKQ1Yh950YFNz-b_pbvEY_QlQa5Tr-BP4366UgkGIg968J-QEN1M/s1600/uefi.jpg"
+disclaimer: "None"
+---
+
+## Sophisticated UEFI Bootkit "BlackX" Targets Central Asian Diplomats, Bypasses Windows Defenses
+
+A new and alarming piece of malware, dubbed BlackX, has been identified targeting diplomatic organizations across Central Asia, raising significant cybersecurity concerns. This sophisticated UEFI bootkit, believed to be linked to a China-sponsored hacking group, is designed to bypass even the latest security patches on Windows systems, allowing for covert and persistent access to sensitive networks.
+
+### A New Threat Emerges from the Shadows
+
+In early 2026, diplomatic entities in Tajikistan, Uzbekistan, and Turkmenistan found themselves in the crosshairs of a potent cyber threat. Researchers at Kaspersky have detailed the activity of BlackX, a Unified Extensible Firmware Interface (UEFI) bootkit with a clear agenda: to undermine crucial Windows startup defenses and any installed third-party security solutions. This allows attackers to maintain a stealthy, long-term presence on compromised devices, a critical advantage for espionage or disruption.
+
+The sophistication of BlackX is underscored by its lineage. It is considered an evolution of the notorious BlackLotus bootkit, which first surfaced in late 2022 and gained prominence for its ability to exploit a vulnerability in Microsoft's Secure Boot feature. This exploit, known as Baton Drop (CVE-2022-21894), allows malicious code to be loaded and executed before the operating system even begins to load, making it incredibly difficult to detect and remove.
+
+### Exploiting the Gaps in Defense
+
+While BlackLotus and now BlackX are powerful tools for maintaining persistence and evading detection, they are not typically used as initial entry vectors. Instead, they require attackers to already possess administrative privileges or even physical access to a target system to deploy them. However, the true danger lies in how these bootkits exploit weaknesses in the security update process.
+
+Microsoft has issued patches and guidance to address vulnerabilities like Baton Drop. Yet, simply applying the latest Windows updates is not enough to completely neutralize the threat. Organizations must also implement manual steps, such as adding specific certificates to the Secure Boot UEFI Forbidden List (DBX). It appears that many targeted diplomatic entities have not fully completed these additional security measures, leaving them vulnerable to BlackX's advanced evasion capabilities.
+
+### What To Watch
+
+The continued focus on diplomatic targets in Central Asia by state-sponsored actors indicates ongoing geopolitical tensions and a high value placed on intelligence gathering in the region. As cybersecurity firms continue to analyze BlackX, expect to see further technical details emerge regarding its specific functionalities and potential future targets. Organizations relying on Secure Boot should rigorously review their implementation and ensure all recommended manual revocation steps are in place to guard against this persistent threat.
