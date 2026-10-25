@@ -1,0 +1,28 @@
+---
+title: "Brotli Decoder Flaw Behind Node.js RCE Also Affects Bun, Python and Other Widely Used Software"
+date: "2026-10-25"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxIIerJT3LOMCGn3nXAnmhaHzJlJnVJCso1COluq8t3WuF4IpNARa_Asl5nEhRUDTEcR89kwzo5vGmP5IyNbj1ncdaCpkhqcHUODHAd3khanaE-7N8Vb0NyEJkmPmNkhSpJtLCLgi9srDRhZLtM5n8UDI58F797ZJaVzC7JzjPLfca4NpxZr_7tCX8RIk/s1600/br-nodejs.jpg"
+disclaimer: "None"
+---
+
+## Widespread Vulnerability Found in Brotli Decoder Puts Bun, Python, and More at Risk
+
+A significant security vulnerability, initially discovered in Node.js, has now been found to impact a much wider range of software that handles Brotli-compressed data. This memory corruption flaw, lurking within Google's Brotli decoder library, could allow attackers to execute malicious code, leading to serious security breaches. The discovery has prompted a wave of urgent updates across various popular development tools and web infrastructure.
+
+### Understanding the Brotli Flaw
+
+At the heart of this issue is a memory corruption bug, formally identified as CVE-2026-111497, within the C code responsible for unpacking Brotli-compressed streams. When crafted with malicious intent, compressed data can overflow its intended buffer, corrupting a program's memory. This corruption can manifest in various ways, from causing a program to crash or leak sensitive information to, in the worst-case scenario, allowing an attacker to run their own code on the affected system.
+
+### The Ripple Effect Across Software
+
+Researchers at Imperva have demonstrated the potential for remote code execution (RCE) on unpatched Node.js builds. While similar demonstrations haven't yet been made public for other affected software, the underlying vulnerability is present in the shared Brotli decoder library. This means that Bun, popular Python packages like `brotli` and `brotlicffi`, and even web proxies such as Envoy, are susceptible if they rely on a vulnerable version of the decoder. The widespread use of Brotli for compressing web traffic means this vulnerability has far-reaching implications for web security.
+
+### A Race Against Time: Patches and Updates
+
+The vulnerability was first publicly disclosed in October, with Node.js and Google quickly releasing fixes. Since then, a piecemeal update process has been underway as different projects incorporate the patched versions of the Brotli decoder. Because each application maintains its own copy of the decoder, developers must proactively update their specific implementations. Users of affected software are strongly encouraged to check for and apply the latest security patches for their respective tools and libraries to mitigate this risk.
+
+### What To Watch
+
+Expect to see continued updates and advisories from various software vendors as they integrate the latest Brotli decoder fixes. Developers using Bun, Python with Brotli compression, and Envoy or Istio proxies should prioritize updating to the patched versions. Security teams will be monitoring for any signs of exploitation in the wild, although no real-world attacks have been reported as of yet.
