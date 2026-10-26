@@ -1,0 +1,28 @@
+---
+title: "Data Engineering Weekly #293"
+date: "2026-10-26"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/data-engineering-weekly-293"
+image: "https://substackcdn.com/image/fetch/$s_!AdQk!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6f51c1bf-abc9-4cd3-ad69-22cc8e3f1ef2_1080x1080.png"
+disclaimer: "None"
+---
+
+## Rethinking Data Catalogs and the Future of Data Modeling
+
+The world of data engineering is constantly evolving, sparking critical discussions about the tools we use and the fundamental principles guiding our work. This week, we're diving into two thought-provoking ideas: what truly defines an "open" data catalog and whether traditional data modeling still holds its ground in our modern data stacks.
+
+### The Illusion of Openness: Navigating Data Catalog Choices
+
+A pressing question in the data engineering community is what constitutes a truly open data catalog. One perspective suggests that relying on proprietary catalog specifications, like potentially seen with Iceberg's approach, might inadvertently lead to vendor lock-in. Instead of fostering a truly open ecosystem, this could create isolated systems that limit users' flexibility and choice in their data infrastructure. The drive for openness should prioritize interoperability and ensure that data users aren't trapped by the dictates of a single provider.
+
+### The Enduring Relevance of Data Modeling in a Shifting Landscape
+
+In parallel, the debate continues about the necessity of data modeling. While data platforms have become increasingly sophisticated, the core principles of having a shared language for understanding complex data concepts remain invaluable. Decades of experience building data platforms underscore the importance of frameworks that enable clear communication and informed decision-making. Data modeling, in essence, provides this crucial shared language, which, like any language, will inevitably evolve over time. Understanding how this evolution will shape future data practices is key.
+
+### Driving Clarity and Consistency: The Rise of Semantic Layers
+
+Adding fuel to these discussions is the growing trend of semantic layers, with companies like Pinterest highlighting their practical applications. Pinterest's "Metrics Board" tackles the chaos of scattered metric definitions and manual pipelines, which often hinder experimentation and erode trust in reporting. By centralizing metric definitions, their solution automates calculations and quality checks, ensuring consistent and reliable data across various tools. This movement towards semantic layers, where business logic and metric definitions are standardized, is gaining significant traction across the data ecosystem, promising greater clarity and efficiency. Major players like Snowflake, Databricks, and Microsoft are all actively developing their own solutions in this space, aiming to capture calculation rules and business relationships. Meanwhile, open-source projects like Apache Ossie are working to facilitate the exchange of these definitions across different tools, emphasizing the ongoing need for clear ownership and well-maintained rules to achieve accurate data insights.
+
+### What To Watch
+
+Keep an eye on how the industry grapples with the balance between proprietary catalog features and the demand for true open standards. The ongoing development and adoption of semantic layers will also be crucial, as they promise to standardize how we define and use data, potentially simplifying complex data environments and empowering more users.
