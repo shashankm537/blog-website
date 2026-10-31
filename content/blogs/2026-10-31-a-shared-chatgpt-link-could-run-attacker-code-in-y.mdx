@@ -1,0 +1,28 @@
+---
+title: "A Shared ChatGPT Link Could Run Attacker Code in Your Session and Read Private Chats"
+date: "2026-10-31"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/10/a-shared-chatgpt-link-could-run.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEplEzMjNIg5IBNIX4uz_WyVhtJqqbKICvvpW5LbwPEsQVd4ypSQC1ISnXoR0pMLlQEF4erNUIf-5-ELvBXIE8VH2Iv7dCPCuaZAFVeS9VIITs_5e_77DwtIvo3ExUcfJC_aT4x3FDD3AmTKeQFKnOrufXorlbiHOJNO-pUhwzBNwL98r-2JSW2CWiTBs/s1600/chatgpt.jpg"
+disclaimer: "None"
+---
+
+## Your ChatGPT Chats Weren't as Private as You Thought: A Glaring Security Flaw Exposed
+
+A chilling discovery has revealed a vulnerability within ChatGPT that could have allowed malicious actors to gain access to your private conversations and even execute code within your active session. Security researchers recently uncovered how a seemingly innocent shared link could have been weaponized to compromise user data, highlighting a significant security oversight by OpenAI.
+
+### The Deceptive Shared Link
+
+The exploit centered around a seemingly standard ChatGPT feature: the ability to share conversations via a public link. Attackers could craft these links and distribute them through various channels, including emails, direct messages, or even social media posts. The alarming part? Victims didn't need to download any software, join a new workspace, or even sign in again to become vulnerable. In the most straightforward scenario, simply opening the malicious link and clicking ChatGPT's "Preview" button was enough to trigger the attack. Later iterations of the exploit even made the "Preview" button activate automatically upon opening the link, requiring no further user interaction.
+
+### Unveiling the Scope of the Threat
+
+Once the malicious code was deployed within the victim's active ChatGPT session, the implications were severe. Researchers demonstrated that the attacker's code could operate with the same permissions as the legitimate ChatGPT site. This meant they could access and list recent conversations, open private chats that had never been shared, and even exfiltrate snippets of this sensitive information to a server controlled by the attacker. The exploit didn't merely scrape what was visible on the screen; it directly utilized ChatGPT's own authenticated APIs, granting it broad access to the user's account and its full range of functionalities. Essentially, the researchers noted, "we could perform any action on behalf of the victim's ChatGPT account." Fortunately, this was a controlled test by the security firm Parameter, and there are no reports of this vulnerability being exploited in the wild.
+
+### The Mechanism Behind the Breach
+
+Parameter's investigation pinpointed how the flaw allowed the attack to break free from its intended sandbox. ChatGPT possesses a feature that transforms blocks of HTML within a chat into a mini web page, accessible through its "Preview" function. The vulnerability arose because this preview environment was not sufficiently isolated. When an attacker could inject malicious code within this HTML, it could then execute within the user's authenticated ChatGPT session, bypassing intended security restrictions. OpenAI has since acknowledged the severity of the P1 rated flaw and has implemented a fix.
+
+### What To Watch
+
+With OpenAI having patched this critical vulnerability, the immediate threat to users sharing ChatGPT links has been neutralized. However, this incident serves as a stark reminder of the evolving security landscape in AI-powered platforms. Users should remain vigilant about the links they click, even those appearing to originate from trusted services. The cybersecurity industry will undoubtedly be scrutinizing how AI platforms handle user data and session security moving forward, with a focus on preventing similar exploits in the future.
