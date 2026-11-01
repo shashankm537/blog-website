@@ -1,0 +1,24 @@
+---
+title: "Hackers Steal About $2.7 Million From Polymarket Traders via Hijacked DebugBear Script"
+date: "2026-11-01"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/11/hackers-steal-about-27-million-from.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhe0B28qLAtUMfqN29_phxZJVJORICkj_98MZFwDiXAxFTABw8G9qbsVyD98pg7T_Rvgv83NXyR5tNGYH4dRwlxs3QFTUZxDPHQs2BgFsnmGcOuVW1HkFVCfiCR3Y05kPQrfFx4S7A8DiFXXAAgdc5SiEKx0-0xrW5rNlNSyN3jZJcyXasdpCr5AG7KM3s/s1600/Polymarket.jpg"
+disclaimer: "None"
+---
+
+## Millions Drained from Prediction Market in Sophisticated Script Attack
+
+A daring cyberattack has rocked the world of decentralized prediction markets, with hackers siphoning approximately $2.7 million from Polymarket traders by exploiting a compromised third-party script. The incident, which occurred on October 29th, saw malicious code embedded within a script that Polymarket relied on for website performance, ultimately leading to the unauthorized sale of user positions and the theft of funds.
+
+### The Anatomy of the Breach: A Hijacked Script
+
+The attackers ingeniously injected malicious code into a script hosted by DebugBear, a company that provides website performance monitoring tools. Polymarket, like many websites, loads scripts from external providers to enhance functionality and gather data. In this case, hackers managed to compromise DebugBear's domain, allowing them to serve a booby-trapped version of the script to Polymarket users. This altered script then silently operated within the browsers of signed-in traders, granting attackers unauthorized access to their account details and trading information.
+
+### How Funds Disappeared: Exploiting User Sessions
+
+Once the malicious script was active in a user's browser, it could access sensitive information stored locally by Polymarket, including crucial trading API keys. While these keys alone weren't enough to initiate transactions, the script was designed to work in conjunction with the existing active session of a signed-in trader. It would then locate and interact with Polymarket's order placement and transaction signing functionalities, effectively hijacking the user's authenticated session to execute trades and reroute funds directly to the attackers' wallets. Blockchain records confirm that a significant portion of the stolen cryptocurrency arrived in the hackers' wallets within a remarkably short timeframe.
+
+### What To Watch
+
+Polymarket has pledged to refund all affected users, a significant undertaking given the scale of the loss. The incident highlights the growing vulnerability of web applications that rely heavily on third-party scripts, as a compromise in one service can have cascading effects. Investigators are still delving into the precise methods used to compromise DebugBear's infrastructure and are examining whether this attack was a targeted operation or part of a broader campaign. The cryptocurrency community will be closely watching the ongoing investigation and the steps Polymarket and DebugBear take to bolster their security measures to prevent future incidents.
