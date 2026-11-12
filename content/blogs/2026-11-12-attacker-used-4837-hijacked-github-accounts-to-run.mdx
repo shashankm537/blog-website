@@ -1,0 +1,24 @@
+---
+title: "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories"
+date: "2026-11-12"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1-4OiOkGLcK3fAr2HdhALOfc_BqR21440TsjUIuCNzv4YL0lWRC3lvUjE1vu2RdVfjunxi80gMQyGpjvUdWzMRtthW8_-hFOJ79YhFzJrNGgoKDPYXm2OaWOsN8kgBELqOPs5s9QKL4qzQzu_3NEEqHygpfQzKYxDRIQeFgMHj24oyPyaslUemke-loU/s1600/github.jpg"
+disclaimer: "None"
+---
+
+## Thousands of GitHub Accounts Abused in Widespread Supply Chain Attack
+
+A sophisticated cyberattack has recently targeted the developer community, leveraging thousands of compromised GitHub accounts to inject malicious code into software development pipelines. Security researchers have uncovered a vast operation that used over 4,800 hijacked accounts to deploy a tool designed to steal sensitive credentials from over 1,800 repositories. This incident highlights a significant vulnerability within the software supply chain, where even seemingly innocuous actions can have far-reaching consequences.
+
+### The Anatomy of the Attack
+
+The operation, identified by security firm Aikido Security, began with a systematic approach to test the compromised accounts' access. Attackers initiated pull requests with the title "docs: dependency audit notes" from a specific branch named "wfx-docs." These initial requests, numbering over 61,000 across various repositories, served as a reconnaissance step to confirm write permissions. Once access was verified, the attackers proceeded to inject a "secret stealer" tool into a subset of these repositories. This malicious code was specifically engineered to capture sensitive information, including cloud credentials, that the repository's automated build and deployment processes (CI workflows) had access to.
+
+### Widespread Compromise and Stealthy Tactics
+
+The impact of this attack is significant, with researchers from SafeDep estimating that over 8,000 repositories received malicious commits within a 16-hour window. Their analysis, focused on the default branches of public repositories, suggests the true scale of the compromise is likely even larger. The injected code often took the form of a modified existing workflow or, in a more insidious move, an npm postinstall hook, which executes during the installation of software packages and can even run on individual developer machines. A key tactic employed by the attackers was their ability to quickly revert these malicious changes, often within minutes of their introduction. Furthermore, they actively deleted logs and the execution traces of the stealer, aiming to cover their tracks and make detection more challenging.
+
+### What To Watch
+
+The immediate concern is the potential for widespread credential compromise. Developers and organizations with repositories that were potentially affected should treat all secrets and cloud roles accessible by their CI/CD pipelines as compromised. A thorough audit of repository access logs and a review of any suspicious pull requests or commits are crucial next steps. The ongoing investigation will likely focus on identifying the origin of the initial account compromises and understanding the full extent of data exfiltrated by the attacker.

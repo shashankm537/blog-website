@@ -1,0 +1,24 @@
+---
+title: "How Open Is Open? Iceberg, Catalogs, and User Choice"
+date: "2026-11-12"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/how-open-is-open-iceberg-catalogs"
+image: "https://substackcdn.com/image/fetch/$s_!EWqJ!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06ea1e81-96d3-4df9-8ef5-01cf77c89bfb_1672x941.png"
+disclaimer: "None"
+---
+
+## Beyond the Buzzwords: Demystifying "Open" Data Platforms
+
+The promise of a vendor-neutral data platform – free from lock-in, offering cost control, and accelerating insights – remains a tantalizing goal for many organizations. However, recent discussions around formats like Apache Iceberg highlight a critical need: users must be able to independently verify claims of openness, moving beyond vendor assurances to understand the real-world implications for their data architecture.
+
+### The Vendor Influence on Data Catalogs
+
+At the heart of data platform architecture lies the catalog, which dictates how different engines access and modify data. Apache Iceberg's REST catalog protocol, for instance, centralizes commit logic and manages storage access, giving the catalog provider significant influence. Vendors invest heavily in making their platforms performant and secure, but this can inadvertently create dependencies that limit future flexibility. Understanding where these advantages tip into constraints is crucial for data engineering leaders facing significant architectural and financial decisions.
+
+### Interoperability in Practice: More Than Just a Connection
+
+While a published interface like Iceberg's REST catalog protocol establishes a foundational contract, true interoperability extends far beyond simply connecting an engine to a catalog. Real-world data operations involve complex scenarios like managing vast amounts of metadata, handling concurrent data writing, and ensuring seamless credential renewals under demanding workloads. Different implementations of Iceberg's features, such as lazy snapshot loading and server-side scan planning, can lead to vastly different performance outcomes before data processing even begins, necessitating robust evidence of practical interoperability.
+
+### What To Watch
+
+Expect continued debate and development around standardized testing and benchmarking for data platform components. Organizations will likely push for clearer documentation and independent validation methods to assess the true openness and interoperability of their chosen data solutions. The industry will need to move towards demonstrable proof of concept, not just promises, to satisfy the growing demand for genuine vendor neutrality.
