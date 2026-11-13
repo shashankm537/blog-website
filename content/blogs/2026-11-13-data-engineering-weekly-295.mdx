@@ -1,0 +1,28 @@
+---
+title: "Data Engineering Weekly #295"
+date: "2026-11-13"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/data-engineering-weekly-295"
+image: "https://substackcdn.com/image/fetch/$s_!AdQk!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6f51c1bf-abc9-4cd3-ad69-22cc8e3f1ef2_1080x1080.png"
+disclaimer: "None"
+---
+
+## AI Reshaping the Analytics Landscape: Will Your Data Questions Get Answered by a Bot?
+
+The age-old dream of asking a computer for business insights without needing a deep technical dive is rapidly becoming reality. As Artificial Intelligence matures, it's poised to fundamentally transform the role of analytical engineers, potentially automating aspects of their work that were once solely human-driven.
+
+### The Dual Role of Analytical Engineers Under AI's Gaze
+
+Historically, analytical engineers have juggled two critical functions within organizations. They've served as the go-to experts for ad-hoc business questions, acting as a human-powered "tap-on-the-shoulder" support system, akin to early AI agents. Simultaneously, they've focused on building standardized metrics to ensure data consistency and alignment across different teams. Now, with the rise of sophisticated AI agents, companies are exploring how these powerful tools can augment, and perhaps even automate, these vital responsibilities.
+
+### Navigating the Evolving Data Infrastructure
+
+In the fast-paced world of data, infrastructure choices are constantly under review. PostHog, for instance, recently shared their experience rolling back their adoption of DuckLake, opting instead for a Trino-based solution. This decision highlights a common challenge: while much of the analytical pipeline may only touch a small fraction of data, the complex task of data modeling remains a significant hurdle. The article also touches on the potential of DuckDB, suggesting its use cases are most effective where its specific strengths shine. Meanwhile, Uber is pushing the boundaries of Apache Spark performance, exploring innovations that could lead to substantial cost efficiencies, with a potential shift towards new execution engines like Glutten and Velox on the horizon.
+
+### Performance Benchmarks Highlight Key Data Technologies
+
+To understand the practical implications of these advancements, a recent benchmark compared the performance of Trino, ClickHouse, and StarTree when querying data stored in Apache Iceberg. This analysis, which involved billions of rows of data, revealed significant differences in how these tools handle filtered aggregations, caching, and concurrent queries. The findings underscore the impact of index-driven access on reducing the volume of data scanned, illustrating how bottlenecks can shift between CPU and storage demands.
+
+### What To Watch
+
+Expect to see continued innovation in AI agents designed to democratize data access and insights. The data infrastructure space will likely witness further consolidation and optimization as companies seek the most efficient and performant solutions for their evolving needs. Keep an eye on how these trends impact the core responsibilities and required skillsets for analytical engineers.
