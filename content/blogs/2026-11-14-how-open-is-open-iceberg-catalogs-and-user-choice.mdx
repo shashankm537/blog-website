@@ -1,0 +1,24 @@
+---
+title: "How Open Is Open? Iceberg, Catalogs, and User Choice"
+date: "2026-11-14"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/how-open-is-open-iceberg-catalogs"
+image: "https://substackcdn.com/image/fetch/$s_!EWqJ!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06ea1e81-96d3-4df9-8ef5-01cf77c89bfb_1672x941.png"
+disclaimer: "None"
+---
+
+## Navigating the "Open" Data Landscape: Iceberg, Catalogs, and True User Freedom
+
+The promise of a truly vendor-neutral data platform—one that liberates companies from lock-in, offers superior cost control, and accelerates analytical insights—remains a tantalizing, yet often elusive, goal. Even with seemingly "open" table formats like Apache Iceberg, recent discussions highlight a critical gap: users need a way to independently verify the extent of this openness.
+
+### Understanding the Core of Interoperability
+
+For data engineering leaders, the definition of "openness" directly impacts architectural decisions and financial strategies. The crucial question becomes: can a team seamlessly switch query engines, manage their own data catalog, or replace a service provider without a costly and time-consuming platform overhaul? Furthermore, what capabilities, performance benefits, or levels of control might be sacrificed in such a transition? Apache Iceberg offers a significant step towards this independence, particularly through its REST catalog protocol. This protocol standardizes how commit logic is handled and allows for the delegation of storage access, placing the catalog in a pivotal role that influences how data engines interact with and update tables.
+
+### Beyond the Interface: Real-World Performance and Control
+
+While a published interface establishes a foundational contract for interoperability, the true test lies in its practical application. Connecting an engine to a catalog is just the first step in a complex journey. Real-world production environments introduce challenges such as growing metadata, concurrent data writing, frequent credential renewals, and demanding workloads. Iceberg's support for features like lazy snapshot loading and server-side scan planning are designed to enhance efficiency. However, the actual performance gains users experience depend heavily on how distinct engine and catalog implementations leverage these capabilities. Users need concrete evidence demonstrating that "better engineering" translates into tangible performance improvements before committing to a specific path.
+
+### What To Watch
+
+The ongoing evolution of the Iceberg specification and the increasing number of vendor implementations will be key indicators of its practical openness. Keep an eye on independent benchmarks and community-driven validation efforts that can provide objective measures of interoperability and performance across different engine and catalog combinations.
