@@ -1,0 +1,24 @@
+---
+title: "Attackers Compromise Microsoft's Agent Framework PyPI Package to Steal Cloud Credentials"
+date: "2026-11-18"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_LozO7RAz13Jr3eqWHIjlAF6M0Cs-mJXX2mKUqU0TxVS02piD1na92TAZjICmeySD4z0zS-Y_BFvceERBdk-UZvV1DUh1LGN6wK-T-yt_TROJ5fcuvROu807jqESQo93CFP3faBbReKMZQxvgYOAGl_vS2VzfO67O24NdAgh6d9jMO2mTSy2jaNJMPD9T/s1600/ms-python.jpg"
+disclaimer: "None"
+---
+
+## Malicious Code Lurks in Microsoft's Agent Framework, Targeting Cloud Credentials
+
+In a concerning development for developers and cloud users, a popular Microsoft-sanctioned Python package has been compromised to secretly steal sensitive cloud credentials. Malicious versions of the `agent-framework` package were recently published to the Python Package Index (PyPI), raising alarms about the security of open-source software supply chains.
+
+### A Stealthy Sabotage
+
+Threat actors successfully injected malicious code into versions 1.26.1 and 1.26.2 of the `agent-framework` package, releasing them just 33 minutes apart on November 17, 2026. These compromised versions were designed to execute a credential-stealing script every time a Python interpreter is launched on an affected system. Even if the `agent-framework` itself isn't directly used in a project, any Python startup could trigger the illicit activity.
+
+### How the Attack Unfolds
+
+Upon installation, the malicious packages plant a `.pth` file within the Python environment's `site-packages` directory. This seemingly innocuous file acts as a startup hook, automatically executing Python code whenever the interpreter begins. This code then silently gathers valuable data, including environment variables, cloud identity tokens, and credential files associated with services like Azure CLI, npm, and Git. The stolen information is subsequently exfiltrated to a remote webhook endpoint, leaving users vulnerable to account takeover and data breaches.
+
+### What To Watch
+
+While the compromised packages have been quarantined on PyPI, the incident highlights the persistent threat of supply chain attacks. Developers should remain vigilant, promptly updating their dependencies and using security scanning tools to identify and mitigate potential risks. The industry will likely see increased scrutiny on package vetting processes and efforts to strengthen the security of open-source repositories.
