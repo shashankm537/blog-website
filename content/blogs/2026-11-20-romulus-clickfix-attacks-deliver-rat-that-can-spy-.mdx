@@ -1,0 +1,28 @@
+---
+title: "ROMULUS ClickFix Attacks Deliver RAT That Can Spy on Users and Control PCs"
+date: "2026-11-20"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/11/romulus-clickfix-attacks-deliver-rat.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjugg63OPJwZuh94vDIg7MkA4YoeLKr5sjiqI6CEgjvDjUvJ-pBJOfUrUBxPUTbartqVwdldczbKSYo6lpkcVic1EDQYIDyWq12zMdMONjpDtK4NKCgkppAWvnOJpXe7prfmRG8WNpH0RrQ0bhX2nZKGpRy33y0OMZraBjEPoDorp9h3kNJSa-IQrJC7Nl5/s1600/cf.jpg"
+disclaimer: "None"
+---
+
+# New Malware Threat: ROMULUS Delivers Spying RAT via Clever Deception
+
+Cybersecurity researchers have uncovered a sophisticated new threat, dubbed ROMULUS ClickFix, which is being used to distribute a dangerous remote access trojan (RAT). This RAT, previously unknown to security experts, bears a striking resemblance to another known malware family and possesses the chilling ability to spy on users and take complete control of their computers.
+
+## The Deceptive Tactics of ROMULUS ClickFix
+
+ROMULUS ClickFix operates as a cunning delivery service, utilizing deceptive tactics to trick unsuspecting users into downloading malware. Researchers have observed it employing "ClickFix" style lures, essentially bait designed to entice victims into clicking malicious links. This often involves impersonating legitimate software or updates, making it incredibly difficult for users to discern the real threat.
+
+Further adding to its sophistication, ROMULUS ClickFix has been seen leveraging ChatGPT Custom GPTs to steer individuals towards compromised websites. Once on these sites, the ClickFix lures kick in, ultimately leading to the deployment of the RAT payload through a technique known as DLL sideloading. This method exploits the trust users place in legitimate executable files to sneak in malicious code.
+
+## Unveiling the CNCMachineRMS RAT
+
+The ultimate payload delivered by ROMULUS ClickFix is a previously undocumented remote access trojan that security analysts have noted shares significant similarities with the CNCMachineRMS malware. This RAT is particularly concerning due to its extensive capabilities, allowing attackers to remotely control a victim's desktop, stream their screen, capture audio and video from microphones and cameras, and manage files on their system. The threat is amplified by the fact that CNCMachineRMS has also been previously distributed through other loaders, indicating a broader and evolving threat landscape.
+
+One specific attack chain involves a malicious MSI installer disguised as a legitimate software tool. This installer, when executed, initiates a DLL sideloading process that ultimately launches the CNCMachineRMS RAT. The RAT then unpacks and executes embedded shellcode, enabling the full suite of its malicious functionalities.
+
+## What To Watch
+
+The evolving tactics of ROMULUS ClickFix highlight the increasing sophistication of cyber threats. Users should remain vigilant about unsolicited prompts, software updates, and links from unknown sources, even those appearing to come from trusted platforms like AI chatbots. Cybersecurity firms will continue to monitor ROMULUS's activities and the capabilities of the CNCMachineRMS RAT, working to develop better detection and mitigation strategies.
