@@ -1,0 +1,24 @@
+---
+title: "OpenRouter Drops 3 Providers After Researchers Catch Months of Prompt Theft at AI Hosting Firms"
+date: "2026-11-22"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEGP3P_elvK4C-QnSx5onZ67viDXCIgPCUYqtTF_RDNcLJfyQ4QMbegUmn8AJy5nEmnXfN4ACr6hHztG_DdqXlj54S21toacPQaZgRx2rgqZltN3lvREpZR2xlvgXF_iZ7zW0XT0b91mMiRDVaEB6TUvMFlWwaSa3_C7gwpxdKcNhLtIq15KqwaZrR3VI/s1600/openrouter.png"
+disclaimer: "None"
+---
+
+## Hidden Danger: AI Providers Caught Red-Handed Stealing User Data, Even Secret Prompts
+
+Your most sensitive AI prompts might have been compromised for months without you even knowing. Researchers have uncovered a disturbing trend where data, including "Zero Data Retention" requests intended for privacy, was systematically stolen from multiple AI hosting services. This revelation has led to swift action from OpenRouter, a platform connecting users to various AI models, which has now removed the offending providers from its service.
+
+### The Invisible Thief: Months of Exploitation Uncovered
+
+Cybersecurity firm Dragos revealed that attackers successfully infiltrated three separate AI inference providers, pilfering user data for an extended period without the providers' awareness. Disturbingly, some of the stolen information included prompts specifically marked with "Zero Data Retention" settings, a feature designed to ensure that user inputs are never stored. The investigation, which involved planting millions of specially crafted prompts embedded with unique tracking links and credentials, discovered that these "bait" prompts were processed alongside genuine customer requests, suggesting that all submitted data was likely copied.
+
+### How the Attackers Operated and the Response
+
+The breaches, some dating back to mid-July, employed sophisticated tactics. Researchers observed attackers exploiting vulnerabilities to access and copy vast amounts of data. In one significant incident, hundreds of AWS keys embedded in prompts were stolen, leading to an attacker making tens of thousands of AWS API calls to access sensitive information like S3 buckets and user credentials. One attacker even managed to compromise two providers simultaneously, utilizing stolen secrets from both through a single compromised server. In response to these findings, OpenRouter has not only removed the three implicated providers but also revoked "Zero Data Retention" eligibility for 125 endpoints and is actively informing all potentially impacted customers. Importantly, the investigation found no evidence of a breach affecting OpenRouter itself.
+
+### What To Watch
+
+The fallout from this incident is likely to continue. Expect to see increased scrutiny on AI provider security practices and a stronger push for transparency regarding data handling. The incident also highlights the critical need for robust auditing and monitoring within AI infrastructure to detect and prevent such sophisticated attacks. As the industry grapples with these revelations, the focus will be on how these providers and platforms like OpenRouter implement more rigorous security measures to protect user privacy and data integrity moving forward.
