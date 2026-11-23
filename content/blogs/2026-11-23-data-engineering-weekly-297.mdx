@@ -1,0 +1,26 @@
+---
+title: "Data Engineering Weekly #297"
+date: "2026-11-23"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/data-engineering-weekly-297"
+image: "https://substackcdn.com/image/fetch/$s_!AdQk!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6f51c1bf-abc9-4cd3-ad69-22cc8e3f1ef2_1080x1080.png"
+disclaimer: "None"
+---
+
+**Coding Interviews Take a Turn: LeetCode.ai Embraces the Code Review**
+
+The landscape of technical interviews is evolving, and a recent announcement from LeetCode.ai signals a significant shift. Recognizing the move away from pure code generation tests, LeetCode.ai is introducing a "code review" feature designed to assess a data engineer's ability to understand, debug, and improve existing code, mirroring the practical demands of modern development workflows.
+
+### Rethinking the Coding Interview
+
+For years, coding interviews have primarily focused on a candidate's ability to build solutions from scratch. However, as the article highlights, many companies are now shifting towards a "fix-and-explain" approach. This means candidates are presented with existing code, tasked with identifying and resolving bugs, and then articulating their reasoning. LeetCode.ai's new feature directly addresses this trend, aiming to equip data engineers with the skills necessary to excel in these review-focused assessments. It's a move that emphasizes collaboration and practical problem-solving over raw algorithmic prowess.
+
+### Streamlining Data Pipelines: Lakehouse Migrations and Control Planes
+
+Beyond interview prep, two compelling engineering stories showcase how organizations are optimizing their data infrastructure. Flock, a company focused on insurance technology, has successfully migrated its entire data lakehouse architecture from AWS Glue to DuckDB. This transition, involving nearly 480 dbt models, resulted in a dramatic 74% reduction in core build times and a staggering 91% cut in daily compute expenses by leveraging DuckDB's single-node efficiency.
+
+Meanwhile, e-commerce giant Meesho has tackled the challenge of running Spark at massive scale with its innovative "MeeUPP" control plane. By centralizing pipeline management and decoupling it from infrastructure decisions, MeeUPP transforms raw Spark clusters into self-tuning, multi-provider platforms. This intelligent routing and warm cluster reuse has led to a 90% decrease in cluster counts and a 40% reduction in compute costs, demonstrating the power of a unified control plane for complex data operations.
+
+### What to Watch
+
+The introduction of LeetCode.ai's code review feature suggests we'll see more platforms and companies prioritizing practical code comprehension and debugging skills in their hiring processes. On the infrastructure front, the successful migrations and control plane implementations by Flock and Meesho will likely inspire other organizations to explore similar strategies for cost optimization and performance enhancement in their data engineering efforts. We can also anticipate continued advancements in tools like Apache Airflow, with its upcoming 3.4 release bringing enhanced features like DAG folders and native task looping, further simplifying complex data workflows.
