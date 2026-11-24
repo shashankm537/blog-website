@@ -1,0 +1,28 @@
+---
+title: "Microsoft Fixes Azure API Management Classic Flaw as Actor Targets Customer Secrets"
+date: "2026-11-24"
+category: "cybersecurity"
+source: "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html"
+image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSM2FAnf9UEb3Do4v-r8AEBpoI8byXOrHgng-eRjEyudSf0hiKMpymmDiK_NLTxYuzXdtrWvMrBzY9qmLqDo31r3JOpVefOQxLE77gdkoOAYMkCK__-Bc-AJoWg-8nEOEVjcY6SswkzLbCfYl6kK9clg6xXw3xginWqIwnMxBUaS6wgPKVVwXZNhZA5G85/s1600/azure-ms.jpg"
+disclaimer: "None"
+---
+
+## Azure API Management Vulnerability Exposes Customer Secrets, Norway's NSM Reports
+
+A significant security flaw in Microsoft's Azure API Management (APIM) service has been uncovered, potentially exposing sensitive customer data. Norway's National Security Authority (NSM) has confirmed the vulnerability affected businesses in the country, with energy giants like Equinor and Skagerak Energi among those potentially impacted. The incident raises serious concerns about the security of cloud-based management tools and the critical information they hold.
+
+### The Threat: Targeting Access Tokens and Secrets
+
+According to the NSM, an unidentified attacker actively exploited a vulnerability to gain access to crucial information within Azure API Management. This included seeking out access tokens, sensitive secrets, and named values stored within the service. While the full extent of this exploitation remains unclear, the mere possibility of unauthorized access to such critical data is a major cause for alarm among organizations relying on Azure's cloud infrastructure.
+
+### Which Services Were Affected?
+
+The vulnerability specifically impacted the Azure API Management "Classic" tier. Microsoft has clarified that newer "v2" tiers were not affected by this particular issue. The flaw was identified on November 18, 2026, and Microsoft moved swiftly to close the access path the following day, November 19, 2026. However, the company acknowledged that during the period the vulnerability was active, an unauthorized party could have potentially accessed secrets stored in affected APIM instances.
+
+### Potential Data Compromise and Microsoft's Response
+
+If an organization's Azure API Management Classic instance was not configured according to Microsoft's documented security best practices, credentials or configuration secrets could have been accessed. This compromised data could include client secrets for identity providers, subscription keys, and tokens used for direct management API calls. Microsoft has since released guidance to help affected customers identify and rotate any compromised secrets and credentials.
+
+#### What To Watch
+
+The ongoing investigation will likely focus on determining the precise number of customers affected and the extent of any actual data exfiltration. Organizations using Azure API Management Classic are strongly advised to immediately review Microsoft's guidance and take proactive steps to secure their environments. Future attention will be on how cloud providers continue to enhance security protocols to prevent similar incidents.
