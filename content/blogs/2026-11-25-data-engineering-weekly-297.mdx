@@ -1,0 +1,28 @@
+---
+title: "Data Engineering Weekly #297"
+date: "2026-11-25"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/data-engineering-weekly-297"
+image: "https://substackcdn.com/image/fetch/$s_!AdQk!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6f51c1bf-abc9-4cd3-ad69-22cc8e3f1ef2_1080x1080.png"
+disclaimer: "None"
+---
+
+**The Future of Data Engineering Interviews is Here: Are You Ready?**
+
+The way we assess data engineers is evolving rapidly, and a new tool is emerging to bridge the gap between traditional coding tests and the practical skills employers now seek. From optimizing lakehouse architectures to streamlining massive data processing workflows, the challenges facing data engineers are becoming more complex, demanding not just coding prowess but also critical thinking and problem-solving abilities.
+
+### Embracing the Code Review Revolution
+
+Gone are the days of solely focusing on generating code from scratch during interviews. Many leading companies are shifting towards a "fix-and-explain" model, requiring candidates to not only identify bugs but also articulate their reasoning. To help data engineers sharpen these essential skills, a new "code review" feature has been launched on LeetCode.ai. This innovative addition directly addresses the need for practical code analysis and debugging proficiency, preparing professionals for the real-world demands of collaborative development and quality assurance.
+
+### Flock's Leap to Efficiency with DuckDB
+
+In a significant architectural shift, Flock has successfully migrated its extensive data operations from AWS Glue to DuckDB, a move that dramatically slashed processing times and costs. By leveraging the power of Iceberg storage for compute modularity, Flock was able to replace resource-intensive distributed systems like Spark with a single-node engine tailored to their specific workload needs. This migration, involving nearly 480 dbt models, resulted in a staggering 74% reduction in core build times and a 91% decrease in daily compute expenses, showcasing the potent benefits of this modern data stack approach.
+
+### Meesho's Unified Command Center for Spark
+
+Meesho has developed a sophisticated control plane, dubbed MeeUPP, to manage its vast Spark operations efficiently and cost-effectively. This centralized system decouples pipeline logic from underlying infrastructure, transforming raw Spark engines into adaptable, self-tuning platforms capable of operating across multiple providers. By intelligently routing 125,000 daily Spark jobs to optimal, pre-warmed cluster pools and using Spark listener telemetry for automatic size adjustments, MeeUPP has achieved remarkable results, cutting cluster requirements by 90% and compute expenses by a significant 40%.
+
+### What To Watch
+
+The ongoing evolution of data engineering interviews suggests a greater emphasis on practical problem-solving and collaborative coding. Keep an eye on platforms like LeetCode.ai as they continue to introduce features that mirror real-world engineering challenges. Furthermore, the success stories from companies like Flock and Meesho highlight a growing trend towards more efficient, cost-effective data processing architectures, likely driving further innovation in open-source tools and cloud-native solutions.
