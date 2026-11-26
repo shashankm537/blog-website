@@ -1,0 +1,28 @@
+---
+title: "Data Engineering Weekly #297"
+date: "2026-11-26"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/data-engineering-weekly-297"
+image: "https://substackcdn.com/image/fetch/$s_!AdQk!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6f51c1bf-abc9-4cd3-ad69-22cc8e3f1ef2_1080x1080.png"
+disclaimer: "None"
+---
+
+**Data Engineering Landscape Shifts: New Tools Emerge for Code Review and Performance**
+
+The world of data engineering is in constant motion, with a new wave of innovations promising to streamline workflows and slash costs. This week's updates highlight a significant shift in how we approach code, from interview practices to the operational efficiency of massive data platforms.
+
+### Revolutionizing the Data Engineering Interview
+
+The traditional coding interview, often focused on generating code from scratch, is evolving. Many companies are now adopting a "fix-and-explain" approach, testing a candidate's ability to identify and resolve issues within existing code. To better prepare aspiring data engineers for this new reality, LeetCode.ai has launched a dedicated "code review" feature. This tool allows users to hone their debugging skills and demonstrate their understanding of code quality, offering a more practical assessment of their readiness for real-world data engineering challenges.
+
+### Optimizing Lakehouse Migrations for Speed and Savings
+
+Data management platforms are increasingly looking for ways to enhance performance while reducing infrastructure overhead. Flock Cover details their successful migration of nearly 480 dbt models from AWS Glue to in-process DuckDB. By leveraging Open Iceberg storage, they achieved compute modularity, replacing the demanding overhead of Spark with a single-node engine tailored to their specific workload. This strategic move resulted in a remarkable 74% reduction in core build times and a staggering 91% decrease in daily compute expenses. Their approach also involved AI agents and a reusable Claude skill to ensure data integrity throughout the upgrade process.
+
+### Unlocking Spark's Potential with Unified Control Planes
+
+Running large-scale data processing jobs, particularly with distributed engines like Spark, can be complex and costly. Meesho shares their experience building MeeUPP, a unified control plane designed to manage their extensive Spark operations. This centralized system decouples pipeline logic from infrastructure decisions, transforming raw Spark into a self-tuning, multi-provider platform. MeeUPP efficiently routes 125,000 daily Spark runs across various providers, optimizing resource utilization through intelligent warm cluster management and auto-tuning based on Spark listener telemetry. The result is a dramatic 90% reduction in cluster count and a 40% cut in compute costs.
+
+**What To Watch**
+
+The ongoing exploration of more efficient data processing and a refined approach to developer assessment will undoubtedly shape the future of data engineering. Expect to see more tools emerge that focus on code quality, cost optimization, and the intelligent orchestration of complex data pipelines. The integration of AI and sophisticated control planes is likely to become a standard practice for organizations handling significant data volumes.
