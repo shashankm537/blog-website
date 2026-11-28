@@ -1,0 +1,28 @@
+---
+title: "Data Engineering Weekly #297"
+date: "2026-11-28"
+category: "data_engineering"
+source: "https://www.dataengineeringweekly.com/p/data-engineering-weekly-297"
+image: "https://substackcdn.com/image/fetch/$s_!AdQk!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6f51c1bf-abc9-4cd3-ad69-22cc8e3f1ef2_1080x1080.png"
+disclaimer: "None"
+---
+
+## LeetCode.ai Introduces AI-Powered Code Review to Revolutionize Data Engineering Interviews
+
+The landscape of technical interviews is shifting, and LeetCode.ai is stepping up to meet the evolving demands of data engineering. With a new "code review" feature, the platform aims to equip data engineers with the skills needed for the increasingly common "fix-and-explain" interview format, moving beyond simple code generation tests.
+
+### Evolving Interview Standards: From Creation to Correction
+
+Traditional coding interviews often focused on a candidate's ability to write code from scratch. However, a growing number of companies are now opting for a "fix-and-explain" approach. This methodology tests a candidate's understanding of existing code, their debugging prowess, and their capacity to articulate technical solutions. LeetCode.ai's new feature directly addresses this trend, offering a practical way for data engineers to hone their skills in identifying and rectifying issues in codebases, a crucial aspect of real-world development.
+
+### Flock's Leap: From AWS Glue to DuckDB for Dramatic Cost Savings
+
+In a remarkable feat of engineering, Flock has successfully migrated its extensive data infrastructure, comprising nearly 480 dbt models, from AWS Glue to in-process DuckDB. This transition, enabled by the compute modularity offered by Open Iceberg storage, has led to staggering improvements. By replacing the overhead of distributed Spark with a single-node engine tailored to their workload, Flock slashed core build times by an impressive 74% and saw their daily compute expenses plummet by a remarkable 91%. Their innovative approach also involved pairing AI agents with a reusable Claude skill to ensure table parity throughout the migration to DuckDB 2.0.
+
+### Meesho's MeeUPP: Streamlining Spark Operations for Massive Scale
+
+Meesho has tackled the complexities of running Spark at scale by developing a sophisticated control plane, dubbed MeeUPP. This centralized system effectively decouples data pipelines from underlying infrastructure decisions, transforming raw distributed engines like Spark into self-tuning, multi-provider platforms. MeeUPP intelligently routes a substantial 125,000 daily Spark runs across various providers' warm cluster pools. By leveraging Spark listener telemetry to automatically adjust resource allocation and maximize the reuse of pre-initialized clusters, Meesho has achieved a dramatic 90% reduction in cluster counts and a significant 40% decrease in compute costs.
+
+### What To Watch
+
+Expect to see more platforms embracing AI-driven solutions for interview preparation. The successful migrations at Flock and Meesho highlight the ongoing industry push towards optimizing cloud infrastructure for both performance and cost-efficiency, with a particular focus on efficient data processing engines like DuckDB and scalable orchestration tools like Apache Airflow. The introduction of new features in Apache Airflow 3.4, such as DAG folders and native task looping, signals continued innovation in workflow management.
